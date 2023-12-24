@@ -1,0 +1,17 @@
+= Study tips =
+
+There is no guess penalty, and you should never leave a queston blank!
+
+No parrot sign - no need to learn "this" by heart, but it is still important.
+
+This is one of the most theoretical modules in the curriculum. Sometimes the topics are approached conceptually.
+
+Study the matter!
+
+Take notes in a structured way so you can esily search/add things later! This way you become a producer and not a consumer.
+
+= Lecture 1 - History overview from single process to Docker =
+
+[[Lecture1|Content Lecture 1]]
+
+[[Lecture1CQ|Course Questions Lecture1]]

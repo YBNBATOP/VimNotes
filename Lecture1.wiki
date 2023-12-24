@@ -1,0 +1,110 @@
+== How do computers work? ==
+
+Somebody says with ones and zeros!
+
+A computer accepts requests of different children, and giving them what the ask, makes his own decision of what is most urgent, decided by a manager. Such processes can be done one by one.
+
+Behind every service, there are *Libraries*, *Frameworks*, and other software. Game engines as well can be used. Everything of this use a thing - a *programming language*!.
+
+A programming language is used to provide an interface to the end user.
+
+Programming languages (2 typs) talk first to the *OS* and then to the Hardware! So there is always a layer before accessing the hardware, so you cannot talk to it directly!
+
+== Compiler vs Interpreter: ==
+
+=== Compiler ===
+
+* A compiler transforms everything into machine code and then gives you an executable.
+* Takes some time to analyze the code but is overall faster.
+* Uses Linking - requries more memory.
+
+=== Interpreter ===
+
+* An interpreter reads command by command.
+* Take less time to analyze the source code, but overall execution is slower.
+* Is more memory efficient.
+
+== From simple program to containers ==
+
+=== A process address space ===
+
+* Initialized data is a variable that already has a value.
+* Unitialized - does not have that.
+
+A simple program has its own structure. High address -> Stack + Heap -> Uninitialized data -> Initialized data -> Text/Code segment -> Low address
+
+Devices talk to the *Kernel virtual address space*!
+
+And then the kernel talks to the *user virtual address space* (in simple words, this is the process number that is created!
+
+The interupts interupt the execution of a process after a certain amount of time, and give priority to another process, and so on until everything is not finished. The interupts depend on the clock of the PC.
+
+There exists such a thing like protection rings, such as that you can not talk directly to the hardware, and you need to pass trhough a couple of security layers (protection)
+
+A CPU has 3 rings for example, and then the kernel runs in ring 0 (the most close to the hardware one!)
+
+So you can not skip through rings to execute levels of programms.
+
+The program runs in the *higher space*. The kernel runs in the *lower space*.
+
+The kernel is common for every program, but each program has its own *structure* or in simple words, its own delegated space. Hence every process has different "spaces", which containt information about the process for the execution. Here the switch between processes is dependant on the interupts of the CPU(clock) which is about *20ms*.
+
+=== Full virtualization ===
+
+* For applications there apprared to be a good solution - to run them in different OS at one time, and on the same hardware! Hence they invented a virtualization engine, which is like any otehr program, which represents another protection ring and runs the applications in separate containters!
+* But it still talks to the layer that sits higher.
+* So in simple words - here it is a kernel above another kernel!
+* It is fully isolated!
+
+=== Paravirtualization ===
+
+* So every container aswell have a virtual machine monitor, which then talks to the father OS!
+* Here it is a kernel that serves all the requests of another kernel!
+* This is still linked to the father OS!
+
+This all is possible thanks to the layer -1 of the protection ring which gives you possibilitty to hypervise everything!
+
+=== Containers ===
+
+In traditional virtualization each app runs on a separate OS.
+An app depends on other apps or libraries.
+The need to quickly deploy as "microservice"
+
+Containers solve this issues, as they have containerized engines with libraries and etc.
+
+User -> Application -> OS -> Hardware = this is how a User talks to the "hardware"!
+
+=== Role of a OS ===
+
+It manages all the files and data of processes, manages physical devices, memory, processes, fold management, make sure that you can talk between services and systems.
+
+Summarized:
+
+* What is an OS?
+	* It's software
+	* A set of programs
+* What is the function of a OS?
+	* Management of system resources to improve operations of the system.
+	* Communicates with the user to hide the complexity of the system.
+
+=== Goal of the OS ===
+
+* Be the manager!
+* Some functions of the OS:
+	* Booting
+	* Memory management
+	* Loading & Execution
+	* Data security
+	* Disk/device management (hardware management)
+	* Process management
+	* Avoid same requests at the same time (locking)
+
+=== Some important figures and things related to them ===
+
+* Ken Thompson
+	* UNIX
+	* B Proramming language
+	* Google - GO Language
+	* UTF-8
+* Dennis Ritche
+	* C !

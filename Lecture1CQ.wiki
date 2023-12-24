@@ -1,0 +1,111 @@
+= What does it truly mean if people say: "computers work on 0's and 1's"? =
+
+Generailly, such a sentence might mean that the computer works by understanding machine code, or even lower level, that being the electrical currents that go through the CPU. But overall, the main idea is that a computer accepts requests from someone (that being an application for example), decides on the priorities, and gives output when it is needed.
+
+GPT says: When people say "computers work on 0's and 1's," they are emphasizing the binary nature of digital information and the fact that all the complex tasks a computer performs are ultimately carried out by manipulating sequences of 0's and 1's at a very low level. The binary system provides a simple and reliable way to represent and process information in the digital world.
+
+== What is a "framework"? ==
+
+In the context of software development and computer programming, a "framework" refers to a pre-built structure or set of tools that provides a foundation for developers to build upon. It is essentially a reusable set of libraries, code snippets, and conventions that can be used to develop software applications, making it easier for developers to create robust and maintainable software.
+
+In simpler words - is a standart that a developer would have to use and obey to. Think of React for Front-End - it is a framework, and you make it work by creating components and making it work as the creator thought of it.
+
+== What is a "library"? ==
+
+In the context of software development, a "library" refers to a collection of pre-written code, routines, and functions that developers can use to perform common tasks or add specific functionalities to their own programs. Unlike a framework, which provides a more comprehensive structure and set of conventions for building an entire application, a library is generally a more focused and modular set of code that can be utilized for specific purposes.
+
+In simpler words - its a functionality that can be used inside a framework or something like that, which enlarges the possibilites of your program.
+
+Like python - without the libraries - its mainly empty, but by addding them, you enlarge your possibilities.
+
+== What is the difference between a compiler and an interpreter? ==
+
+A compiler will transform all the code of a program into machine code, and then give an executable as output.
+It is also more memory eating, and faster!
+
+The interpreter will read line by line, and then execute it asweel.
+Requires less memory, but is overall slower.
+
+== What type of programming languages exist? Why are some called high and others low-level programming languages ==
+
+Programming languages can be broadly categorized into high-level and low-level languages based on their level of abstraction and proximity to machine code. The distinction between high-level and low-level languages is primarily related to how closely the language instructions map to the hardware architecture of a computer.
+
+In simpler words, the closer the programming language "talks" to the hardware, the lower the level. So, a C language will be lower level, rather than python, as well giving in much more control over what is supposed to happen.
+
+== What is the difference between assembly code and machine code? What is disassembly in this context? ==
+
+In summary, machine code is the lowest-level representation of instructions that a computer's CPU can directly execute. Assembly code provides a more human-readable version of machine code, using mnemonics to represent instructions. Disassembly is the reverse process, converting machine code back into assembly code for analysis or reverse engineering purposes.
+
+In simpler words, machine code is representation of everything in bytes/hexes. Assembly is a "readable" version of that, that gives information of what is happening like memory allocation or address transition. Disassembly is used for reversing the code that is generated for the purpose of reverse engineering.
+
+== What is PCB (in hardware context) and how are electronics and logical gates related? ==
+
+In summary, the relationship between electronics and logical gates lies in the fact that logical gates, implemented using electronic components like transistors, form the basic building blocks of digital circuits. These circuits, in turn, are designed and implemented on PCBs to create electronic devices with specific functionalities.In summary, the relationship between electronics and logical gates lies in the fact that logical gates, implemented using electronic components like transistors, form the basic building blocks of digital circuits. These circuits, in turn, are designed and implemented on PCBs to create electronic devices with specific functionalities.
+
+In simpler words, a PCB is almost like a CPU, which can transsform electrical circuits into code and results. Hence, by opening and closing a gate, there might be different results like 0 or 1, and hence by generating multiple choices like that, a device can work.
+
+= Give 5 names of different Operating Systems (flavors) =
+
+* Windows
+* Linux
+* macOS
+* UNIX
+* Android
+
+== Which families are still common today / most used? ==
+
+Windows, Linux, macOS
+
+== How old are they? ==
+
+What a useful question - OLD AS FUCK
+
+Up to 50 years (like in UNIX case), 37 years for Windows, 30 years for Linux, 20 years for macOS, and like 13 years for Android.
+
+== What is a Linux distribution? ==
+
+A Linux distribution, often abbreviated as "distro," is a complete operating system built on the Linux kernel along with a collection of software applications, libraries, and system tools. The Linux kernel is the core of the operating system, and a distribution adds additional software components to create a functional and usable environment for end-users.
+
+Overall, it is just a piece of software built over the Linux kernel, with its own way to do stuff, but overall the main part stays the same.
+
+= Give a definition for "Operating System" (in a classic sense and as defined in this course) =
+
+A OS is a piece of software, that is responsible for managing system reources, manage priorities of processes and give hand in the resources those ask for.
+In a more classic way it would also be responsible for managing users and etc.
+
+== Do a microwave, a fridge or a classic Game Boy have operating systems? (Note: we are not talking about smart fridges or microwaves ;) ==
+
+No, traditional microwaves, refrigerators, and classic gaming devices like the original Game Boy typically do not have operating systems in the same sense as general-purpose computers or smartphones. These devices often operate with simpler embedded systems or firmware that is specifically designed to perform their dedicated functions.
+
+OS is ususally between a user and a hardware. In this case, it does not really work like that.
+
+== Explain the difference between virtualisation, emulation and simulation? ==
+
+* Virtualization - creates virtual instances of resource to improve resource utilzation and flexibility
+* Emulation - mimics the behaviour of one system on anotherm allowing compatibility with software or devices designed for the emulated system.
+* Simulation - involves creating models to study the behaviour of systems or processes for training, testing, or analysis.
+
+== What is a mainframe? ==
+
+A mainframe is a powerful and high-performance computer system that is designed for handling large-scale computing tasks and data processing.
+
+Overall, this most probably referes to something like ultra computers.
+
+== What is/are the primary goal(s) of an OS? ==
+
+* Be the manager!
+* Some functions of the OS:
+	* Booting
+	* Memory management
+	* Loading & Execution
+	* Data security
+	* Disk/device management (hardware management)
+	* Process management
+	* Avoid same requests at the same time (locking)
+
+== Why is there a new way of looking at "Operating Systems" (in a cloud / micro service / more modern sense)? ==
+
+In summary, the evolution of computing paradigms has led to a new way of looking at operating systems. Modern operating systems must be designed to manage distributed, dynamic, and heterogeneous environments, providing solutions for resource abstraction, orchestration, security, and automation in the context of cloud computing, microservices, and other contemporary technologies.
+
+Overall it just means that you need more of a smaller and faster environment to deploy something like a microservice, because there is not enough time to manage the dependencies for the program itself.
+
