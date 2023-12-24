@@ -138,4 +138,122 @@ Overall they just act like a layer between a dumb user and the hardware, transof
 * Educational Use
 * Safety and Reliability.
 
+== Why are people like Charles Babbage and Ada Lovelace so critical in the evolution of (modern) computers ? ==
+
+Charles Babbage and Ada Lovelace are critical figures in the history of computers because of their pioneering work on the conceptualization and design of early mechanical computing devices. Their ideas and contributions laid the groundwork for the development of modern computers. 
+
+Overall they were important simply because they were the pioneers in the realm of computers.
+
+== Was there ever such a thing as a non-electronic computer ? ==
+
+Yes, there have been non-electronic computers, and early computers were entirely mechanical or electro-mechanical in nature. Before the advent of electronic computers, various ingenious devices were designed to perform calculations, automate tasks, and solve mathematical problems. 
+
+== How did Alan Turing win the war ? ==
+
+Alan Turing played a crucial role in the Allied efforts during World War II, particularly in breaking German codes and ciphers. His work at Bletchley Park, the British codebreaking center, significantly contributed to the Allies' ability to decrypt encrypted messages, gather intelligence, and gain an advantage in various military operations. 
+
+Overall he most probably been helping with the Enigma codes I should suppose.
+
+== Which functions does a punch card have for a computer ? ==
+
+Punch cards were an early and fundamental method of input for computers, especially during the mid-20th century. They served as a means of providing data and instructions to computers. 
+
+So overall if a whole would be in the wrong place - everything would go brrrr!
+
+== What do we mean when we talk about the Von Neumann bottleneck? ==
+
+The Von Neumann bottleneck refers to a limitation in the processing speed of a computer system caused by the traditional von Neumann architecture. The von Neumann architecture, named after the mathematician and computer scientist John von Neumann, is a design framework that describes the basic structure of most modern computers. It includes a central processing unit (CPU), memory, and a bus system for data transfer.
+
+The bottleneck arises from the architecture's sequential nature and the shared use of the same bus for both data and instructions.
+
+Overall, you are just trying to send too much data on a single path which is not designed for those ammount of data at the same time.
+
+== How does Moore's Law impact your cost of digital living? ==
+
+Moore's Law is an observation made by Gordon Moore, co-founder of Intel, in 1965, stating that the number of transistors on a microchip doubles approximately every two years. This observation has been a driving force behind the rapid advancement of computing power over the years. While Moore's Law specifically refers to the growth in transistor density, it has broader implications for the cost and performance of digital technologies.
+
+= A Matter of UNIX = 
+
+== Why was Unix made at all ? ==
+
+* Portability and Compatibility
+* Development for Personal Use
+* Support for programming
+* Simplicity and Modularity
+* Networking capabilities.
+
+In summary, Unix was created as a practical, lightweight, and portable operating system to address the shortcomings of existing projects like Multics. Its design principles of simplicity, modularity, and portability, along with its support for software development, contributed to Unix becoming a foundational operating system and a precursor to many modern operating systems.
+
+It represents a base for many other OS's that are using the same principles.
+
+== Why was Dennis Ritchie a crucial element in the evolution of the computer ? ==
+
+Dennis Ritchie was a crucial figure in the evolution of computing, and his contributions, particularly in the development of the C programming language and the Unix operating system, have had a profound and lasting impact on the field.
+
+Overall he just worked on creation of UNIX and C programming lanugage.
+
+== Who was Ken Thompson ? ==
+
+He is renowned for his contributions to the development of the Unix operating system and the creation of the C programming language. 
+
+He, as the previous one, is also known for making the C programming language as well as UNIX
+
+== What was the role of the evolution of B & C in the creation of Unix and subsequent OS? ==
+
+In summary, the evolution from the B programming language to the C programming language played a pivotal role in the creation and development of the Unix operating system. The combination of C and Unix not only influenced subsequent operating systems but also shaped the programming landscape by providing a powerful and portable platform for software development. 
+
+A combiination of both gave the freedom to create further applications.
+
+== What are the core principles of the Unix Philosophy ? ==
+
+* Small is Beautiful
+* Make each program do one thing well
+* Write program to work together
+* Use test as the universal interface
+* Provide a mechanism, not a policy
+* Avoid captive UI
+* Portability and efficiency
+* Store data in flat text files
+* Use software tools in preference to hardware tools
+* Keep it simple, stupid (KISS)
+
+== Why is worse (sometimes) better in modern OS? ==
+
+"Worse is Better" is a design philosophy that contrasts with the traditional "The Right Thing" approach in software and system design. The concept was introduced by Richard P. Gabriel in his essay "Lisp: Good News, Bad News, How to Win Big" in 1991. This philosophy suggests that a system that is simpler, more limited, and potentially "worse" in some aspects can be better overall, especially in terms of adoption, usability, and practicality. This idea has been observed in the development of some modern operating systems
+
+So overall, if there is no code, there is nothing to break. Hence this principle works the same way.
+
+== Sketch the three main family lines that evolved from Unix ==
+
+* System V family
+	* Solaris
+	* HP-UX
+	* AIX
+* BSD family
+	* FreeBSD
+	* OpenBSD
+	* NetBSD
+* Linux family
+	* Ubuntu
+	* Red Hat Enterprise Linux (RHEL)
+	* Arch Linux
+
+== What is POSIX? ==
+
+POSIX, which stands for Portable Operating System Interface, is a family of standards specified by the Institute of Electrical and Electronics Engineers (IEEE) for maintaining compatibility between operating systems. The goal of POSIX is to ensure that software written for one operating system can be easily ported to other operating systems that adhere to the POSIX standards. POSIX standards define the application programming interface (API), command line interface, and utility interfaces for operating systems.
+
+Overall, it is just a principle of maintaining the system working over other systems that are also falling under the POSIX basics.
+
+== What is UTF 32-16-8 ? ==
+
+UTF-32, UTF-16, and UTF-8 are different character encoding formats used to represent Unicode, a standardized character set that assigns a unique numeric code to each character from virtually all known scripts and writing systems of the world. These encodings are methods of representing these numeric codes in binary form.
+
+== What is GNU? ==
+
+GNU, which stands for "GNU's Not Unix," is a free and open-source operating system that was initiated by Richard Stallman in 1983 as part of the Free Software Foundation (FSF). The goal of the GNU project is to create a Unix-like operating system composed entirely of free software, where users have the freedom to run, study, modify, and share the software.
+
+== What is a distro? ==
+
+As said in one of the questions, it is maily a set up with software and everything else, but based on the same plain Linux kernel which represents an OS to run for the users.
+
 
