@@ -109,3 +109,33 @@ In summary, the evolution of computing paradigms has led to a new way of looking
 
 Overall it just means that you need more of a smaller and faster environment to deploy something like a microservice, because there is not enough time to manage the dependencies for the program itself.
 
+== Explain the difference between User space and Kernel space? ==
+
+In summary, user space is where user applications run with restricted privileges, and kernel space is where the operating system's core components execute with higher privileges, managing system resources and providing essential services. 
+
+Overall the User space is a restricted space for the program and everything it needs to use. Whereas the kernel space is the daddy which just listens for the calls.
+
+= What are system calls? =
+
+System calls are a mechanism by which a user-level program requests a service or resource from the operating system's kernel. They provide an interface between user space and kernel space, allowing applications to access functionalities and features that require elevated privileges or direct interaction with the hardware. 
+
+Overall, this is like sending a function to the kernel to execute (which is predefined) and then you can sue the values you get.
+
+= What are drivers? =
+
+Drivers, in the context of computer systems, are software components that enable communication and interaction between the operating system (OS) and hardware devices. They act as intermediaries, translating high-level operating system commands and requests into instructions that the hardware can understand. 
+
+Overall they just act like a layer between a dumb user and the hardware, transoforming giberish into readable instructions for the hardware itself.
+
+= General Computer History =
+
+== What made Pascal so special ? ==
+
+* Simplicity and Readability
+* Structured Programming
+* Data Structuring
+* Portable and Compiler-Oriented
+* Educational Use
+* Safety and Reliability.
+
+
