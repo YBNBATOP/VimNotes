@@ -1,0 +1,129 @@
+= Recap OS =
+
+Define OS:
+* Hard to define
+* It's a manager for a lot of stuff
+* The link between the software we create in programming languages and the processes sharing hardware.
+* Something about kernelspace and userspace
+
+* In charge of making sure the system operates correctly and efficiently in an easy-to-use manner
+* Layers-on-layers
+
+= A bit of history = 
+
+Usually there was only one server that would fit all the needs (but that is about the dark ages)
+Then there was enlightment, and there were separate servers for every need.
+
+Then People thought of having a server, and virtualization
+
+Then, the great mind thought of having virtualization along with containers.
+
+That is why Cloud computing was invented.
+
+= Cloud: intro =
+
+The Amazon was the first provider of cloud computing. It appeared because Amazon had a lot of power, which was idle, hence they decided to rent it for a price/sell it to the outer world.
+
+Features of cloud computing:
+
+* Only pay for what you use
+* It is an automated system
+* Things are installed already for what you need
+* Self service
+* Self maintainable
+* Available
+* Security embedded
+
+There is a major differemnce in what you need to do yourself, and what is provided. 
+
+On premise - you need to do everything yourself
+Infrastructure - harware comes from the vendor!
+Platform - everything except the application and the data
+Software - fully comes as a service (like office)
+
+== Egress vs Ingress ==
+
+Egress:
+* Outbound data: from the inside to the outside world
+* Watch out: in a lot of cases impact on the bill!
+
+Ingress:
+* Inbound data: from outside to the inside instance
+
+Taking something into the cloud is easy and cheap.
+But taking out of the cloud will cost you more!
+
+== Scalling ==
+
+You can scale vertically:
+* Making the thing bigger
+	* Adding more memory, cpu, storage
+	* Has a limit
+
+You can scale horizontally
+* Don't make 1 VM bigger -> Create more VMs
+	* Distrubute the workload
+	* Load balancing
+
+== Containerization ==
+
+Docker comes in play!
+
+* Smaller footprint
+* Less resources
+* Faster
+* Lot of cases it doesn't matter for the user 
+
+Though, you need an orchestrator to maintain all of the containers (like Kubernetes)
+
+There already exist a bunch of stacks, which you can work with!
+LAMP, WAMP, PERN, MERN!
+
+== Caveats of Cloud computing ==
+
+* Vendor lock-in = making sure it is hard for oyu to leave!
+* Management = not easy to manage all groups & users
+* Abstraction = One-click-solutions are eays but do you know what they do?
+* The easier the automation, the easier it is to forget to secure the "stuff"
+* Overwhelming
+
+= Docker =
+The advantage between VM and container, is that you processes are running in a container process which uses certain libraries, and runs on a single kernel user space!
+
+| Traditional Software | Docker Equivalent                | Docker command |
+|----------------------|----------------------------------|----------------|
+| Find software        | Docekr Hub                       |                |
+| Download software    | Pull an image                    | docker pull    |
+| Start software       | Run the container                | docker start   |
+| Stop software        | Stop the container               | docker stop    |
+| Uninstall software   | Remove the container             | docker rm      |
+| Not possible         | Do all of this with one command! | docker run     |
+
+== What are containers? ==
+
+Containers are just isolated processes!
+
+It is a operating system virtualization in other words.
+
+The CPU is isolated
+The memory is almost isolated
+Privelege are also almost isolated
+
+Docker is a tool set to manage containers
+* It has pre-defined images from repositories
+* Deploys containers
+* Etc.
+
+Docker commands
+| Command             | Description                                                                  |
+|---------------------|------------------------------------------------------------------------------|
+| docker pull <image> | Download image                                                               |
+| docker run <image>  | Start a container based on the image (and pull it automatically if necessary |
+| docker iamges       | List downloaded images                                                       |
+| docker ps           | List all runnning containers                                                 |
+| dokcer ps -a        | List all containers (also the ones not running)                              |
+| docker help         | To dinf out all other commands                                               |
+
+Linux uses LXC and LXD for containerization
+
+Windows 10 uses Hyper-V in the background, but it is not really good for the virtualization because it gives an additional security layer, and since it is used by both the Host OS and Guest OS, it actually slows the VMs.

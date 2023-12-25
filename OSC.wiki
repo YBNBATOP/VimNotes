@@ -15,3 +15,9 @@ Take notes in a structured way so you can esily search/add things later! This wa
 [[Lecture1|Content Lecture 1]]
 
 [[Lecture1CQ|Course Questions Lecture1]]
+
+= Lecture 2 - Intro cloud and Docker =
+
+[[Lecture2|Content Lecture 2]]
+
+[[Lecture2CQ|Course Questions Lecture2]]

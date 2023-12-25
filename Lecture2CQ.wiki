@@ -1,0 +1,60 @@
+= What are containers? =
+
+In simple words, containers represent processes, which are not running along with other processes you got on your pc, but they are rather isolated from your system, and still use the same kernel user space.
+
+= Why would anyone use containers? Aka. what is the prime goal/function of containers? =
+
+Most probably they are used to that you can run stuff which is separated/isolated from each other, and comes already with its predefined libraries all together. Additionally, if a container would fail, well the whole other system would be still working properly without any problem.
+
+= What is the difference between a container and a virtual machine? =
+
+A container does not require a Guest OS to run the program, and a container does not use the Hypervisor layer which is required for the work of the VMs. It is cheaper, and also more practical.
+
+= Why are the terms "container" and "docker" not synonyms? =
+
+Container is the outcome, and docker is just like a package manager that gives you the functionality to download and run those containers! So overall, it is a tool(set), whereas the container is what you get as a result of working with the tool.
+
+= List 2 other technologies to run a "container" without using "docker" =
+
+* LXC/LXD
+* Rocket
+
+= Is it possible to run the very same type of Docker container both on Linux and on Windows? Why or why not? How do Windows 10 and Windows 11 work around this? =
+
+I suppose that both of them use different images, hence the output can be the same, but I believe the containers which are downloaded should be different.
+
+But Win 10 and 11 run them more or less the same way.
+
+= What is the difference between the Docker client (utilities) and the Docker server (~daemon)? =
+
+In summary, the Docker client is the user interface through which commands are issued to Docker, while the Docker daemon is the background process responsible for managing containers. The client and daemon communicate through a REST API, allowing users to build, manage, and run containers efficiently. This separation of concerns enables a client-server model that supports both local and remote Docker operations.
+
+So yeah, the docker client is what we see, and then it sends requests to the server which is daemon.
+
+= What is a Dockerfile? =
+
+A Dockerfile is a script or configuration file used to build a Docker image. It contains a set of instructions that specify how to create a containerized application environment. Docker images are lightweight, portable, and self-sufficient, encapsulating all the dependencies and configurations needed to run a specific application.
+
+So overall, in one of those you specify everything you want/need in terms of dependencies, and then you get what you asked for.
+
+= What is a Docker image? =
+
+A Docker image is a lightweight, standalone, and executable package that includes all the necessary components to run a piece of software, including the code, runtime, libraries, and system tools. Docker images are the basis for containers, providing a consistent and portable environment across different infrastructure and deployment environments.
+
+Overall it is like a predefined package that you can install and run on your system.
+
+= What is Docker registry? =
+
+A Docker registry is a centralized storage and distribution system for Docker images. It serves as a repository for storing and managing Docker images, making it easier to share, distribute, and deploy containerized applications across different environments.
+
+Overall this is really like a place where all the images (i.e. "packages") are located somewhere on the server, and you can call them to install.
+
+= What do the following docker commands do? =
+
+* docker ps = displays a list of running containers (-a flag would show all)
+* docker images = displays all available docker images on the machine
+* docker run -d <imagename> = runs a docker container in a detached mode (background)
+* docker exec -it <containerId> sh = executes a command in the running container (-it Interactive Terminal, sh is the shell)
+* docker-compose up = starts the services defined in a Docker Compose file
+* docker stop <containerId> = stops a running container
+* docker rm <containerId> = removes a stopped container
