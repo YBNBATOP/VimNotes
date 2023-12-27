@@ -1,0 +1,74 @@
+= Notmyfault =
+
+Always remember the difference between user and kernel space.
+
+You, as a user never write to kernel yourself.
+
+Sometimes though, you can actually write something to the kernel, especially as root.
+
+= Introduction to C =
+
+C has its own compile (gcc). To compile it you could do `gcc hello.c -o hello` or `make hello`. Always remember the suckless tools.
+
+= Kernel modules =
+
+This were introduced so that the kernel is more modular and expandable. 
+
+= Algorithms =
+
+It is a step-by-step approach to obtain an output (in a certian programming language), and it usually solves a problem.
+
+== Datastructure ==
+
+There are aswell a bunch of datastructures like Linked List, Stack, Queue, Tree, Array etc.
+
+== Pass by value vs Pass by reference ==
+
+There are differences between passing an argument to a function
+
+We can pass those arguments by *value* or *reference*.
+
+If you give by value, and then change the value, you will still get back the old value before the change.
+
+By reference, if you change it and return, you will get the same value! Wow it makes sense.
+
+By reference, you are technically giving it the reference (pointer) to a value.
+
+== Pointers ==
+
+Every value has its own address in the memory, and hence you can get the value that is storred in that actual address and at the same time you can get the address itself. In C you could do it via `p* = i` which would give you the actual address of the variable.
+
+= Processes =
+
+Every application is made up of components, as well as commands in linux for example.
+
+Job and Process - same thing but the first one is an older term.
+
+= Process vs Program =
+
+Program/Binary/Executable:
+* passive
+* has no state
+* program code
+* (=is not running!)
+
+Process:
+* active
+* has a state
+* program code + program counter + stack + data section + heap + ...
+
+Every process gets a state, like that being *new*, ready, running, terminated, waiting, etc.
+
+The process is also managed by the Process Control Block (PCB) that is actually ment to control the processes, and from time to time this part is responsible for moving the priorities, or changet the state, and etc.
+
+There is such a thing called *Context Switch* which is the same as Saving/Storing the state of a process (or thread). As a result, as single CPU can allow multiple processes -> multitask!
+
+The actions of the Context Swtitch depende on a lot of actual things.
+
+= Stack vs Heap =
+
+Stack - manages by the compiler, or while you run the program.
+
+Heap - managed by the programmer.
+
+
