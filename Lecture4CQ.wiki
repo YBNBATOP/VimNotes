@@ -1,0 +1,69 @@
+= What is deadlocking? =
+
+Deadlocking is when a resource requested at the same time by one 2 or more processes, and there is no locking mechanism that can decide who takes the resource except from the resource itself, causing that way an circular wait for the resource to become free.
+
+= Who was Dujkstra? =
+
+ДИЙКСТРА was someone who actually invented the dining table (was shown in the video), and said that there is a need of a waiter who decides on the locks of the resources.
+
+= What are the 4 deadlock conditions? =
+
+Mutual exclusion - one process - one resource
+
+Hold and wait - a process controls the resource while the others wait for it
+
+No preemption - no one controls the locks on the resources
+
+Circular wait - everybody waits for a resource in a circle
+
+= What is the difference between deadlock avoidance & deadlock prevention? =
+
+By getting rid of at least one of the deadlock conditions, we can actually prevent the deadlock from happening. In order to avoid a deadlock (from repeating rather) we should let the system see it, tackle it, and then see how to solve the issue.
+
+= What are safe sequences and why are they interesting? =
+
+Most probably they mean sequences of allocation and requests, that as a result will not lead to a deadlock of a system.
+
+= What is the concept of virtual memory? =
+
+Virtual memory is a memory management technique used by modern computer operating systems to provide the illusion of a larger and contiguous block of primary memory (RAM) than is physically available on the system. It allows programs to execute as if they have access to a larger amount of memory than is actually installed on the computer.
+
+In simpler workds, it should probably mean that the system mimics availability of larger amount of RAM than really is, hence gives the ability to actually launch and execute what is needed.
+
+= What is the difference between the difference layer caches (1,2,3)? =
+
+Each of the layers have their own usage in the CPU, but overall their main principle is to cache bits of data that come from RAM, in order to give it as food to the CPU to process.
+
+= What is the difference between an executable and a process? =
+
+An executable lives on the storage (such as HDD/SSD), whereas processes live the RAM, and overall are the component part that is being processed itself.
+
+= What is "swapping"? =
+
+I DO NOT FUCKING KNOW WHY I NEED THIS
+
+Overall it is probably a term that is supposed to mean a swap of pages for the virtual memory. Maybe it is more like putting in another memory location to be processed rather than the other one being worked on.
+
+Swap out internal memory and put it on external memory
+
+= What is partitioning, paging, segmentation in the context of memory layout strategy's. Are they consecutive memory allocation or non-consecutive? = 
+
+Consecutive Allocation: Fixed-size partitioning may result in consecutive allocation, while variable-size partitioning, paging, and segmentation often lead to non-consecutive allocation.
+
+Non-consecutive Allocation: Variable-size partitioning, paging, and segmentation often involve non-contiguous allocation, helping to reduce fragmentation and make more efficient use of memory.
+
+= What is trashing? =
+
+Trashing, in the context of computer systems, refers to a situation where the operating system is spending a significant amount of time swapping data between the main memory (RAM) and the secondary storage (usually a hard drive or SSD). This swapping occurs when the system is under heavy load and is unable to keep up with the demand for physical memory by actively running processes.
+
+= What is the difference between a page and a frame? =
+
+Page: Refers to a unit of virtual memory in the address space of a process.
+
+Frame: Refers to a unit of physical memory in the RAM of the computer.
+
+= What is the copy-on-write principle? =
+
+Probably it means that once some process changes the state of something, it is being copied or maybe even overwritten inside the memory
+
+The copy-on-write (COW) principle is a strategy employed in computer programming and operating systems to optimize the use of resources when duplicating data. The basic idea behind copy-on-write is to delay the actual copying of data until it is necessary, reducing the initial overhead associated with copying large amounts of data.
