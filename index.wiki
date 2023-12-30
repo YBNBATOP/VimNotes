@@ -1,8 +1,8 @@
-= This is a new start =
-[[My Italian]]
-
-=Studying=
+= Studying =
 
 [[IM&E]]
 
 [[OSC]]
+
+[[WBA]]
+

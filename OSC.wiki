@@ -12,24 +12,24 @@ Take notes in a structured way so you can esily search/add things later! This wa
 
 = Lecture 1 - History overview from single process to Docker =
 
-[[Lecture1|Content Lecture 1]]
+[[OSCLecture1|Content Lecture 1]]
 
-[[Lecture1CQ|Course Questions Lecture1]]
+[[OSCLecture1CQ|Course Questions Lecture1]]
 
 = Lecture 2 - Intro cloud and Docker =
 
-[[Lecture2|Content Lecture 2]]
+[[OSCLecture2|Content Lecture 2]]
 
-[[Lecture2CQ|Course Questions Lecture2]]
+[[OSCLecture2CQ|Course Questions Lecture2]]
 
 = Lecture 3 - Processes and virtual adress space =
 
-[[Lecture3|Content Lecture 3]]
+[[OSCLecture3|Content Lecture 3]]
 
 = Lecture 4 - The fruit game =
 
-[[Lecture4|Content Lecture 4]]
+[[OSCLecture4|Content Lecture 4]]
 
-[[Lecture4CQ|Course Questions Lecture4]]
+[[OSCLecture4CQ|Course Questions Lecture4]]
 
 = Lecture 5 - Multithreading and Locking =
