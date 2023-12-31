@@ -1,0 +1,64 @@
+= Threading =
+
+Threading is also called a process of creating forks, and by that you are actually creating tha same copy of a virtual address space over multiple processes. The pointers stays the same, but once a process changes that value of the pointer, then a Copy on Write happens and then the page changes and the virtual address changes aswell.
+
+A thread is usually called a lightweight process, and you keep the same address space, but you work in a different code section. So it is like 2 workers working in the same house (construction) instead of working on different houses! So in this case the changes in the same house will be visible for both workers.
+
+= Threads vs Processes =
+
+Processes are scheduled by the OS, as it is its responsibility (kernel).
+
+Threads take responsibility in your program itself. The thread scheduling is created inside the libraries which are called for the trheading functionality.
+
+A *thread* is a basic unit of CPU utilization, each thread has a:
+* Thread ID
+* Program Counter
+* Register set
+* Stack
+
+It share with other threads (belonging to the same process):
+* Code section
+* Data section
+* Other OS-resource such as Open-files
+
+= Threads vs fork = 
+
+Fork is a system call that creates a child *process*. Such a child can become orphaned if the father dies!
+
+Thread is all the same part of a single process! So it is a single process but using the multiple resources.
+
+= Child processes vs Parent processes =
+
+What can happen with the child process if parent is killed? 
+It depends on the OS! Child might become an orphan, or get's to live with no issues, or gets killed too!
+
+Sometimes, like in Unix, the child would get a new father process!
+
+= Disadvantages =
+
+Programming! (harder to write, harderd to debug, harder to manage)
+
+Concurrency issues with shared resources!
+
+It is never set in stone that a "Java thread" is always mapped to an "OS thread"
+
+= Critical - important code =
+
+It is very importajnt to understand which part of your code is "sensitive"! And of course, take extra care of it.
+
+Shared resources are also a big threat.
+
+= Tools to deal with concurrency problems =
+
+Mutex: "Mutual exclusion"
+* = Object that synchronizes access to a resource
+* Only one thread can acquire the mutex
+* Locking mechanism!
+
+Semaphore
+* Signaling mechanism!
+* Bunary semaphore ~ mutex
+
+Monitor
+* Note: a deadlock-free solution does not necessarily eliminate the possibility of starvation.
+

@@ -33,3 +33,5 @@ Take notes in a structured way so you can esily search/add things later! This wa
 [[OSCLecture4CQ|Course Questions Lecture4]]
 
 = Lecture 5 - Multithreading and Locking =
+
+[[OSCLecture5|Content Lecture 5]]
