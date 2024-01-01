@@ -35,3 +35,11 @@ Take notes in a structured way so you can esily search/add things later! This wa
 = Lecture 5 - Multithreading and Locking =
 
 [[OSCLecture5|Content Lecture 5]]
+
+[[OSCLecture5CQ|Course Questions Lecture5]]
+
+= Lecture 6 - Unix file system and users =
+
+[[OSCLecture6|Content Lecture 6]]
+
+[[OSCLecture6CQ|Course Questions Lecture 6]]

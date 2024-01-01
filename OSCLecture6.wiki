@@ -1,0 +1,146 @@
+= Why file system? =
+
+The idea of the file system in the Unix is most like a virtual demonstration of the actual files. It is mostly for the processes to know how to access the secondary storages.
+
+As well, it was very important to make only the Kernel able to get access to the hardware.
+
+A vurtual file system:
+* provides the interface
+* between the data representation
+	* by the kernel
+	* (/dev/sda)
+* to the user process and the data presentation 
+	* to the kernel in memory
+	* (/home/user/myfile)
+
+The implementation of a *file system interface* like in OOP can be different, like from distro to distro, or in the older times from system to system. Think of it like Nix and Arch for example!
+
+= Secondary storage =
+
+An example for the secondary storage is an HDD. Secondary storage is pretty much a very interesting thing as it can be differently connected, that beign directly, or network, or NAS, and etc.
+
+The data from old disks was gathered by physically moving an arm to actually read sectors/write sectors themselves.
+
+= Partitioning a disc =
+
+In order to make the "bucket'o bits" available to the system, there is a need to make a partitioning for it, as then the OS will know what to do with it.
+
+There are multiple types of partitioning a hard disc. One of the schemes would be MBR, a very old format but still works.
+
+However this old schemes were very limiting, hence you could only have 27 ~ 26 partitions, and a maximum space of 2 TB.
+
+Hence, there was a need for a new partitioning system, and GPT appeared, which is pretty much a standart nowadays, and the index is reduntantly spread accross the disc (index is information about partitions and the disc itsefl)
+
+Thanks to all this, the maximum partitioning amount became 128 bits, and then the maximum space is around 9,7 zettabytes.
+
+Everything is a file, and hence even the disc itself is represented as a file!
+
+By navigating to /dev/disk/by-path you can get information about the paritions you got!
+
+Also there is no real need to partition if you do not want to, you could live with only one partition (as we do usually). But also, we have access to flexibility, and we can make different partitions.
+
+= The art of mounting =
+
+The partition that is mounted to the file system doesnt need to know where it is mounted on. You can mount the users' home directories at /home. But aswell mount it at any other point. and already do some other manipulations to see it.
+
+= /etc/fstab =
+
+The /etc/fstab is very important as it keeps all the information about your mounts which will be kept even after a reboot!
+
+To mount, you would need to specify the device to mount, the location to mount the device to, and the file system type, if not automatically known!
+
+= File system system locations =
+
+/bin:
+* executable programs needed to run the system
+
+/etc:
+* contains all the configuration files for the system
+
+/lib:
+* system libraries necessary to run the system
+
+/usr:
+* root of the userland locations
+
+/boot:
+* contains the static boot-related files
+
+/mnt:
+* made for temporary mounts
+
+/media:
+* for various media storages
+
+/opt:
+* add-on packages and is usually used to install application info
+
+/tmp:
+* temporary files that are gone after reboot
+
+/var:
+* a place for every config file if configured correctly.
+
+= The directories =
+
+Everything is a file, hence even the "/" directory is a file!
+
+Everything that you see is like a linked list that then gives you access to files all over the place.
+
+New files or dirs are eventually also called the inodes, which is mostly like addresses listed in a linked list.
+
+Eveery file have an address/inode! Some files may refer to the same address/inode, and then that is called a *hard link*! You cannot have hardlinks across partitions!
+
+A soft link points to another directory entry as long as there is a level between them. 
+
+Hardlinks - only on one partitions, Softlinks - as you wish.
+
+Also, you can not hardlink directories! And the space will not be emptied unless you delete all the possible hardlinks you have to the same inode.
+
+= Archiving and compression =
+
+Archiving is collapsing multiple files into one. Compressing is the same, but you also make the files take less space.
+
+Compressing is also easier for sending over the network.
+
+There are different types of compression like Lossless (get the same as before), Lossy (dont mind about some data beign lost)
+
+= User accounts =
+
+Files in the /etc directory ocntain system configuration data.
+
+The /etc/passwd file defines some of the account information for user accounts.
+
+Each line of the /etc/passwd files relates to a user account.
+
+/etc/shadow contains account information related to the user's password.
+
+To see the information about a certain user name we can do `grep sysadmin /etc/passwd`
+
+To identify yourself you can do `id` command!
+
+= System accounts =
+
+System accounts are there for the programs/daemons to work correctly.
+
+= Group accounts =
+
+Additional groups are situated in /etc/group ! You can assign a user to multiple groups.
+
+To change your group (if you are part of multiple ones) you can do `newgrp group_name` and then you will eventually change to the group you are also a part of.
+
+That is working like a shell where you have some permissions.
+
+= Working with root =
+
+Root is evil! You should always think about your security of the system and make it traceable to know who dafuck logged in as root and try to do some shenanigans with the system.
+
+You can change users by doing `su user -` so that you get the environment settings of the user you are logging in. You can aswell use `su --login`
+
+= The sudo command =
+
+We can set up configuration for sudo in the /etc/sudoers file, which allows to configure very neatly what and who can do! That really enhances the system security!
+
+Additional useful commands are `w` and `who` command that can give information about system resources usage, and who is logged in.
+
+
