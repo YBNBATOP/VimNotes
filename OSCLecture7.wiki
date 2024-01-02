@@ -1,0 +1,123 @@
+= Ownership =
+
+To view the ownership of a file you can run `ls -l`!
+
+You can get 2 levels of the ownership - owner of the file and the group that can do something with the file.
+
+To view the owenership of a directory file you can use `ls -ld`!
+
+`stat` can give even more information about the file/directory itself.
+
+It can show information as inode! Which represents the address on the storage of where it is situated.
+
+You can not make hardlinks to directories, but some of directories will have 2 links, which means that it does not have subdirectories! This can be an exam question!
+
+It can will also show you the information about the UID (user id) and GID (group id) that comes from /etc/passwd.
+
+Fun fact: if you delete a user, then the number will still be there, but the name will not. If you then try to create a new user not knowing much context, then the new user can get the number of the deleted user, and get access to the file.
+
+Stat command can as well show modifying time on the files.
+
+= FIle ownership =
+
+When you create the file, you are the owner of it! But you can only transfer ownership as root!
+
+= Group ownership =
+
+You can transfer the ownership aswell, but without root, by running the `chgrp` command! Of course you need to be a member of the group you want to transfer owenrship to.
+
+You can get into a new group by running the `newgrp` and entering the group password.
+
+= Identity information =
+
+To find your identity you can run the `whoami` and `id` command to find out who dafuck are you!
+
+You can get the `groups` you are a part of by running the command. That information comes from the /etc/group! Also rememberm that if you are addded to a group while logged in, nothing will change until you do not log out first!
+
+= Changing ownership =
+
+The `chown` command can be used by root and then the ownership is transferred. `chgrp` is the same but for groups!
+
+By doing `newgrp` you can change your hat of the group, but it will be like a shell in nixos which you can change afterwards. You can aswell just get out of the shell by doing `exit`.
+
+= Permissions =
+
+`ls -l` command actually shows you the information about the file, like the type of file (or flavor) and then the rights for the owner, group, and others! 
+
+The standart `rwx` mean different thing for the file and directory
+
+r (read):
+* You can read the content of the file
+* You can read the content of the directroy, but you cannot access the files in the directory
+
+x (execute):
+* You can run a file
+* You can access the files of a directory
+
+w (write):
+* You can write only if you have the read rights!
+
+The permissions are handled left to right.
+
+It is very important to have correct directory access so that you can actually access the files you are allowed to manipulate. Like imagine that you have wrong permissions on the directory. but you have the rights for the file of the inside.
+
+`chmod` is the command used to change permissions on the file/directory.
+
+= Umask command =
+
+There are already predefined values of permissions set by the system when you create the file/directory, that is set up by the umask. Umask means - this are the maximum permissions you can get when creating a directory, and then you can deselect the ones you do not want. By default the maximum permissions for a file is 666 (because then every file would become and executable! And we do not want this), and for the directory is 777. For instance you can set up the umask to 002 and then every file you create/directory will have 664 amd 775 rights! So it will eventually just delete permissions!
+
+The umask is working only for a single session! To save it for the reboots, you need to put it into the .profile of your shell!
+
+= Access Control List (ACL) =
+
+The ACL is there because other users like the rest of the world sometimes need access to the files of your webserver as an example.
+To set up the ACL, the files would need to be mounted in a special way, and then you could set that ACL with `setfacl`. By doing this, you are somehow giving multiple users on the same level - different permissions.
+
+= Setuid =
+
+It is mostly like a mask you put on to make a robbery. So imagine, by using that, you can execute a script, that will be ran by the "seemingly" user. You just put up a mask and pretend to be another one to execute the user.
+
+To find out that there is a setuid set up, you can see it as a `s` in the permissions of the file. Of course, under that `s` there is still the permission from the initial file. Like if you set the `x` and then the `s`, then you will be able to execute the file. 
+
+= Setgid =
+
+Works mostly like the previous one, but for a group level, and will mimic the group level of the execution. Like for example the `/usr/bin/wall` command can be run for all the tty because it has the group set up to the tty.
+
+That is very useful for the directories, so that the members of the same group can freely have their files shared among themselves.
+
+= Sticky bit =
+
+It works the same way as the 2 previous ones, but it will be for the others!
+
+= Boot process =
+
+Boot process overview:
+
+Startup -> Load firmware -> Boot loader -> Kernel -> systemD
+
+= Firmware stage =
+
+This stage is meant to actually check what is there in terms of the hardware and what we are running on. Usually it is also referred to as BIOS. UEFI is just the modern option of BIOS.
+
+The two primary jobs are - make sure that the components have power to get! this is usually referred to as POST. Then it will go and check a special location to actually know what to do next. It is also called as checking the MBR, which is a very small part (446 bytes) that contain information about the filesystem structure and what can be found on the hard disc.
+
+= First stage Boot Loader =
+
+BIOS looks for the MBR and loads information about the computer system that should be used.
+
+= Kernel phase =
+
+The bootloader loads the kernel in memory and passes control to it using the files that are in the /boot directory.
+
+= SystemD =
+
+Set kernel options! Starts daemon to detect all devices! Import network configuration (so the network starts existing here)! Decrypts filesystems if encrypted! Mount the filesystems according to /etc/fstab! Enable swap devices! The system boots in a specific target mode (like in win 7 you could have dirrefent mods like passive)! Can be managed by systemctl command.
+
+`dmesg` command can show information that is shown when you load the system.
+
+Tbe systemctl comamnd can give you acces to the services that are being started when the system boots up!
+
+Daemons allow the administrator to control the processes that come up on boot.
+
+

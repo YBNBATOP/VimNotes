@@ -1,0 +1,119 @@
+= Ownership =
+
+== Which command statements could you use to determine the ownership of a file/directory in linux ? ==
+
+`stat` or `ls -l` would give more information.
+
+== There are two levels of ownership in linux. Explain ==
+
+There is the level of owenership for the user, and the group. The first one is who created the file, the second one is the group (or user im not sure) that have access to that file and permissions.
+
+== Explain CHOWN. What does it do ? Who can use it ? When ? ==
+
+The CHOWN command can be used by the root, and when there is a need to change the owner of the file/directory for security reasons or if someone needs to edit the file.
+
+== Explain CHGROUP. What does it do ? Who can use it ? When ? ==
+
+Same as previous one, but chagnes the group level.
+
+== What is an orphaned file ? ==
+
+I suppose it is more like a file that already does not have a user. Like imagine you had a user, he created files, and then you delete the user. The GID will stay the same, or UID, but the name will be deprecated.
+
+== Which command statements could you use to determine your user's identity / group memberships ? ==
+
+`groups` or `id`. That information comes from the /etc/passwd folder.
+
+== Explain NEWGRP. What does it do ? Who can use it ? When ? ==
+
+You can put on a hat with a group you are a part of! You can for some time become a part of the other group, and works the same with only root i believe.
+
+= Permissions =
+
+== Which three permissions can a file have ? ==
+
+The standart rwx (readwriteexecute)
+
+== What are the three levels in which permissions are set ? ==
+
+Owner, Group, and Other
+
+== Consider this : "-rw-r--r--. 1 root root 4135 May 27 21:08 /etc/passwd" . What does the first - mean in this case ? What else could you see there ? ==
+
+We could see the permission set up for the root and ther others and the group, as well we can understand that it is a hardlink I believe, or a simple file!
+
+== How do set permissions result in effective permissions for a given user in Linux ? ==
+
+I do not understand the question.
+
+In Linux, file and directory permissions are set using the chmod command, and the effective permissions for a given user are determined by a combination of the user's ownership of the file or directory, the group ownership, and the permissions assigned to the user, group, and others.
+
+== Explain CHMOD. What does it do ? Who can use it ? When ? ==
+
+It is used to set up permissions for a file/directory, can be used by the root, and essentially when you need to change permissions very fast.
+
+== What is the difference between using CHMOD symbolically or numerically ? ==
+
+The symbolical is easier is you need to set up `setuid` and `ACL`. Apart from that - there is none.
+
+== Explain UMASK. What does it do ? Who can use it ? When ? ==
+
+It is used to actually get rid of the permissions from the default ones. Like, the default is 666 and 777 and then you can get rid of some permissions. Can be used by root I believe.
+
+== Explain ACL. What does it do ? Who can use it ? When ? ==
+
+This is used for the setup of others in the permissions, so that you can actually give access to the users for your web server for example. The command is `setfacl` and can be used without root I believe?
+
+== Explain SETUID. What does it do ? Who can use it ? When ? ==
+
+Used to actually put on a mask of another user to execute something. Like a heist - you put on a mask to mock that is was not you who executed it.
+
+== Explain SETGUID. What does it do ? Who can use it ? When ? ==
+
+Works the same way as the previous one. But for the group.
+
+== Explain the sticky bit. What does it do ? Who can use it ? When ? ==
+
+Works as an additional bit, but also works for the others and like previous 2 ones?
+
+= Boot =
+
+== In which stages can you split up a system's boot process ? ==
+
+5 Stages:
+
+Startup -> Firmware Load -> Bootloader -> Kernel -> SystemD
+
+== What is the difference between firmware/bios/uefi ? ==
+
+BIOS and UEFI is mainly the same thing, but one is older than the other. The firmware is just another naming convention for the BIOS.
+
+== What is a bootloader ? ==
+
+A bootloader is a small program or piece of software that is responsible for loading the operating system into the computer's memory (RAM) during the initial boot-up process.
+
+I guess it is responsible for loading the kernel into the RAM and maybe finding the MBR for the filesystem.
+
+== Bootloaders are usally called 2-(or multi)stage bootloaders. Why ? ==
+
+Because they load MBR and Kernel into the RAM.
+
+== How does grub2 "boot" a system ? ==
+
+It is situated in the MBR the image of the system, then it loads the next stage after it is found, it is then found in the RAM, and then presents the boot menu and then even loads the kernel.
+
+== What does systemD atually "do" ? ==
+
+It is responsible for running daemons and other stuff that will eventually be responsible for running the system.
+
+It plays a crucial role in initializing and managing the system's services, processes, and resources during the boot process and throughout the system's runtime.
+
+== Which commands/statements could you use to troubleshoot/monitor a booting system ?  ==
+
+`dmesg` command will give you information about the systemD stuff that runs around.
+
+`systemctl` might be useful aswell
+
+`journalctl` can be aswell used to get some logging information.
+
+
