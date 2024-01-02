@@ -1,0 +1,94 @@
+= BOOT =
+
+== Why would you replace your firmware with an open source version ? ==
+
+Because sometimes the firmware has some useless functions you do not want to have! Hence, you can strip down it to what you want/need.
+
+== What is a "payload" in the coreboot world ? ==
+
+The actual firmware is represented as payload, because then it is handed in to the OS.
+
+== What is a toolchain ? ==
+
+A toolchain is a set of programs that can run a multitude of software development tricks and for example compile your firmware as in coreboot and etc.
+
+== When you ise Coreboot to build your own BIOS rom, are all black boxes gone then ? ==
+
+I do not understand what it means by black box. If you make your own BIOS and put it on your laptop - then its done, unless you do not have a second chip.
+
+== What is Qemu ? ==
+
+Type 2 Hypervisor used for emulation, and we ususally use it only on Linux. It can also be referred to as an emulator because it runs on the same OS but not on a very low level.
+
+== What is Seasboot ? ==
+
+I am not sure but maybe it is a kind of booting which will have some basic terminal functions?
+
+== How can you build a custom firmware rom for other hardware ? ==
+
+You can use it with some other setting or maybe use some common utilities that will allow the program to work in both cases.
+
+= SystemD =
+
+== What does systemD "dp" when you get down to it ? ==
+
+It is responsible for running the daemons to make your system work, also it starts up services and etc.
+
+== Which command allows you to communicate with SystemD ? ==
+
+`systemctl`!
+
+== What are .service files (for) ? ==
+
+You can create your own services that will start up at the same time with your own system, like a server or anything like that.
+
+== Explain the following keywords that are often found in SystemD configuration files : Description, Before, After, ExecStart, ExecReload, Restart, WantedBy, RequiredBy ==
+
+Description:
+* Gives some information for the systemctl command to know what is this for
+
+Before/After:
+* Maybe puts some timings in between which this service would start
+
+ExecStart:
+* Maybe sets up some starting functions 
+
+ExecReload:
+* What it will reload?
+
+Restart:
+* No clue
+
+WantedBy:
+* If another thing runs, then this one is also wanted by it
+
+RequiredBy:
+* Without this - I will not freaking move
+
+== How can you make systemD aware of the presence of a new service ? ==
+
+sudo systemctl daemon-reload
+
+systemctl --user daemon-reload
+
+== What happens when you "enable" a service that is wanted by a Target ? ==
+
+I have no clue?
+
+== What is the difference between a user level .service and a root level .service ? ==
+
+Mayube in one case it will be able to run for the whole system, and not only a single user like in the second case
+
+== How is the home directory specified differently in a script vs a .service file ? ==
+
+I do not remember but honestly that would not matter much because you could just use another nbotation for the hone partition.
+
+== What's the advantage of a SystemD service over a scheduled or a user-started process ? ==
+
+It can be automatically restarted by the system, I do not honestly know, maybe it will just be alive for a longer time.
+
+== WHat happens when you kill a process started via SystemD ? ==
+
+You should get into some trouble I believe.
+
+

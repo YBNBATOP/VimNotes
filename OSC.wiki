@@ -49,3 +49,9 @@ Take notes in a structured way so you can esily search/add things later! This wa
 [[OSCLecture7|Content Lecture 7]]
 
 [[OSCLecture7CQ|Course Questions Lecture7]]
+
+= Lecture 8 - Hands on coreboot and systemD =
+
+[[OSCLecture8|Content Lecture 8]]
+
+[[OSCLecture8CQ|Course Questions Lecture8]]
