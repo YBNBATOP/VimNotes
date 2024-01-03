@@ -1,0 +1,210 @@
+= Windows Server =
+
+Pros:
+* Easier setup and configuration
+* Better technical support
+* Better inttegration with other MS software
+* More complete and more features
+
+Cons:
+* Less reliable
+* Most used -> less secure
+* Higher TCO (Total Cost of Ownership)
+* Compare to other OS' sometimes less performant
+
+== Deployment ==
+
+Deploying a piece of software = putting it in production = end users get to use the app/software
+
+Users want 100% uptime, they want web applications, hence deployment on WSM has seen a decrease in popularity.
+
+== The Windows Client ==
+
+Cmd/Powershell = also called legacy commands vs cmdlet
+
+Powershell outputs information as Object, and Cmd as text
+
+Process management = taskmanager
+
+User management = `lusrmgr.msc` 
+
+Logging/Events = `eventvwm.msc`
+
+Windows Version = winver
+
+== Windows Client vs Server OS ==
+
+* Server OS has more support for higher-end hardware
+* It also more concurrenty remote connections
+* WS includes a lot of server software
+* Can be installed without a GUI
+* By default has got more security tweaks already done and ready
+* Does not support MS account log in
+* Is more expensive
+* Gives priority more to the background services and tasks
+
+== WS Realease Channels ==
+
+It has 2 main channels:
+* LTSC - Long Term Servicing  Channel = more stability
+* SAC - Semi Annual Channel = something much fresher
+
+WS comes in 3 editions:
+* Standart Edition - limited virtualization rights
+* Datacenter Edition - includes uinlimited virtualization rights
+* Hyper-V - bare metal hypervisor, no GUI
+
+== WS Hosting ==
+
+Where to install WS: on-premise or in the cloud?
+
+* On-premise: Windows is installed on local server of company
+* In the cloud: Windows is hosted on cloud -> *IaaS* = Infrastructure as a Service or *Pass* = Platform as a Service
+
+On-premise advantages:
+* Lower TCO
+* Complete Control
+* Uptime
+
+Cloud advantage:
+* Anywhere and anytime access
+* Worry free IT
+* Quick deployment
+* Scalability
+
+== Windows Licensing ==
+
+3 types:
+* Retail (keys to buy)
+* OEM (on the hardware)
+* Volume (multiple usage keys
+
+== WS Management ==
+
+You can manage your server locally, remotely (Using RDP [Remote Desktop Protocol], or RSAT [Remote Server Administration Tools])
+
+Management tools:
+* CLI commands
+* Traditional GUI based tools:
+	* Server manager
+	* MMCs (Microsoft Management Consoles)
+Web based:
+	* WAC = Windows Admin Center
+
+== Win32 API ==
+
+It is important to remember that this interface is used to talk with the libraries, by the application
+
+== WMI - Windows Management Instrumentation ==
+
+This works like a kind of interface that is responsible for fetching information about the object for the PowerSHell.
+
+== WinRM - windows remote management ==
+
+== Active Directory Structure ==
+
+Active DIrectory is a hierarchy of objects
+
+AD can be a container or a leaf
+
+A container is an object that can contain other objects. The domain container is the root container of the hierarchy of a domain
+
+A leaf is an object that cannot contain other objects
+
+There are 2 types of leaf objects:
+* Resource: for example printers and GPOs
+* Security principles: user or computer account and groups. These kind of objects are assigned unique SID's (Security Identifiers)
+
+Each object in the AD has a set of attributes, describing their caharacteristics
+
+Objects in the AD can be accessed by LDAP (Lightweight Directory Access Protocol)
+
+= Security Principles =
+
+There are 3 keys - CIA - Confidentiality, Integrity, Availability
+
+Confidentiality:
+* Ability to hide information form unathorized people -> encryption
+
+Integrity:
+* Ability to ensure that dat acannot be modified by unathorized or undetected manner -> digital signature
+
+Availability:
+* Ensure that data is available when it is needed -> prevent DoS attacks, and use of high availabvle systems
+
+== Certificates ==
+
+There are multiple types of encryption and etc. One of the most used ones is Private and Shared key encryption. To check whether a key is actually made correctly, there is such a thing as trusted thirst party issued CA certificate
+
+One of such is a X.509 standart!
+
+Every certificate has a digital signature, created with the private key of the CA.
+
+SSL (Secure Socket Layer) is also another example of encryption, which we for example use for the HTTPS.
+
+= Windows: Users and Groups =
+
+There are 2 main types of users in Windows:
+
+Local user accounts:
+* are creatd on a member server or a windows-client
+* can only be used to log on locally on the computer on which the accounts are created
+
+Domain user accounts:
+* are created on a domain
+* can only be used to log on the domain
+
+== User accounts storage ==
+
+Local User accounts information is stored in the SAM (Security Accounts Manager) database on the local computer
+
+Domain user account information is stored in the Active Directory database
+
+== SID's ==
+
+Every user, computer and group account has a SID (Security Identifier), used by Windows when dealing with accounts internally (example - granting or denying access and privileges).
+
+== GUIDs ==
+
+Each object in the Active Directory  has a unique 128 bit GUID (Globally Unique Identifier) to identify the object in the AD
+
+== User Profile Types == 
+
+Local user profile:
+* is stored on the local computer
+* changes are specific to the computer on which you made the changes
+* useful for users with personal computer
+
+Roaming user profile:
+* is stored on a server
+* is available every time you log on to any computer of the domain changes are updated onm the server
+* is cached locally by default (bad, should be disabled?)
+* useful for uysers without a personal computer
+
+Mandatory user profile:
+* is a special form of a roaming profile
+* changes are NOT updated on the server
+* useful for kiosks
+
+
+== Permission Inheritance ==
+
+When you set NTFS permissions on a folder, by defualt those permissions appply to this folder, subfolders and files of that folder -> inherited permissions!
+
+Inherited permissions are shaded in the GUI, explicit permissions are not shaded
+
+You can disable the inheritance on the folder via the properties of the folder
+
+You can convert inherited permissions on a file or folder into explicit permissions via the properties of that file or folder.
+
+The hierarchy of precedence for the permissions can be summarized as follows:
+* Explicit Deny
+* Explicit Allow
+* Inherited Deny
+* Inherited Allow
+
+Explicit > Inherited
+
+As a consequence, eplicit allow permissions take precedence over inherited deny permissions!
+
+

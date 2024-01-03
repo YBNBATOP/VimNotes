@@ -1,0 +1,145 @@
+= Why would a company choose for Windows Servers? =
+
+They are imbecilies.
+
+It has more features that are available by default, more suitability with some specific components also from MS. Overall it really does not help that much.
+
+= Give a difference between a Windows client OS and a Server OS. =
+
+More support for higher-end hardware
+Allows more concurrent remote connections
+Can be installed without a GUI
+Is more expensive
+Gives priority more to the background services and tasks
+
+= What is the difference between LTSC and SAC? =
+
+LTSC gets less releases, but a longer support term!
+
+SAC gets more realeases, but a less longer support term!
+
+= What different editions and installation options can you install when it comes to a Windows server? =
+
+Standart Edition, Datacenter Edition, Hyper-V
+
+Server Core, Server with Desktop Experience, Nano Server
+
+= What is the difference between a retail, an OEM and a volume licensing? =
+
+Retail - keys that you can buy in a shop
+
+OEM - built-in in your PC
+
+Volume - one key that has multiple activations
+
+= What is the Win32 API? =
+
+This is like an interface that is responsible for managing talks between applications and the libraries.
+
+= What is the WinRM? =
+
+The teacher just skipped it!
+
+It is Windows Remote Management, it is a management protocol used in Microsoft Windows operating systems to enable remote management of computers. It allows administrators to perform various management tasks on remote Windows machines, such as running scripts, accessing system information, configuring settings, and executing commands.
+
+= Give 5 examples what a company typically uses a Windows server for. =
+
+Active Directory, DHCP Server, DNS Server, File Server, Web Server.
+
+Use cases: application server, database server, back-up, etc.
+
+= What is AD? =
+
+Anno Domini.
+
+It is Active Directory, which is some kind of very sophisticated bullshti that is meant to contain all information about groups and users I believe.
+
+Active Directory is a hierarchical arrangement of objects.
+
+
+
+= What is an OU? =
+
+An organizational unit (abbreviated as OU) is a container that can
+be used to group objects (users, user groups, computers, printers,
+other organizational units,…) within a domain.
+
+= What is a DC? =
+
+DC is a domain controller which means it will gather other PC's around itself.
+
+On a domain controller, you can only sign in using a domain user
+account (except if you start the DC in the “Directory Services
+Recovery Mode”). On other domain computers (clients or
+member servers), you can always sign in with a domain user
+account (highly recommended) or a local user account (not
+recommended).
+
+= What is a RODC =
+
+It is a read only Domain Controller
+
+contains an AD in which only read operations are possible
+
+can only replicate data from writable DCs, and never
+replicate data to other DCs → only inbound replication
+
+is often installed in less secure environments (e.g. branch
+offices) 
+
+= What are the different options to logon to a Windows machine (authenticate) when domain-joined? =
+
+IDFK
+
+NTLM? (relies on password authentication)
+Kerberos? (relies on password authentication)
+
+= What is typically stored in an X.509 certificate (the most important things)? =
+
+Everything?
+
+Validity period, Public Key, Certificate Authority information, Signature algorithm, Serial Number, Validity period
+
+= What is a SID, a GUID and NTLM? =
+
+SID are assigned to Users, are Security Identifiers used for authentication to do manipulations by windows for user management.
+
+GUID - same but for groups and some management, used for the AD.
+
+NTLM - an authentication mechanism, a very fucked up one because it uses challenge/response principle
+
+= What is more secure, a LM hash of an NT(LM) hash? =
+
+Windows can use 2 kind of hash functions:
+• LM hash: not very secure (uses DES); only available for
+backward compatibility; is not stored by default
+• NT(LM) hash: more secure than LM hash; doesn’t use salting
+
+NTLM > LM
+
+= What is LDAP and why is this interesting for developers? =
+
+LDAP stands for Lightweight Directory Access Protocol. It is a protocol used to access and manage directory information services, which can include a variety of items such as user profiles, organizational structures, and network devices.
+
+DO NOT USE THIS SHIT.
+
+= What different domain groups exist? =
+
+Security gorups:
+* used for securing the acces sto files, folders, printers etc.
+* used as mailing distribution lists
+Distibution groups:
+* can only be used as mailing distribution lists
+
+= How do NTFS and Share permissions interact with each other? =
+
+* Explicit Deny
+* Explicit Allow
+* Inherited Deny
+* Inherited Allow
+
+When you set NTFS permissions on a folder, by default those
+permissions apply to this folder, subfolders and files of that
+folder → inherited permissions
+
+
