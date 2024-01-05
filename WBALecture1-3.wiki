@@ -1,0 +1,55 @@
+= Fundamentals: Recap =
+
+Here are some basic stuff that we know:
+* IDOR/BOLA (Insecure Direct Object Reference/Broken Object Level Access)
+* CSRF (Cross-Site Request Forgery)
+* XSS (Cross-Site Scripting)
+* SQLi (SQL Injection)
+
+== Fundamentals: IDOR ==
+
+It means that user input poins to an identifier without Access Control
+
+Like just changing a parameter to another one and not how it is supposed to be like, and hence get access to another session/account and etc.
+
+Always be suspicious when an application sends your userid to the server!
+Securing designs do not need you to tell the server who you are! Hence, it means that your session is not being checked if it is you or not.
+
+Broken authentication & Microservice architecture
+
+== Fundamentals: CSRF ==
+
+You can understand that you can find it by looking at this things:
+* No CSRF Token
+* CSRF Token not user specific
+* CSRF Token leaked with XSS
+* Referer header validation
+
+So for example, you could easily do such a trick: change a username of a user that goes to your website and is still logged in the website that is vulnerable!
+
+== Fundamentals: XSS ==
+
+The goal here is to expose something using javascript
+
+* Run javascript in victims browser
+* Control the origin
+* Usr input not sanitized
+* Postmessage wildcard domain
+
+== Fundamentals: SQLi ==
+
+This is the wholy grail of those who do not have prepared statements in their coding and hence are vulnerable to our own string concatination and etc.
+
+* Inject user supplied data in DB querries
+* User input not sanitized
+* No prepared queries
+* Unathorized access to data
+* Control the outcome of a query
+
+== Tip ==
+
+A useful resource here would be brutelogic website, burp suite, swisskyrepo payloads
+
+[Brutelogic XSS Gym](https://brutelogic.com.br/gym.php)
+
+[Payloads for all kind of functions](https://github.com/swisskyrepo/PayloadsAllTheThings)

@@ -1,0 +1,110 @@
+= Methodology =
+
+== ToolChain: Recon ==
+
+Recon has the most tools, as you need to find quite a lot of information to get further intel.
+
+You can better get a hand of actually doing reconning by your own hands (manually, and hence get more experience and information, rather than by running something automatically.
+
+The more you know how something works, the more you find!
+
+* Nmap (allows to find open ports in a certain network range)
+* Shodan (IoT search on the internet!)
+* Censys (Exposure management service, and basically tells how exposed something is on the Internet, like according to the certificates!)
+* Waybackurls (small but handy, queries wayback machine, which indexes everything on the internet, and hence can give information on how something looked in previous versions, i.e. previous versions of a website)
+* Google Dorks 
+* ASN to IP: (Autonomous System is how the backbone of the internet is configured, and genuiely have some obvious common settings, like a default gateway for the router, and every machine knows its own stuff. It is like every router would be the last one, or the father one, and would tell constantly to everyone that it can handled a certain type of requests and etc.)
+	* hackertarget
+	* pyasn
+
+DNS:
+* Amass
+* SecurityTrails
+
+Visuals:
+* Aquatone
+* Eyewitness
+* httpx
+
+More information about tools:
+
+*Nmap*
+Depending on how large your scope is:
+* Scan for web ports
+* Scan for 1000 most common ports
+* Scan for all ports
+
+Identify services & Vulnerabilities
+
+Useful flags to use:
+
+-sS - makes only the first part of a TCP handshake (SYN)
+
+Example of command:
+
+nmap -T4 --open -n -oA -p 443 --script-http-title <ip here> (-T means how aggressive nmap will be. --open will only talk about open ports, -n will not do reverse DNS, -oA - output all to ..., -p for port, --script - would mean it to use some kind of certain script already premade or what you can make yourself)
+
+*Amass*
+
+Some useful information about Amass is that it has got 3 main types of what it can do.
+
+amass enum, amass intel, amass db
+
+Useful flags:
+
+-v - will put everything in vorbose mode and hence give you more information about what is happenning
+
+Example of command:
+
+amass enum -v -d howest.be (it will give us information about the -d domain)
+
+amass enum -v -d howest.be -r 172.20.0.3 (that would use another DNS resolver and not a default one, thanks to the -r flag
+
+*Censys*
+
+It represents a certificate search engine
+
+Useful for subdomain enumeration, IP Space.
+
+== ToolChain: Mapping ==
+
+Remember, you want to find out something that gives out errors!
+
+Crawlers:
+* Burp
+* Go Spider
+
+Use the application
+
+Extract endpoints from javascript
+* BurpJSLinkfinder
+* Grep
+
+Brute Force
+* Intruder
+* Ffuf  (Fuzz Faster You Fool)
+* dirsearch
+
+Smart use of wordlists and bruteforce can reveal a lot about an application
+
+Naming conventions FTW
+
+== ToolChain: Discovery ==
+
+You want to try out some interesting payloads maybe here, or play around with the website, in order to get the application functionality
+
+* Burp Repeater
+* Burp Intruder
+* Mostly manual process
+* Probing for errors
+
+There are honestly not many tools for discovery, so you have to probe, test, take notes and organize, and of course - make errors
+
+== ToolChain: Exploitation ==
+
+* Mostly manual
+* SQLMap
+* Commix
+* Burp Activescan, Backslash Powered Scanner
+
+
