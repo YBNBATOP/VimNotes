@@ -52,4 +52,6 @@ A useful resource here would be brutelogic website, burp suite, swisskyrepo payl
 
 [Brutelogic XSS Gym](https://brutelogic.com.br/gym.php)
 
+[Brutelogic website train XSS muscles](https://brutelogic.com.br/blog/training-xss-muscles/)
+
 [Payloads for all kind of functions](https://github.com/swisskyrepo/PayloadsAllTheThings)

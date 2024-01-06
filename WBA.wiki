@@ -5,3 +5,7 @@
 [[WBALecture1-2|Methodology continuation, toolchains]]
 
 [[WBALecture1-3|Warming up with the old information]]
+
+= Lecture 2 =
+
+[[WBALecture2-1|Exploiting RCE and reverse-shell]]
