@@ -57,7 +57,16 @@ Process:
 * has a state
 * program code + program counter + stack + data section + heap + ...
 
-Every process gets a state, like that being *new*, ready, running, terminated, waiting, etc.
+== Process states ==
+
+Every process gets a state, like that being:
+* *new*, - The process is being created
+* *ready,* - The process is waiting to be assigned to a processor
+* *running,* - Instructions are being executed
+* *terminated,* - The process has finished execution
+* *waiting* - The process is waiting for some event to occur
+
+*New* process can become admitted, and then it becomes *Ready*. By scheduling and prioritizing, it get a *Running* state. To get from *Running* to *Ready*, it would have to get interupted by the CPU. When the process needs a event, it will get a state of *Waiting*. Then if a event is completed, it get the status ready again. From there, it should get back to *Running* and then *Terminated*.
 
 The process is also managed by the Process Control Block (PCB) that is actually ment to control the processes, and from time to time this part is responsible for moving the priorities, or changet the state, and etc.
 

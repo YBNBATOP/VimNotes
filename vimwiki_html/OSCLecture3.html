@@ -118,8 +118,30 @@ has a state
 program code + program counter + stack + data section + heap + ...
 
 </ul>
+<div id="Process vs Program-Process states"><h2 id="Process states" class="header"><a href="#Process vs Program-Process states">Process states</a></h2></div>
+
 <p>
-Every process gets a state, like that being <span id="Process vs Program-new"></span><strong id="new">new</strong>, ready, running, terminated, waiting, etc.
+Every process gets a state, like that being:
+</p>
+<ul>
+<li>
+<span id="Process vs Program-Process states-new"></span><strong id="new">new</strong>, - The process is being created
+
+<li>
+<span id="Process vs Program-Process states-ready,"></span><strong id="ready,">ready,</strong> - The process is waiting to be assigned to a processor
+
+<li>
+<span id="Process vs Program-Process states-running,"></span><strong id="running,">running,</strong> - Instructions are being executed
+
+<li>
+<span id="Process vs Program-Process states-terminated,"></span><strong id="terminated,">terminated,</strong> - The process has finished execution
+
+<li>
+<span id="Process vs Program-Process states-waiting"></span><strong id="waiting">waiting</strong> - The process is waiting for some event to occur
+
+</ul>
+<p>
+<span id="Process vs Program-Process states-New"></span><strong id="New">New</strong> process can become admitted, and then it becomes <span id="Process vs Program-Process states-Ready"></span><strong id="Ready">Ready</strong>. By scheduling and prioritizing, it get a <span id="Process vs Program-Process states-Running"></span><strong id="Running">Running</strong> state. To get from <span id="Process vs Program-Process states-Running"></span><strong id="Running">Running</strong> to <span id="Process vs Program-Process states-Ready"></span><strong id="Ready">Ready</strong>, it would have to get interupted by the CPU. When the process needs a event, it will get a state of <span id="Process vs Program-Process states-Waiting"></span><strong id="Waiting">Waiting</strong>. Then if a event is completed, it get the status ready again. From there, it should get back to <span id="Process vs Program-Process states-Running"></span><strong id="Running">Running</strong> and then <span id="Process vs Program-Process states-Terminated"></span><strong id="Terminated">Terminated</strong>.
 </p>
 
 <p>
@@ -127,7 +149,7 @@ The process is also managed by the Process Control Block (PCB) that is actually 
 </p>
 
 <p>
-There is such a thing called <span id="Process vs Program-Context Switch"></span><strong id="Context Switch">Context Switch</strong> which is the same as Saving/Storing the state of a process (or thread). As a result, as single CPU can allow multiple processes -&gt; multitask!
+There is such a thing called <span id="Process vs Program-Process states-Context Switch"></span><strong id="Context Switch">Context Switch</strong> which is the same as Saving/Storing the state of a process (or thread). As a result, as single CPU can allow multiple processes -&gt; multitask!
 </p>
 
 <p>
