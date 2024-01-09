@@ -1,0 +1,71 @@
+= Lets learn some tools for the base! =
+
+So, it such happens, that in order to work good - you need to know your tools.
+
+Such tools for us are like, the browser, and burp. For us - that is the holy grail!
+
+== Browser =
+
+Different browsers, have different behaviour! Hence, we have a bunch of different engines that exist:
+* Gecko
+* Webkit
+* Blink
+
+Important thing, is that, What You See, is not always What You Get. Like different resources can not get one line the same thing. Though, for example a good and stable thing would be the firefox inspector, which actually shows something in a better way. 
+
+*TIP*: A better way is select the needed text, and then right-click -> view selection source, and you can get a more accurate view!
+
+*TIP*: Another tip, is - to represnt the javascript, there are really a lot of ways to do that. One of the, is doing "javascript:alert(1)". Another way I found in brutelogic exercises, is for the parameters of the functions, to use "-alert(1)-", the dashes play the important role, and sometimes it requires to be wrapped with apostrophees.
+
+== Burp Suite ==
+
+=== Burp Suite Dashboard ===
+
+There are multiple things you can do with it!
+
+* Overview of scans
+* Overview of issues
+* Overview of events
+* Additional info for found issues
+
+We did not use it that much, but it should be interesting to check it eventually.
+
+=== Burp Suite Target ===
+
+Here we can see:
+* Site map
+* Request/Response details
+* Warning: Deduplication!
+
+=== Burp Suite Proxy ===
+
+A very useful one, if you want things to be done manually.
+
+Here you can:
+* Proxy intercept
+* Change requests/responses on-the-fly
+
+Though, HTTP History muight be more useful as you can color the requests and send them directly to a repeater/intruder etc.
+
+=== Burp Suite Intruder ===
+
+Mighe be useful as a brute force attack generator for a small payload.
+
+* Perform different attack types on request
+* Throttled in community, still useful
+* Ability to perform active scans on defined payload position (pro)
+
+=== Burp Suite Repeater ===
+
+* Manual investigation of single request
+* Exploitation phase
+
+=== Burp Suite Decoder ===
+
+Self explanatory, and can do decoding, encoding, chaining, and etc.
+
+*TIP*: There can be a lot of settings specified in the burp suite, like Match&Replace rules, or maybe your own hotkey rules, or maybe you want to install extenstions like paraminer? (which will be able to make your requests way smaller than the original ones, and space it only to the most essential ones)
+
+Also, make sure to use the tabs like in repeater in the according way, since it is really useful. Also, you can rename them.
+
+

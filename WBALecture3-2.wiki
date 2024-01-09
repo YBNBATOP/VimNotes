@@ -1,0 +1,17 @@
+= Session handling rules =
+
+This topic is pretty cool, as you can automate the session handling for your testing.
+
+An application can use tokens with a short life-span
+
+This hinders our work!
+
+So overall, your exploits (manual or repeater) might usually really get on your nerves!
+
+It is quite hard to understand at first, but it is very cool!
+
+Hence, the macros exist!
+
+The idea of the macro is to get your GET request (because there you are being given the new token), then mark that space (as it is the spot where the token will appear), and then you will be able to change it automatically in the other spot of your further requests!
+
+It also kind of works on a miss and match scheme, that it will eventually check what you have selected, run it only according to the rules you set up. Hence it is all a very good way to automate things.

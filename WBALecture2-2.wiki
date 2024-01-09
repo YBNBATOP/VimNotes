@@ -1,0 +1,62 @@
+= SSRF (Server Side Request Forgery) =
+
+It is a very powerful bug with critical consequences, as it can force the application to make unintended requests!
+
+We can do:
+* Scan/Access the internal network
+* Smuggle data to 3rd party server
+* Access restricted web pages or files
+* Execute code on the server
+
+Some examples of vulnerable parameters:
+* /getPage.php?url=/orders.php
+* /getPage.php?url=http://10.126.10.158/
+
+The application is taking user input to construct a web call:
+* In domain (+ HTTP Basic Auth)
+* Port
+* Path
+* Query
+* Body
+* Fragments
+
+Common place for SSRF:
+* PDF Export
+* Integrations (sometimes the services use 3rd party software/integrations)
+* Import
+* Headers + Methods
+* File Uploads
+* regular parameters
+
+
+First, you would like to attack agains the server itself, hence you would try something of this:
+* localhost
+* 127.0.0.1
+* 0.0.0.0
+* [::]
+* [0000::1]
+* 2130706433
+* 127.1
+
+This all means the same, but some of them might be locked by wirefall or something.
+
+After that, you can change to attacks against the backend network:
+* Need to know the network ip space
+* External DNS might give it away
+* Error messages can disclose network range
+* Stuch with HTTP method => test for X-http-method-override variations
+
+Useful services for the SSRF:
+* Nip.io
+* Beeceptor (can mock APIs)
+* Ngrok
+* Burp collaborator
+
+All of this are just meant to mock APIs, or in some cases like some kind of addresses.
+
+Some useful services:
+* DNS resolving to desired address
+* 30x redirects to desired address
+* Open redirects
+
+*TIP*: Sometimes you can bypass something black-listed by double URL encoding the payloadm or maybe just by changing the case of the payload. Like "admin" can aswell be "Admin". Also, sometimes you can get access to different fily types, like file://, http://, dict://, and many others.

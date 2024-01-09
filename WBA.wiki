@@ -9,3 +9,11 @@
 = Lecture 2 =
 
 [[WBALecture2-1|Exploiting RCE and reverse-shell]]
+
+[[WBALecture2-2|SSRF]]
+
+= Lecture 3 =
+
+[[WBALecture3-1|The hackers toolkit]]
+
+[[WBALecture3-2|Session handling rules]]
