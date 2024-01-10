@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<title>WBALecture5-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="JSON Web Tokens (JWT)"><h1 id="JSON Web Tokens (JWT)" class="header"><a href="#JSON Web Tokens (JWT)">JSON Web Tokens (JWT)</a></h1></div>
+
+<p>
+JWT are commonly used for authentication, session management and access control.
+</p>
+
+<p>
+Why JWT?
+</p>
+<ul>
+<li>
+No need to store state server-side
+
+<li>
+Claims are store &amp; send by the client
+
+</ul>
+<p>
+Wait a minute... is this safe?
+</p>
+
+<p>
+We have session cookies, what is the added value?
+</p>
+
+<p>
+JWT's do not store secrets, but claims! The client is allowed to view the contents, but not change it! Hence, there is a need for cryptographic signatures.
+</p>
+
+<p>
+JWT's are easy to recognize:
+</p>
+<ul>
+<li>
+3 base64 encoded parts (eyJ...) separated by a dot(.)
+
+</ul>
+<p>
+The first one - is header. It contains information about the algorithm and etc, in which the token is built.
+</p>
+
+<p>
+The second one - is the payload. It contains the data about the user.
+</p>
+
+<p>
+The third one - is a signature. It is used to verificate whether the user is a legit one or not and etc.
+</p>
+
+<p>
+JWT vulnerabilities are almost always severe
+</p>
+
+<p>
+Most of the time, developers are not JWT experts.
+</p>
+
+<p>
+Impact:
+</p>
+<ul>
+<li>
+Create valid, but malicious tokens == ATO, ACL bypass, SSRF
+
+</ul>
+<p>
+There are 2 main attack vectors on JWT:
+</p>
+<ul>
+<li>
+Attacks on the header
+
+<li>
+Attacks on the signature
+
+</ul>
+<p>
+Problems with signatures:
+</p>
+<ul>
+<li>
+No verification
+
+<ul>
+<li>
+Just a dot separating the payload from NULL
+
+</ul>
+<li>
+Arbitrary signatures accepted
+
+<ul>
+<li>
+Anything that looks like a signature will do 
+
+<li>
+Flawed signature verification
+
+</ul>
+<li>
+Weak keys
+
+<ul>
+<li>
+"secret", "compaanyname", "stackoverflow copy pasta"
+
+</ul>
+</ul>
+
+</body>
+</html>

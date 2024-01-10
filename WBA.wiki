@@ -17,3 +17,13 @@
 [[WBALecture3-1|The hackers toolkit]]
 
 [[WBALecture3-2|Session handling rules]]
+
+= Lecture 4 =
+
+[[WBALecture4-1|Defeat defenses]]
+
+[[WBALecture4-2|Advanced attack vectors]]
+
+= Lecture 5 =
+
+[[WBALecture5-1|Advanced attakc vectors. JWT.]]

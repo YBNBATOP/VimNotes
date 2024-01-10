@@ -1,0 +1,42 @@
+= JSON Web Tokens (JWT) =
+
+JWT are commonly used for authentication, session management and access control.
+
+Why JWT?
+* No need to store state server-side
+* Claims are store & send by the client
+
+Wait a minute... is this safe?
+
+We have session cookies, what is the added value?
+
+JWT's do not store secrets, but claims! The client is allowed to view the contents, but not change it! Hence, there is a need for cryptographic signatures.
+
+JWT's are easy to recognize:
+* 3 base64 encoded parts (eyJ...) separated by a dot(.)
+
+The first one - is header. It contains information about the algorithm and etc, in which the token is built.
+
+The second one - is the payload. It contains the data about the user.
+
+The third one - is a signature. It is used to verificate whether the user is a legit one or not and etc.
+
+JWT vulnerabilities are almost always severe
+
+Most of the time, developers are not JWT experts.
+
+Impact:
+* Create valid, but malicious tokens == ATO, ACL bypass, SSRF
+
+There are 2 main attack vectors on JWT:
+* Attacks on the header
+* Attacks on the signature
+
+Problems with signatures:
+* No verification
+	* Just a dot separating the payload from NULL
+* Arbitrary signatures accepted
+	* Anything that looks like a signature will do 
+	* Flawed signature verification
+* Weak keys
+	* "secret", "compaanyname", "stackoverflow copy pasta"

@@ -1,0 +1,131 @@
+= Persistence =
+
+Once we are out there in the wild, we need to know how to bypass defenses, and there are surely new problems to come with that!
+
+Problems that can be met:
+* Payloads blocked => defeat the WAF
+* Payloads sanitized => defeat the filter
+* Obfuscated/opaque attack surface => better mapping
+* Limited time => efficient use of tools
+* Traffic throttled
+
+The more you know, the more you find!
+
+The methodology says:
+* Identify the defense mechanism
+* Enumerate the limits
+* Encoding
+* Obfuscation
+* Pattern splitting
+* Hide the payload
+* Globbing
+* Escape the escape
+
+== Identify the defense mechanism ==
+
+Trigger the defense mechanism!
+
+Look for telltale signs:
+* Headers
+* Cookies
+* Error messages
+* DNS
+
+== Enumerate the limits ==
+
+Are you rate limited?
+* What is the max rps?
+* Multi-threading?
+
+Keywords blocked?
+* Which ones?
+* By themselves or in combination?
+
+== Encoding ==
+
+Encoding is a very popular way to hide our payloads, as it can hide them from the WAF, but not from the application.
+
+* Encoding: represents in a different way
+* Encryption: only the secret key cab decrypt
+* Obfuscation: intentionally made hard to understand
+* Hashing: scrambling algorithm, cannot be decrypted
+
+With encoding, we hope that the defense mechanism does not recognize the payload with the application, while the application does recognize it.
+
+There are different ways to encode:
+* Base64
+* URL
+* Unicode
+* Hex
+* Octal
+* HTML
+
+You can obfuscate your payloads so much with your encoding that it may barely look like something that should work.
+
+But still you need to be accurate, because Hex would work only with strings! Same as unicode I believe!
+
+== Obfuscation ==
+
+Obfuscation is the art of making something difficult to understand
+
+It take multiple cycles for humans and WAF's to understand
+
+You can:
+* Multiple encodings mixed together
+* Using novel techniques
+
+== Pattern splitting ==
+
+WAF's & filters rely on recognizing keywords or patterns
+
+Splitting can make detection harder
+
+What happens if the filter only removes the <script> tag once?
+* <scri<script>pt>
+
+Or concatenation?
+* "</scri"+"pt>"
+
+== Hide the payload ==
+
+Sometimes, a payload can be hidden from the WAF's view
+
+* window.name() object
+* URL fragment (location.hash or #)
+* out-of-band
+
+== Globbing ==
+
+The bash shell has special characters to match patterns
+
+* ? => Match a single character
+* * => Match zero or more characters
+* [] => define a range of characters
+* {,} or (|) => separate multiple conditions
+
+We use globbing to break patterns a WAF might look for
+
+== Defensive layers ==
+
+We need to account for different layers that can eventually secure us
+
+* Cloud
+* Server
+* Framework
+* Application
+* OS
+
+=== Cloud layer ===
+
+Rate-limiting
+
+Determine limit:
+* Ip based
+* Endpoint based
+* header (cookie) based
+
+Throttle requests
+
+Multi-thread
+
+Distribute requests over multiple targets
