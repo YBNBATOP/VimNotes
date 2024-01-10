@@ -31,6 +31,11 @@ Look for telltale signs:
 * Error messages
 * DNS
 
+Sometimes you can just get some errors that mean that you are restricted. Or maybe you can see that in the headers when we send our requests.
+
+You can aswell just check the DNS of the service you are trying to get:
+* whois $(dig +short safeonweb.be | head -n 1) | egrep -i orgname
+
 == Enumerate the limits ==
 
 Are you rate limited?
@@ -45,14 +50,18 @@ Keywords blocked?
 
 Encoding is a very popular way to hide our payloads, as it can hide them from the WAF, but not from the application.
 
-* Encoding: represents in a different way
-* Encryption: only the secret key cab decrypt
-* Obfuscation: intentionally made hard to understand
+Encoding is converting a series of characters into another representation format
+
+Encoding != Encryption != Obfuscation != Hashing
+
+* Encoding: represents in a different way, but overall is the same thing!
+* Encryption: only the secret key can decrypt the original!
+* Obfuscation: intentionally made hard to understand, so it might be a lot of algorithms going on!
 * Hashing: scrambling algorithm, cannot be decrypted
 
 With encoding, we hope that the defense mechanism does not recognize the payload with the application, while the application does recognize it.
 
-There are different ways to encode:
+There are different ways to *encode*:
 * Base64
 * URL
 * Unicode
@@ -62,7 +71,21 @@ There are different ways to encode:
 
 You can obfuscate your payloads so much with your encoding that it may barely look like something that should work.
 
-But still you need to be accurate, because Hex would work only with strings! Same as unicode I believe!
+But still you need to be accurate, because Hex would work only with strings! Same as unicode I believe! An example of that can be `<script>\u0061lert(1)</script>`
+
+Fun fact: WAF usually block the `alert()` keyword, but they sometimes miss the `eval()` one.
+
+Also, there can be such a situation where you would try and write `javascript:alert(1)`, but it would get blocked. Hence, you could try and make it base64 encoded and put it as `data:text/html;base64,<base64encodedhere>` and that would also be a legit piece of code, because it would need an additional decoding cycle.
+
+URL encoding is also very much used by us, as they are used of course in the URL's. URL decoding happens automatically by http stacks. But sometimes happens twice (ssrf)! Hence, *double URL encoding can smuggle the payload behind the WAF*
+
+Unicode represents characters outside and inside of the ascii range. *Javascript* supports unicode. For example the `a` will be `\u0061`. Something like `<script>\u0061lert(1)</script>` would actually work, as it did work in my exam!
+
+Hex encoding would work only with *strings*! Hence `eval('alert(1)')` would work the same way as encoding alert(1) in hex. Octal works the same way!
+
+Fun fact, that for example if you have a function and parameters for it, you can pass javascript into it too. `console.log('hello&apos;-alert()-&apos;')` would work just fine!
+
+And most important, is that everything can be applied simultaneous! Also it is nice to know that function atob() exists!
 
 == Obfuscation ==
 
