@@ -1,0 +1,132 @@
+= Quick recap =
+
+== Entity ==
+
+An entity is a thing which can be distinctly identified. A person, a company, or event is an example of an entity.
+
+== Entity Set ==
+
+It is a set (or collection) of entities or instances of an entity type which share the similar properties or attributes.
+
+== Entity Type ==
+
+It is a concept for defining the entities which share the similar properties or attributes
+
+== Example ==
+
+Ann and Jim are member *entities* in VGC's UoD. In OO paritance they are also called objects.
+
+{{{java
+package domain;
+
+public class Member { // -- ENTITY TYPE
+
+}
+}}}
+
+
+{{{java
+private void run() {
+
+	// -- ENTITIES
+	
+	Member c = new Member(1, "CTT");
+	Member c = new Member(2, "MDG");
+	Member c = new Member(3, "FVL");
+	
+	// -- ENTITY SET
+	
+	List<Member> members = new ArrayList<>();
+	
+}}}
+
+{{{java
+package domain;
+
+public class Member { // -- ENTITY TYPE
+
+	// -- ATTRIBUTES
+
+	private final int membershipNumber;
+	private final String lastName;
+	private final String firstName;
+} 
+}}}
+
+
+{{{java
+package domain;
+
+public class Member { // -- ENTITY TYPE
+
+	// -- ATTRIBUTES
+
+	private final int membershipNumber;
+	private final String lastName;
+	private final String firstName;
+	private final Optional<String> title; // -- Define a optional field (non-required). Also useful to know is the usage of *.orElse()* funciton which can show alternative text.
+
+	public Member(int membershipNumber, String lastName, String firstName) {
+		this(membershipNumber, lastName, firstName, null);
+	}
+	
+	public Member(int membershipNumber, String lastName, String firstName, String title) {
+		this.membershipNumber = membershipNumber;
+		this.lastName = Objects.requireNonNull(lastName); // -- Required attibutes (mandatory)
+		this.fistName = Objects.requireNonNull(fistName); // -- Required attibutes (mandatory)
+		this.title = Optional.ofNullable(title); // -- Optional attributes
+	}
+} 
+}}}
+
+{{{java
+package domain;
+
+public class Member { // -- ENTITY TYPE
+
+	// -- ATTRIBUTES
+
+	private final int membershipNumber;
+	private final String lastName;
+	private final String firstName;
+	private final Optional<String> title; // -- Define a optional field (non-required). Also useful to know is the usage of *.orElse()* funciton which can show alternative text.
+	private final LocalDate dateOfBirth; // -- Define a derived attirbute (that can be calculated for example)
+
+	public Member(int membershipNumber, String lastName, String firstName) {
+		this(membershipNumber, lastName, firstName, null);
+	}
+	
+	public Member(int membershipNumber, String lastName, String firstName, String title, LocalDate dateOfBirth) {
+		this.membershipNumber = membershipNumber;
+		this.lastName = Objects.requireNonNull(lastName); // -- Required attibutes (mandatory)
+		this.fistName = Objects.requireNonNull(fistName); // -- Required attibutes (mandatory)
+		this.title = Optional.ofNullable(title); // -- Optional attributes
+		this.dateOfBirth = Objects.requireNonNull(dateOfBitrh); // -- Required attribute (mandatory)
+	}
+	
+	public int getAge() {
+		return Period.between(dateOfBirth, LocalDate.now()).getYears();
+	}
+	
+} 
+}}}
+
+{{{java
+package domain;
+
+public class Member {
+	
+	private final int membershipNumber;
+	
+	private final Set<PhoneNumber> phoneNumbers = new HashSet<>(); // -- Instead of limiting yourself to standard classes, create your own ones.
+	
+	public void addPhoneNumber(PhoneNumber phoneNumber) {
+		phoneNumbers.add(phoneNumber);
+	}
+	
+	public Set<PhoneNumber> getPhoneNumbers() {
+		return Collections.unmodifiableSet(phoneNumbers);
+	}
+	
+}
+}}
