@@ -129,4 +129,38 @@ public class Member {
 	}
 	
 }
-}}
+}}}
+
+== Weak Entity ==
+
+If the existence of an entity depenmds on the existence of another entity, we say the entity is a weak entity.
+
+In order to translate the weak entity into a object, you would make sure that the object you created will have the fields that are necessary for the weak entity.
+
+== Participation and Cardinality ==
+
+The *participation of a relationship* defines the *minimum* number of related entities on a relationship (0 or 1), the *cardinality of a relationship* defines the m*maximum* number of related entities on a relationship (1 or more).
+
+=== One-to-one ===
+
+Means that the class will have a field which can be optional or null, but might as well have a value.
+
+=== One-to-many ===
+
+Means that one of the classes will have certain collection of the needed class. For example, the Member class can have multiple Subscriptions, which means that the Member class will have a collection of Subscriptions inside itself.
+
+=== Many-to-Many ===
+
+It means that each class out of the relationship will have access to a middle class, which will be responsible for gathering information about each opther classes.
+
+== Inheritance ==
+
+Means that we will have a parent class, and then we can extend other classes from it, by using the keyword *extends* in Java, and hence gathering access to the father classses values and override some values aswell.
+
+{{{java
+public class FamilyGame extends BoardGame {
+	private final int expectedGameDuration;
+	
+	// Constructor here with access to the parent classs via *super(<values>)* and then your other necessary setters
+}
+}}}

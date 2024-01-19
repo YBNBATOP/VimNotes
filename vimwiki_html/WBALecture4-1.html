@@ -91,6 +91,18 @@ Error messages
 DNS
 
 </ul>
+<p>
+Sometimes you can just get some errors that mean that you are restricted. Or maybe you can see that in the headers when we send our requests.
+</p>
+
+<p>
+You can aswell just check the DNS of the service you are trying to get:
+</p>
+<ul>
+<li>
+whois $(dig +short safeonweb.be | head -n 1) | egrep -i orgname
+
+</ul>
 <div id="Persistence-Enumerate the limits"><h2 id="Enumerate the limits" class="header"><a href="#Persistence-Enumerate the limits">Enumerate the limits</a></h2></div>
 
 <p>
@@ -121,15 +133,23 @@ By themselves or in combination?
 Encoding is a very popular way to hide our payloads, as it can hide them from the WAF, but not from the application.
 </p>
 
+<p>
+Encoding is converting a series of characters into another representation format
+</p>
+
+<p>
+Encoding != Encryption != Obfuscation != Hashing
+</p>
+
 <ul>
 <li>
-Encoding: represents in a different way
+Encoding: represents in a different way, but overall is the same thing!
 
 <li>
-Encryption: only the secret key cab decrypt
+Encryption: only the secret key can decrypt the original!
 
 <li>
-Obfuscation: intentionally made hard to understand
+Obfuscation: intentionally made hard to understand, so it might be a lot of algorithms going on!
 
 <li>
 Hashing: scrambling algorithm, cannot be decrypted
@@ -140,7 +160,7 @@ With encoding, we hope that the defense mechanism does not recognize the payload
 </p>
 
 <p>
-There are different ways to encode:
+There are different ways to <span id="Persistence-Encoding-encode"></span><strong id="encode">encode</strong>:
 </p>
 <ul>
 <li>
@@ -167,7 +187,35 @@ You can obfuscate your payloads so much with your encoding that it may barely lo
 </p>
 
 <p>
-But still you need to be accurate, because Hex would work only with strings! Same as unicode I believe!
+But still you need to be accurate, because Hex would work only with strings! Same as unicode I believe! An example of that can be <code>&lt;script&gt;\u0061lert(1)&lt;/script&gt;</code>
+</p>
+
+<p>
+Fun fact: WAF usually block the <code>alert()</code> keyword, but they sometimes miss the <code>eval()</code> one.
+</p>
+
+<p>
+Also, there can be such a situation where you would try and write <code>javascript:alert(1)</code>, but it would get blocked. Hence, you could try and make it base64 encoded and put it as <code>data:text/html;base64,&lt;base64encodedhere&gt;</code> and that would also be a legit piece of code, because it would need an additional decoding cycle.
+</p>
+
+<p>
+URL encoding is also very much used by us, as they are used of course in the URL's. URL decoding happens automatically by http stacks. But sometimes happens twice (ssrf)! Hence, <span id="Persistence-Encoding-double URL encoding can smuggle the payload behind the WAF"></span><strong id="double URL encoding can smuggle the payload behind the WAF">double URL encoding can smuggle the payload behind the WAF</strong>
+</p>
+
+<p>
+Unicode represents characters outside and inside of the ascii range. <span id="Persistence-Encoding-Javascript"></span><strong id="Javascript">Javascript</strong> supports unicode. For example the <code>a</code> will be <code>\u0061</code>. Something like <code>&lt;script&gt;\u0061lert(1)&lt;/script&gt;</code> would actually work, as it did work in my exam!
+</p>
+
+<p>
+Hex encoding would work only with <span id="Persistence-Encoding-strings"></span><strong id="strings">strings</strong>! Hence <code>eval('alert(1)')</code> would work the same way as encoding alert(1) in hex. Octal works the same way!
+</p>
+
+<p>
+Fun fact, that for example if you have a function and parameters for it, you can pass javascript into it too. <code>console.log('hello&amp;apos;-alert()-&amp;apos;')</code> would work just fine!
+</p>
+
+<p>
+And most important, is that everything can be applied simultaneous! Also it is nice to know that function atob() exists!
 </p>
 
 <div id="Persistence-Obfuscation"><h2 id="Obfuscation" class="header"><a href="#Persistence-Obfuscation">Obfuscation</a></h2></div>
