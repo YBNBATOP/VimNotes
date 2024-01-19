@@ -1,0 +1,37 @@
+= Relationships =
+
+Relationship is an association among two or more entites.
+
+Relationships are used to document the interaction between entities.
+
+Relationships are usually verbs. They provide useful information that could not be discerned with just the entity types.
+
+For example, a Member wants to *borrow* a game, or reservate, or check out, or review.
+
+Hence, between these 2 entites, there will be a middle entity, which will connect the one to another.
+
+== Relationships degree ==
+
+The relationship degree is the number of entity types involved or participating in the relationship.
+
+The relationship is usually noted as a line, or maybe even a separate entity.
+
+= Role =
+
+The role of a relationship type may additionally name the purpose of the entity in the relationship.
+
+= Participation =
+
+The participation constraint of a relationship specifies the number of instance of an entity type that can participate in a relationship.
+
+= Cardinality =
+
+The cardinality of a relationship is a constraint on a relationship indicating how many instances of an entity type can relate to one instance of another entity type.
+
+= Participation and Cardinality =
+
+The participation of a relationship defines the minimum number of related entities on a relationship (0 or 1). The cardinality defines the maximum number of related entities on a relationship (1 or more).
+
+Usually we first define the participation, with a circle, or vertical line. Then, we make the cardinality, which is represented via a vertical line, or 3 lines to the entity.
+
+Usually, between the entities we say how many of each other we can have, and in between we have relationships, which can be upgraded to a proper entity, and interconnect both entites in between.

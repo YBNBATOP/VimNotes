@@ -1,3 +1,23 @@
+= Lecture 1 =
+
+[[IMELecture1|Introduction to modelling ERD]]
+
+= Lecture 3 =
+
+[[IMELecture3|Relationships, Roles, Participation, Cardinality]]
+
+= Lecture 4 =
+
+= [[IMELecture4|Key attributes, UoD]] =
+
 = Lecture 5 =
 
 [[IMELecture5|Mapping to OO]]
+
+= Lecture 6 =
+
+[[IMELecture6|Inheritance]]
+
+= Lecture 7 =
+
+[[IMELecture7|From conceptual to logical DB model]]

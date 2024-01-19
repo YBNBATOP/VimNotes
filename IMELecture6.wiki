@@ -1,0 +1,12 @@
+= Inheritance =
+
+Inheritance can represent additional classes that derive from a father class, and that can extend it.
+
+For example, in our UoD a member is male or female and nothing else (assumption). Hence, a member should belong to one of the *subsets*. Hence we draw the father class Member, a triangle under it which will say {mandatory} and then the 2 subsets (male, female), which means that the member is obliged to be one of the subsets.
+
+We use optional to express that a game can be one of the subtypes, or might not be at all {optional}. For example a game is a family game or a puzzle game and other possibilities do also exist.
+
+We use or to express that a member can be maximum one of the subtypes. For example a member is male or female but can't be both {or}.
+
+We use and to express that a person belongs to one or more of the subtypes. For example, a person is a student or teacher but can be both. A teacher can subscribe no matter what course.
+

@@ -1,0 +1,84 @@
+= Introduction =
+
+There are a lot of types of modelling, but we are doing ERD (Entity Relationship Diagram)
+
+It gives a good overview of relations between entities, it is commonly known, mostly used.
+
+There are different types of dialects, but we are using the Chen's notation.
+
+It is important for the Business Applications, having well-designed data makes business applications, more useful, more extendable, more understandable.
+
+Information modelling is about modelling the universe of the system you're working on.
+
+Information modelling is about modelling the UoD (universe of discourse)
+
+The UoD is are the boundaries of your system you're working on. The universe of discourse is not part of the information model itself, but it defines its boundaries. Something might relate to your system, and something might not.
+
+An entity type describes the concept of a group of similar entity instances and these instances have attributes.
+
+== Entities ==
+
+An entity is a "thing" which can be distinctly identified. A specific person, company, or event is an example of an entity.
+
+An *entity* is always represented as a noun is a spoken language.
+
+== Entity set ==
+
+It is a *set (or collection) of entities* or *instances of an entity type* which share the similar properties or attributes. For example a Board Game can have different types, like Puzzle, Monopoly and etc.
+
+== Entity type ==
+
+It is a *concept* which is defining the entities with similar properties or attributes. Like a member, since all the members have the same attributes.
+
+== Attribute ==
+
+The information about an entity or a relationship is obtained by observation or measurement, and is expressesed by a set of attribute-value.
+
+An attribute can be formally defined as a function which maps from an entity set or a relationship set into a value set.
+
+Like a member can have a firstName, hence every Member would also have that attribute.
+
+=== Atrribute properties ===
+
+* Each attribute has a type
+* Each attribute has a value
+* A entity can have values for all the defined attributes, or only for a subset of attributes.
+
+There are also multiple types of attributes
+
+=== Optional attributes ===
+
+An optional attribute is an attribute that may not have a value. It means that there is no value, or you do not know the value. This is usually noted with a small "o" at the top right.
+
+An optional attribute is also called *nullable*!
+
+=== Derived attribute ===
+
+A derived attribute is an attribute where the values can be derived (calculated) from the values of other attributes (like the Age if you know the date of birth). It is usually noted with the [attribute].
+
+=== Multivalued attribute ===
+
+A multivalued attribute is an attribute that can hold multiple values. That is usually noted like {attribute}.
+
+==== Multivalued attributes vs 1NF ====
+
+Multivalued attribute: an attribute can hold *multiple values*
+
+1st Normal Form: Each attribute should contain *atomic values*
+
+If you run accross a multivalued attribute, this is a major hint that you need an extra neity type
+
+=== Composite attributes === 
+
+A composite attribute is an attribute where the values of that attribute can be further subdivided into meaningful sub-parts.
+
+A compite attribute is an attribute composed of multiple other attributes.
+
+Like an address might be composed of multiple factors like street number, city, postal code, and overall form the same attribute.
+
+This is the same case as the multivalued attributes, hence you might need to mutate some components into separate attributes, or entiities. It is usually noted down with small numbers on the right down corner of it.
+
+=== Key attributes ===
+
+Key attributes are like the id that represent the unique entity. It is usually noted via a * in the right top corner. attribute*
+

@@ -1,0 +1,92 @@
+= From conceptual to logical DB model =
+
+* Notation of entity type can be used for relations, but add an additional first column to indicate some constraints like PK, FK, UC
+* Relation name: same name as entity type
+* Include all the simple (optional, and non-optional) attributes
+* Put optional attributes in brackets
+
+= Key attribute =
+
+* Strong entity type
+	* Primary key (PK)
+		* Choose an identifying attribute or combination of those attributes
+		* Prefer a single attribute
+		* Prefer an attribute without a meaning
+		* In case of combination of attributes: no part of the key is redundant!
+	* Cadidate keys: mark as uniqueness constraint (UC/UCx and x a number)
+
+So a Key attribute becomes a PK and we write it in the left column that we spaced.
+
+A component key would become a UC.
+
+For the weak entity types, you would specify both primary keys that the entity is connected with, hence it would be clear that an entity is defined by a combination of multiple PK's
+
+== Derived attribute ==
+
+Is there an added value in performance to store in table?
+
+No, hence you can calculate the value in code, query, or in a stored procedure or view.
+
+Yes, hence calculate in database trigger.
+
+== Composite attribute ==
+
+* Split it in simple attributes.
+* Create an extra relation if it can be a concept, split in simple attributes and treat it as an extra entity type, with a one to many relationship with the former.
+* Keep it composite if the parts are not that important.
+
+== Multi-valued attribute ==
+
+* Create a new relation
+* Add that attribute as an attribute of the new relation
+* If that attriute is not suited to be part of the key, add an extra meaningless attribute
+* Take the primary key of the relation where the multi-valued attribute belonged to and add it as attribute and make it part of the key of the new relation. Together with the other key attribute it will be the primary key
+
+= Binary relationship =
+
+== One-to-many ==
+
+* The entity type of the one side is the parent entity type
+* The entity type of the many side is the child entity type
+* Add the primary key of the parent relation as attribute of the child and create a FK (foreign key) and connect it to the parent (from the child).
+* Draw an arrow from the foreign key to the primary key to the primary key
+
+== One-to-one both mandatory ==
+
+Mandatory participation on both side of the relationship
+
+* Keep separate relations and choose the primary key of one of the relations as primary key in the other relation where the original will be changed as alternate key
+* Keep separate relations and their primary keys but add in one of the relations the primary key as attribute and make it an alternate key.
+* Database trigger should guard the mandatory on the other side in those cases
+* Combine the attributes in one relation and choose one of the keys as primary key and the the other as alternate key
+
+So for example a person might have a personpreference and hence the preference will be combined of the preferenceID, and a FK (also a UC) from the parent.
+
+== One-to-one mandatory/optional ==
+
+Mandatory participation on one side of the relationship
+* The entity type on the mandatory side is the parent entity type
+* The entity type on the optional side os the child entity type
+
+* Keep separate relations and choose the primary key of the parent relation as primary key in the child relation where the original will be changed as alternate key (or drop it if not important)
+* Keep separate relations and their primary keys but addd in the child relation the primary key as attribute and make it an alternate key
+* Combine the attributes in one relation and choose the key of the parent as primary key and the other as alternate key (or drop it if not important). Make the attribute of the client relation optional.
+
+== Many-to-many ==
+
+* Create a new relation
+* Add eventual attributes to the relation
+* Add the primary key of both related relations as attribute and make the combination the primary key of the relation.
+
+So overall, you will have a entity between 2 other entities and then connect them. The middle entity will have (most likely) have the FK's as the PK's as the middle class is dependant on both of them.
+
+== Supertype/Subtype ==
+
+* Create one relation for the supertype and one relation per subtype
+* Create one relation for the supertype with all attributes of the subtypes + flag for indicating each subtype (SP)
+* Create one relation for the supertype and one relation for all the attributes for all subtypes + flag for indicating each subtype (SP+SB)
+* Create one relation per subtype and add the attributes of the supertype in each relation
+
+So you would either have subtypes that are connected to the supertype and have a PK, FK as the PK from the parent (supertype), or have only supertypes but with more values inside. Hence you would have to specify for example a category for each of the entity type, instead of having it as a reference in separate classes.
+
+
