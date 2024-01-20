@@ -21,3 +21,11 @@
 = Lecture 7 =
 
 [[IMELecture7|From conceptual to logical DB model]]
+
+= Lecture 8 =
+
+[[IMELecture8|HTTP API Basics]]
+
+= Lecture 9 =
+
+[[IMELecture9|GraphQL]]

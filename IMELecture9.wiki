@@ -1,0 +1,54 @@
+= Rest API =
+
+When consuming an API, each endpoint represents some information.
+
+Hence, you need to do multiple round-trips before you actually get to what you need.
+
+This can result in over-fetching information
+
+= GraphQL =
+
+It is a language to query the server, and it aims to help the life problems that exist with REST APIs
+
+Server is the single endpoint, and you specify all the data that you want in one siungle trip.
+
+There is no over-fetching as the client already knows what is needed
+
+GraphQL is set up on the back-end.
+
+You can use the postman (or insomnia) to write the queries to the server
+
+A query looks like this:
+{{{graphql
+query {
+	continents { // -- give me the continents 
+		code, // -- for all of them, give me the code
+		name // -- and the name
+}
+}}}
+
+If you would like to filter something, than make sure to use something from the class that you are looking for.
+
+{{{graphql
+query {
+	continents(code: "BE") { // -- give me the continents, whose code is BE 
+		code, // -- for all of them, give me the code
+		name // -- and the name
+}
+}}}
+
+You can aswell filter more extensively:
+
+{{{graphql
+query {
+	continents(filter: { // -- Make sure that the filter you want to use is actually specified.
+			name: {
+				eq: "Belgium"
+			}
+		}) {
+			code, // -- for all of them, give me the code
+			name // -- and the name
+		}
+}}}
+
+

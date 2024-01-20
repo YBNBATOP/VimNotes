@@ -1,0 +1,49 @@
+= HTTP basics =
+
+== Status codes ==
+
+Response statuses indicate whether the request was a success or not. 
+
+There are a couple of classes of them:
+* 100-199 - informational
+* 200-299 - successful
+* 300-399 - redirection
+* 400-499 - client error
+* 500-599 - server error
+
+== Verbs and reponses ==
+
+* POST - create functionality
+* GET - read
+* PUT - update
+* PATCH - modify (partial)
+* DELETE - delete
+
+= Semantics for our modelling =
+
+In general we use the plural form of the noun in our endpoints.
+
+(/games, /books/, /books/{book-id}, /events, /history/{timestamp} and etc.)
+
+Also, we need to use proper parameters.
+
+There are some type of them:
+* Query parameters (/comments?from=....)
+* Path parameters (/book/{book-id}/...)
+* Header parameters (like application/json parameters when fetching in JS)
+* Request body (obv the data sent inside)
+
+= Async vs Sync =
+
+Sync - communication in real time between 2 or more entities
+
+Async - communication where you do not need an immediate response from your peers
+
+= HTTP/HTTP2/WebSockets =
+
+*HTTP* - No concurrent requests over a single connection, multiple connections required sequentially
+
+*HTTP2* - Multiple requests at the same time, binary instead of plain text
+
+*WebSockets* - Full duplex communication over TCP/IP, real-time results
+

@@ -89,4 +89,70 @@ So overall, you will have a entity between 2 other entities and then connect the
 
 So you would either have subtypes that are connected to the supertype and have a PK, FK as the PK from the parent (supertype), or have only supertypes but with more values inside. Hence you would have to specify for example a category for each of the entity type, instead of having it as a reference in separate classes.
 
+= Modelling issues =
+
+== Relations with only identityfing attributes (PK) ==
+
+The relation must be kept if only you really want the data to be kept (like where you really want it)
+
+Though, sometimes it might be possible to get the data from a another table (or entity lets say), hence then you would be able to drop the relation.
+
+In the first case, make sure that your identifiyng attributes are properly set/present so that the data is stored properly.
+
+== Standart value and exceptional value ==
+
+If the data is staying the same (like a delivery is always made on Wednesdays in terms of date), then there is no need for additional attributes for the keep of information.
+
+Though, if your data might as well be null, or the date would change, then there is a need for an additional attribute to be in charge.
+
+Also make sure that the attribute is given to the corresponding entity, that is responsible for the data.
+
+== Time dependant attribute ==
+
+Instead of having attributes dependant of the date and time (like age), use an derived attribute that will allow the value to get calculated.
+
+== Fixed number of attributes ==
+
+Instead of having several similar attributes inside an entity, better have another entity that will handle the information, and then connect it to other entities depending on the needs.
+
+= Normalisation =
+
+== 1NF ==
+
+1NF: all attributes are atomic, and depend on the PK.
+
+No composite/multivalued attributes:
+* split composite ones into original relation
+* split the multivalued attributes into new relations
+
+== 2NF ==
+
+Same as 1NF but also all other attributes that do not depend on the PK, should be given out to a separate entity, and hence having no partial dependency
+
+For example a GameCopy is dependant on the copyNr and gameID, but the gamePublisher would not be, as it is related to the Game entity.
+
+== 3NF ==
+
+Same as 1NF but also all attributes should be dependant on the keys (PK). Looks pretty simialr to the 2NF but you do not have the father PK also included in the child entity.
+
+== BCNF ==
+
+Same as 1NF but every key should be dependant of itself, and not of another part (makes no sense)
+
+So overall the is no partial dependencies between keys.
+
+Overall just make sure that you do not have a dependency having another dependency
+
+== 4NF ==
+
+Same as 1NF but no multi-valued attributes between key parts
+
+So imagine you have a PK that is present, as PK, in 2 entities. Hence, what you would do is get attributes from all the entities that contain it, and put them in a joined big entity having all the over attributes in one place.
+
+== 5NF ==
+
+Same as 1NF but all join-dependencies contain a key. 
+
+This is like the opposite of 4NF, because then you will be actually splitting up the classes (neitites) and adding the PK from the initial class.
+
 
