@@ -61,3 +61,5 @@ XML external entities are a type of custom entity whose definition is located ou
 {{{
 <!DOCTYPE foo [ <!ENTITY ext SYSTEM "http://example.com" > ]>
 }}}
+
+It is also important to know that you can exfiltrate information from redirect to your own server, and hence gathering the access to a special information, but that is very hard to do and should be investigated.
