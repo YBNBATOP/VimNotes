@@ -29,3 +29,5 @@
 = Lecture 9 =
 
 [[IMELecture9|GraphQL]]
+
+[[IMELecture9Exercise6b|A GraphQL exercise]]

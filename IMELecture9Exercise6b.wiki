@@ -1,0 +1,147 @@
+Navigate to the site below and do the exercises according to the text.
+
+https://countries.trevorblades.com/
+
+= Retrieve the names (in English) of all countries =
+
+{{{graphql
+query {
+  countries {
+    name
+  }
+}
+}}}
+
+= Retrieve the names (in English and in the country's native language(s)) of all countries =
+
+{{{graphql
+query {
+  countries {
+    name,
+    native
+  }
+}
+}}}
+
+= Retrieve the unique codes and names of all continents =
+
+{{{graphql
+query {
+  continents {
+    code,
+    name
+  }
+}
+}}}
+
+= Retrieve the names (in English and in the country's native language(s)) of all countries on the European continent =
+
+{{{graphql
+query {
+  continents(filter: {
+    code: {
+      eq: "EU"
+    }
+  }) {
+    countries {
+      name,
+      native
+    }
+  }
+}
+}}}
+
+= Retrieve the names of the official languages (both in English and in the language itself) of Belgium =
+
+{{{graphql
+query {
+  country(code: "BE") {
+  	languages {
+      name,
+      native
+    }
+  }
+}
+}}}
+
+= Retrieve the English names of the countries having the Euro as currency =
+
+{{{graphql
+query {
+  countries(filter: {
+    currency: {
+      in: "EUR"
+    }
+  }) {
+    name
+  }
+}
+}}}
+
+= Retrieve names of countries and their capital (both in English) of all countries having the Euro or British Pound as currency =
+
+{{{graphql
+query {
+  countries(filter: {
+    currency: {
+      in: ["EUR", "GBP"]
+    }
+  }) {
+    name,
+    currency
+  }
+}
+}}}
+
+= Retrieve the names of the countries (in English) and their flag emoji, for all countries having the Euro as currency =
+
+{{{graphql
+query {
+  countries(filter: {
+    currency: {
+      in: "EUR"
+    }
+  }) {
+    name,
+    emoji
+  }
+}
+}}}
+
+= Retrieve country name, phone prefix and per individual state in that country its code and name for all countries on the entire American continent. Group per "sub"continent (North America and South America). =
+
+{{{graphql
+query {
+  continents(filter: {
+    code: {
+      in: ["NA", "SA"]
+    }
+  }) {
+    name,
+    countries {
+      name,
+      phone,
+      states {
+        code,
+        name
+      }
+    }
+  }
+}
+}}}
+
+= Retrieve the name (in English) of the languages with the following codes: nl , fr , de and en . =
+
+{{{graphql
+query {
+  languages(filter: {
+    code: {
+      in: ["nl", "fr", "de", "en"]
+    }
+  }) {
+    name
+  }
+}
+}}}
+
+
