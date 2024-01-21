@@ -2,7 +2,7 @@
 
 == Entity ==
 
-An entity is a thing which can be distinctly identified. A person, a company, or event is an example of an entity.
+An entity is a thing which can be distinctly identified. A person, a company, or event is an example of an entity. (This usually goes into the *domain* level)
 
 == Entity Set ==
 
@@ -130,6 +130,8 @@ public class Member {
 	
 }
 }}}
+
+To have a unique parameter, make sure to implement equals and hashCode for that parameter.
 
 == Weak Entity ==
 

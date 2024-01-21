@@ -8,7 +8,7 @@
 
 = Lecture 4 =
 
-= [[IMELecture4|Key attributes, UoD]] =
+[[IMELecture4|Key attributes, UoD]]
 
 = Lecture 5 =
 
