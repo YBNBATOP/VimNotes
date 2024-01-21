@@ -34,9 +34,29 @@ There are 2 main attack vectors on JWT:
 
 Problems with signatures:
 * No verification
-	* Just a dot separating the payload from NULL
+	* Just a dot separating the payload from NULL (means you can just delete everything after the dot)
 * Arbitrary signatures accepted
 	* Anything that looks like a signature will do 
-	* Flawed signature verification
+	* Flawed signature verification (means you can put "none" as algorithm of encryption and hence even unicode encrypt it to obfuscate the convertion)
 * Weak keys
 	* "secret", "compaanyname", "stackoverflow copy pasta"
+
+You can aswell resign your JWT tokens via using the JWT_TOOL, which will allow you to first crack the password via 10k_most_common txt file or harder. An example of such a command would be:
+
+`python3 jwt_tool.py -C -d 10k_most_common.txt "<token here>"` (-C for crack, and -d for directory) 
+
+After that, you should most probably get the most general key that is used.
+
+Afterwards, you may go ahead and temper with the token and edit it, and reasign it using the same verification:
+
+`python3 jwt_tool.py -T -S HS256 -p "<password found here" "<token here>"` (-T temper)
+
+And then you get your magical JWT. Important to know that you can play around with different information from the JWT toke, like that being the expiration time (that was on the exam), and hence get the access to the more advanced parameters.
+
+There are also problems with the header!
+
+JWT need a valid signature, but self signed signatures also work, because the header reserves a place for a public key in the *jwk* parameter.
+
+Also, there is the *jku* parameter, that means that the server might be considered to choose another value from whatever resource that might be specified.
+
+You can use that for your BurpSuite reasign, and hence get more flexibility with your system.
