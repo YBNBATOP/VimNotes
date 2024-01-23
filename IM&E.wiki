@@ -31,3 +31,5 @@
 [[IMELecture9|GraphQL]]
 
 [[IMELecture9Exercise6b|A GraphQL exercise]]
+
+[[IMELecture9Exercise6a|Exercise with OpenAPI editor]]
