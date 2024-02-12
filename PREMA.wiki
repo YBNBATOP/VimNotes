@@ -4,7 +4,7 @@
 
 [[PREMALecture1.1|Overview]]
 
-[[PREMALecture1.2]]
+[[PREMALecture1.2|MagicBytes and terminology]]
 
 [[PREMALab1|MagicBytes and HexEditor]]
 
