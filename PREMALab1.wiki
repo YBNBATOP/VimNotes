@@ -1,0 +1,9 @@
+= Lab 1 =
+
+== Prerequisites ==
+
+Download the lab1.zip, also make sure you have a Windows 10 VM.
+
+== 1st exercise ==
+
+We get a PNG file, but we can't open it. Hence, it means that the MagicBytes are wrong (because it already has the .png extension). Hence what we need to do is edit those bytes. On Linux you can do that with `hexedit` utility, or `Binary Ninjas`.

@@ -1,0 +1,11 @@
+ = Practical Reverse Engineering and Malware Analysis =
+ 
+ = Lecture 1 =
+
+[[PREMALecture1.1|Overview]]
+
+[[PREMALecture1.2]]
+
+[[PREMALab1|MagicBytes and HexEditor]]
+
+[[]]

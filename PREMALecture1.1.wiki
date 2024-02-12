@@ -1,0 +1,76 @@
+= Base information =
+
+Be ethical and make sure you have moral compass!
+
+Try not to perform information gained in the wild
+
+= Malware Analysis =
+
+Will teach you to analyze samples, sometimes malicious ones, in a safe way
+
+* Finding out what they do, how they work and what you can use to identify them
+
+Will only focus on Windwos based software
+
+* With the focus on 32bit processes
+
+The course is partially base on book, and not required to pass this course
+
+= General idea for PREMA =
+
+Most classes will introduce a new method of investigating a malware sample
+* We teach you how to use this method during the theoretical portion
+* Including demonstration
+
+We have created most Lab samples harmless, to make sure that most of them are not harmful
+* Make sure to use VM
+
+Since the Lab samples are made by us, we introduced codes or flags withing the samples.
+* Upon proper usage of the methods discussed, these flags will become revealed
+
+Very practical exam (open book, open course, open notes, not open internet)
+
+You will be provided with new samples
+
+Applied questions will be asked on those samples (3 hours for solving these questions)
+
+Needed: laptop with any tools of your choosing
+* Suggested the tools from the labs
+* Use VM with snapshots
+
+There will also be a sample exam on Leho
+
+= Malware statistics =
+
+It is a thing to concern about, as it is everywhere
+
+= Fighting malware =
+
+Security awareness
+* What is the main vulnerability that malware exploits? (user)
+
+The other method is more technical: Malware Detection
+* Can be done at different levels: OS, network, mail servers, web servers
+* How:
+	* Signature based (hashes)
+	* Behaviour basaed (processes, insides, and etc, like discord detects malware)
+	* Use both!
+
+= Reverse engineering =
+
+Dissecting programs and software with an important purpose
+
+This is only an overview
+
+Goal:
+* Become familiar with the different ways of doing this
+
+= Overview =
+
+4 big hands-on topics
+* Basic static - safe and underrated
+* Basic Dynamic
+* Advanced Static - Some assembly required
+* Advanced Dynamic - Debugger
+
+

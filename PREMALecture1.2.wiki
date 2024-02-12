@@ -1,0 +1,24 @@
+= Recap and terminology =
+
+What is a file:
+* It is a representation of how everything should be stored on a system
+* Is it the same as a process? Not really
+* Is a file running? No, until you run it
+* What is the hash of a file? 
+* Will the hash of a file change, if we modify the name of the file? No, it will not, as the content is the same!
+
+= Magic Bytes =
+
+Magic Bytes show what kind of file (or type) will it be!
+
+The file utility in Linux uses these magic bytes to know what software should be used to open the file
+
+Windows uses extensions (.exe, .pdf, .docx) to decide what software to use (like associating it)
+
+Such associations used to be in the registry itself, but for now it is more like a pointer to a configuration file
+
+If you change the file type, the magic bytes do not change automatically, and you would need to change them manually
+
+Windows looks for the extension (but it will also check the files inside), and Linux watches the magic bytes.
+
+
