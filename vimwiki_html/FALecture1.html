@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<title>FALecture1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="General course introduction"><h1 id="General course introduction" class="header"><a href="#General course introduction">General course introduction</a></h1></div>
+
+<p>
+Teachers:
+</p>
+<ul>
+<li>
+Daan  Pareit
+
+<li>
+Koen Koreman
+
+</ul>
+<p>
+THis course:
+</p>
+<ul>
+<li>
+Forensics process &amp; HDD/SSD fundamntals
+
+<li>
+Volunmes, partitions, bootloaders
+
+<li>
+Windows File System
+
+<li>
+Linux File systems
+
+<li>
+Windows OS forensics
+
+<li>
+Anti forensics &amp; data carving
+
+<li>
+Forensics automated tools
+
+<li>
+Guest lectures
+
+</ul>
+<p>
+In PREMA -  we look for memory analysis
+</p>
+
+<p>
+In NSP - we look more for network analysis
+</p>
+
+<p>
+The work load is 75h
+</p>
+
+<div id="Evaluation"><h1 id="Evaluation" class="header"><a href="#Evaluation">Evaluation</a></h1></div>
+
+<ul>
+<li>
+Uploading labs, with reports, personal screenshots, completing quizzes (every lab need to be finsihed and submitted in 2 weeks) - 33%
+
+<li>
+There is no chance for a second resit with labs
+
+<li>
+Quizzes are infinite
+
+<li>
+The exam - 67%, and is a multiple choice question style
+
+<li>
+No guess penalty
+
+<li>
+Similar to the labs information
+
+<li>
+No pratical part, but based on information from labs
+
+<li>
+Make sure to respect the disclaimer
+
+</ul>
+<div id="Part 1: The forensics process"><h1 id="Part 1: The forensics process" class="header"><a href="#Part 1: The forensics process">Part 1: The forensics process</a></h1></div>
+
+<p>
+It is the use of science and technology to investigate and establish facts in criminal or civil courts of law
+</p>
+
+<p>
+The goal of computer forensics is to explain the current state of a digital artifact. We are trying to find artifacts, not evidence! This is like finding something that happened on a certain hardware, at some time, and aetc etc.
+</p>
+
+<p>
+Forensics is first and foremost - <span id="Part 1: The forensics process-a legal process"></span><strong id="a legal process">a legal process</strong> and it should be replicable
+</p>
+
+<p>
+At the same time we try to get a grip of the incident reponse, and then combine it with the digital forensics and then we get the idea of <span id="Part 1: The forensics process-DFIR"></span><strong id="DFIR">DFIR</strong> 
+</p>
+
+<p>
+There are multiple parts of forensic process:
+</p>
+<ul>
+<li>
+Acquisition - getting sometghing for investigation
+
+<li>
+Analysis - checking the information itself
+
+<li>
+Presentation - trying to replicate the investigation results
+
+</ul>
+<p>
+There are tools like write blockers, that disallow you to write anything to the disk anymore, and that is very important to keep the information intact.
+</p>
+
+<p>
+Disk imagers are also a great tool to make sure that you take a copy of your disks (software and hardware wise)
+</p>
+
+<p>
+The mobile forensics is also very interesting as it has its own tools, and something more like the faraday bags for the phones which blocks the radio signals and etc.
+</p>
+
+<div id="Part 2: HDD &amp; SSD funamentals"><h1 id="Part 2: HDD &amp; SSD funamentals" class="header"><a href="#Part 2: HDD &amp; SSD funamentals">Part 2: HDD &amp; SSD funamentals</a></h1></div>
+
+<div id="Part 2: HDD &amp; SSD funamentals-HDD"><h2 id="HDD" class="header"><a href="#Part 2: HDD &amp; SSD funamentals-HDD">HDD</a></h2></div>
+
+<p>
+There are some component parts of the HDD:
+</p>
+<ul>
+<li>
+Spindle
+
+<li>
+Magnetic platter
+
+<li>
+Arm (reads the platter)
+
+<li>
+PCB
+
+<li>
+Actuator
+
+<li>
+Magnetic head
+
+<li>
+Actuator arm
+
+</ul>
+<p>
+The sector is the smallest part of the HDD, which then formates the cluster, then tracks (around), and then the cylinder
+</p>
+
+<p>
+A sectore size is usually 521 bytes! Normally, they can diverge from different HDD to each one.
+</p>
+
+<p>
+To understand how much space you have, you can check out the LBA (Logical Block Addressing) and then multiply it by * 512 and then you get the value of bytes/bits
+</p>
+
+<div id="Part 2: HDD &amp; SSD funamentals-SSD"><h2 id="SSD" class="header"><a href="#Part 2: HDD &amp; SSD funamentals-SSD">SSD</a></h2></div>
+
+<p>
+SSD have no moving mechanical components
+</p>
+
+<p>
+These can be in the 2.5 Sata format, or M.2 NVMe or sata aswell.
+</p>
+
+<p>
+The basic element of the SSD is the NAND cell. THe SSD's are also having such a thing as TBW which is the amount of time that it takes to exhaust it.
+</p>
+
+<p>
+This TBW is actually related to loading the cells with electronic charges, which means that the electrons can not transfer after some time. Then the load was divided into multiple values, like TLC, MLC, SLC. That specifies how many states a bit can have. Hence, the SLC is the most reliable, while TLC is the least one. 
+</p>
+
+<p>
+Pages - are the minimum unit to write
+</p>
+
+<p>
+Blocks - are the minimum unit to erase
+</p>
+
+</body>
+</html>

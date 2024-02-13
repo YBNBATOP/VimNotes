@@ -1,0 +1,242 @@
+= Introduction to Kotlin =
+
+== Preword ==
+
+We will make use of Jetpack Compose ot build UI's, we will learn how to build Android apps, and also `Kotlin` as a programming language, to develop these apps. 
+
+= First program in Kotlin =
+
+This is how a basic Hello World looks in Kotling
+
+{{{kotlin
+fun main() {
+	println("Hello, World!")
+}
+}}}
+
+It is important to notice the strucuture:
+* fun, which is the same as function
+* main, which is the name of the function
+* body of the function
+* maintain indenting!
+* do not forget to wrap with {}
+* inputs go inside the main()
+
+Style guide:
+* space after function (name() {)
+* indenting 
+* align vertically
+
+It is important to have one operation per line, like here:
+{{{kotlin
+fun main() {
+    println("Cloudy") 
+    println("Partly Cloudy")
+    println("Windy")
+}
+}}}
+
+Overall, just remember that is looks similar to any JS program and maybe a bit of python
+
+= Variables in Kotlin =
+
+Variable - container for a single piece of data (or boxes that you label, and then the contents are the same as the name itself)
+
+You first define the variable, and then you will be able to call it. You uniquely identify a variable by its name.
+
+== Data types ==
+
+* String - Text
+* Int - Integer number
+* Double - Decimal number
+* Float - Decimal number, less precise than double, and has f or F at the end of the number
+* Boolean - true or false
+
+== Variable declaration ==
+
+This is how to define a variable in Kotlin:
+{{{kotlin
+fun main() {
+	val count: Int = 2
+	println(count)
+}}}
+
+In the case above, you specify `val`, which is like const, and then you say the name, data type, and value (looks like Java)
+
+You can use your variables inside the print statements:
+{{{kotlin
+fun main() {
+	val count: Int = 2
+	println("You have this many $count unread messages")
+}
+}}}
+
+This reminds of JS with its usage of variables inside, but here you can just use the $name and get the value of the variable itself
+
+Also, you can do some calculations wiht the variables:
+{{{kotlin
+fun main() {
+    val unreadCount = 5
+    val readCount = 100
+    println("You have ${unreadCount + readCount} total messages in your inbox.")
+}
+}}}
+
+Inside the ${} you can do operations that you need.
+
+*Important note*: You should specify the type of the variable if you do not provide the value from the beginning. Otherwise, you can just do `val name = 2` and it will automatically understand what kind of data type it is. 
+
+Another example:
+{{{kotlin
+fun main() {
+    val numberOfPhotos = 100
+    val photosDeleted = 10
+    println("$numberOfPhotos photos")
+    println("$photosDeleted photos deleted")
+    println("${numberOfPhotos - photosDeleted} photos left")
+}
+}}}
+
+== Update variable ==
+
+If you try to do something like this:
+{{{kotlin
+fun main() {
+    val cartTotal = 0
+    cartTotal = 20
+    println("Total: $cartTotal")
+}
+}}}
+
+You will fail, as you cannot reassign anything to `val`. Hence, we are going to make use of `var`, which is something like let in JS.
+
+This would work, for example:
+{{{kotlin
+fun main() {
+    var cartTotal = 0
+    println("Total: $cartTotal")
+
+    cartTotal = 20
+    println("Total: $cartTotal")
+}
+// output is 0
+// outpus is 20
+}}}
+
+This will work aswell:
+{{{kotlin
+fun main() {
+    var count = 10
+    println("You have $count unread messages.")
+    count = count + 1
+    println("You have $count unread messages.")
+}
+}}}
+
+== Other data types ==
+
+Do not forget that you have a bunch of other data types
+
+Here is an example with Double:
+{{{kotlin
+fun main() {
+    val trip1: Double = 3.20
+    val trip2: Double = 4.10
+    val trip3: Double = 1.72
+    val totalTripLength: Double = trip1 + trip2 + trip3
+    println("$totalTripLength miles left to destination")
+}
+
+// output: 9.02 miles left to destination
+}}}
+
+Do not forget that in the case above it will also work if you simply asign the values without the types!
+
+{{{kotlin
+fun main() {
+    val nextMeeting = "Next meeting:"
+    val date = "January 1"
+    val reminder = nextMeeting + date
+    println(reminder)
+}
+}}}
+Also, check this out, this is String concatenation!
+
+Additionally, you should know that you can escape some characters that are needed as output:
+
+{{{kotlin
+fun main() {
+    println("Say \"hello\"")
+}
+//output: Say "hello"
+}}}
+
+Here is an example of some boolean!
+
+{{{kotlin
+fun main() {
+    val notificationsEnabled: Boolean = false
+    println("Are notifications enabled? " + notificationsEnabled)
+}
+//output: Are notifications enabled? false
+}}}
+
+Some important conventions:
+* val discount: Double = .20
+* var pet = "bird"
+* val sum = 1 + 2
+
+Do not forget that you can also add comments!
+
+{{{kotlin
+/**
+ * This program displays the number of messages
+ * in the user's inbox.
+ */
+fun main() {
+    // Create a variable for the number of unread messages.
+    var count = 10
+    println("You have $count unread messages.")
+
+    // Decrease the number of messages by 1.
+    count--
+    println("You have $count unread messages.")
+}
+}}}
+
+== Summary ==
+
+
+* A variable is a container for a single piece of data.
+* You must declare a variable first before you use it.
+* Use the val keyword to define a variable that is read-only where the value cannot change once it's been assigned.
+* Use the var keyword to define a variable that is mutable or changeable.
+* In Kotlin, it's preferred to use val over var when possible.
+* To declare a variable, start with the val or var keyword. Then specify the variable name, data type, and initial value. For example: val count: Int = 2.
+* With type inference, omit the data type in the variable declaration if an initial value is provided.
+* Some common basic Kotlin data types include: Int, String, Boolean, Float, and Double.
+* Use the assignment operator (=) to assign a value to a variable either during declaration of the variable or updating the variable.
+* You can only update a variable that has been declared as a mutable variable (with var).
+* Use the increment operator (++) or decrement operator (--) to increase or decrease the value of an integer variable by 1, respectively.
+* Use the + symbol to concatenate strings together. You can also concatenate variables of other data types like Int and Boolean to Strings.
+
+= Functions in Kotlin =
+
+Basic information:
+* Declaring a function uses the `fun` keyword and contains the body of what needs to happen
+
+All the examples were written in the `main()` function, but it is like a `psvm` in Java, that executes automatically. Hence, you need to create other functions, and then you will be able to call other functions to actually be called from the main() 
+
+Like this: 
+{{{kotlin
+fun main() {
+    birthdayGreeting()
+}
+
+fun birthdayGreeting() {
+    println("Happy Birthday, Rover!")
+    println("You are now 5 years old!")
+}
+// Happy Birthday, Rover!
+// You are now 5 years old!
+}}}

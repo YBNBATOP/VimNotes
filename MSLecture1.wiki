@@ -1,0 +1,74 @@
+= Introduction - Android development =
+
+Contents:
+* Application development
+* ABD
+* Rooting
+* Statis analysis
+* Dynamic analysus
+* Malware
+
+Evaluation:
+* Individual project (100%)
+* Work on assignment during classes !
+* Need to be presented like Honeypot after 10 weeks
+* See guidlines for all the information
+
+= Guidlines (Overall) =
+
+Create an android application to pentest
+
+Has:
+* at least 2 screens
+* connection to local database
+* request to an API
+* malware inserted in the application
+* functionaluty that can be bypassed using Frida
+
+Not allowed:
+* use of frameworks (like flatter)
+* use of XML views (an old way to create views, but we use Jetpack Compose)
+
+Do not spend much time on UI !
+
+Check for example application afterwards in slides ! As a bonus - learn how to inject a written malware inside your APK !
+
+Frida is a tool that can do a lot of interesting functions and give you way more freedom
+
+Evaluation:
+* 85 - application maintained in gitlab
+* live demonstration with questions
+* also some theory - 15
+
+Practical:
+* deadline is 7th of May
+* No other evaluation period !
+* You can ask for an evaluation at every momemnt, but the deadline is the last day
+
+This is not the hardest course, so you will do good
+
+= Practical lessons =
+
+Eveery topic is published on LEHO, including labs and solutions, videos
+
+Learn by Units, also published !
+
+Make sure you get through all the possible information !
+
+= Android Development =
+
+Jetpack Compose is Androids recommended modern toolkit for building native UI
+
+Kotlin is also useful as it is more new
+
+Google offers tutorials to learn programming in Kotlin and build basic Andoid applications
+
+The pathway for these tutorials can be found on LEHO
+
+= Path to follow =
+
+The path to follow seems to be a bit different:
+* The course starts more like from Topic 1 with units (it gives information upon how to build an application)
+* But officially it starts from the Topic 2, and then you can eventually do the labs
+
+For beginning (13.02.2024) - get to learn the first parts, Topic 1, and start creating something

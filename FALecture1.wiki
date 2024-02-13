@@ -1,0 +1,88 @@
+= General course introduction = 
+
+Teachers:
+* Daan  Pareit
+* Koen Koreman
+
+THis course:
+* Forensics process & HDD/SSD fundamntals
+* Volunmes, partitions, bootloaders
+* Windows File System
+* Linux File systems
+* Windows OS forensics
+* Anti forensics & data carving
+* Forensics automated tools
+* Guest lectures
+
+In PREMA -  we look for memory analysis
+
+In NSP - we look more for network analysis
+
+The work load is 75h
+
+= Evaluation =
+
+* Uploading labs, with reports, personal screenshots, completing quizzes (every lab need to be finsihed and submitted in 2 weeks) - 33%
+* There is no chance for a second resit with labs
+* Quizzes are infinite
+* The exam - 67%, and is a multiple choice question style
+* No guess penalty
+* Similar to the labs information
+* No pratical part, but based on information from labs
+* Make sure to respect the disclaimer
+
+= Part 1: The forensics process =
+
+It is the use of science and technology to investigate and establish facts in criminal or civil courts of law
+
+The goal of computer forensics is to explain the current state of a digital artifact. We are trying to find artifacts, not evidence! This is like finding something that happened on a certain hardware, at some time, and aetc etc.
+
+Forensics is first and foremost - *a legal process* and it should be replicable
+
+At the same time we try to get a grip of the incident reponse, and then combine it with the digital forensics and then we get the idea of *DFIR* 
+
+There are multiple parts of forensic process:
+* Acquisition - getting sometghing for investigation
+* Analysis - checking the information itself
+* Presentation - trying to replicate the investigation results
+
+There are tools like write blockers, that disallow you to write anything to the disk anymore, and that is very important to keep the information intact.
+
+Disk imagers are also a great tool to make sure that you take a copy of your disks (software and hardware wise)
+
+The mobile forensics is also very interesting as it has its own tools, and something more like the faraday bags for the phones which blocks the radio signals and etc.
+
+= Part 2: HDD & SSD funamentals =
+
+== HDD ==
+
+There are some component parts of the HDD:
+* Spindle
+* Magnetic platter
+* Arm (reads the platter)
+* PCB
+* Actuator
+* Magnetic head
+* Actuator arm
+
+The sector is the smallest part of the HDD, which then formates the cluster, then tracks (around), and then the cylinder
+
+A sectore size is usually 521 bytes! Normally, they can diverge from different HDD to each one.
+
+To understand how much space you have, you can check out the LBA (Logical Block Addressing) and then multiply it by * 512 and then you get the value of bytes/bits
+
+== SSD ==
+
+SSD have no moving mechanical components
+
+These can be in the 2.5 Sata format, or M.2 NVMe or sata aswell.
+
+The basic element of the SSD is the NAND cell. THe SSD's are also having such a thing as TBW which is the amount of time that it takes to exhaust it.
+
+This TBW is actually related to loading the cells with electronic charges, which means that the electrons can not transfer after some time. Then the load was divided into multiple values, like TLC, MLC, SLC. That specifies how many states a bit can have. Hence, the SLC is the most reliable, while TLC is the least one. 
+
+Pages - are the minimum unit to write
+
+Blocks - are the minimum unit to erase
+
+
