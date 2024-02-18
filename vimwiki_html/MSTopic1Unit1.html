@@ -380,5 +380,146 @@ fun birthdayGreeting() {
 // You are now 5 years old!
 </pre>
 
+<div id="Functions in Kotlin-Returning a value"><h2 id="Returning a value" class="header"><a href="#Functions in Kotlin-Returning a value">Returning a value</a></h2></div>
+
+<p>
+Functions in Kotlin can as well specify what type they return. There are of course multiple types.
+</p>
+
+<p>
+To specify a retunr type, you should do something similar to values:
+</p>
+<pre kotlin>
+fun main() {
+	birthdayGreeting()
+}
+
+fun birthdayGreeting(): Unit {
+	println("Happy birthday, Rover!")
+}
+
+</pre>
+
+<p>
+Most important it is just to remember to use the ":" and then the type you need.
+</p>
+
+<p>
+<span id="Functions in Kotlin-Returning a value-Unit"></span><strong id="Unit">Unit</strong> is a special type, used for when you return no values.
+</p>
+
+<p>
+But, if it would be anything else, then you need a return statement.
+</p>
+
+<pre kotlin>
+
+fun main() {
+	val greeting = birthdayGreeting()
+	println(greeting)
+}	
+
+fun birthdayGreeting(): String {
+    val nameGreeting = "Happy Birthday, Rover!"
+    val ageGreeting = "You are now 5 years old!"
+    return "$nameGreeting\n$ageGreeting"
+}
+
+</pre>
+
+<div id="Functions in Kotlin-Asking for a parameter"><h2 id="Asking for a parameter" class="header"><a href="#Functions in Kotlin-Asking for a parameter">Asking for a parameter</a></h2></div>
+
+<p>
+You can also pass arguments to the functions, just like this:
+</p>
+
+
+<pre kotlin>
+
+fun main() {
+	val greeting = birthdayGreeting("Rover")
+	println(greeting)
+}	
+
+fun birthdayGreeting(name: String): String {
+    val nameGreeting = "Happy Birthday, $name!"
+    val ageGreeting = "You are now 5 years old!"
+    return "$nameGreeting\n$ageGreeting"
+}
+
+</pre>
+
+<pre kotlin>
+
+fun main() {
+	val greeting = birthdayGreeting("Rover", 5)
+	println(greeting)
+}	
+
+fun birthdayGreeting(name: String, age: Int): String {
+    val nameGreeting = "Happy Birthday, $name!"
+    val ageGreeting = "You are now $age years old!"
+    return "$nameGreeting\n$ageGreeting"
+}
+
+</pre>
+
+<p>
+This way you can give your functions some input, and get some output.
+</p>
+
+<p>
+So how it looks:
+</p>
+
+<pre kotlin>
+fun nameOfFunction(parameter: Type): ReturnType {
+	//computation
+	return value
+}
+</pre>
+
+<p>
+You can also put the arguments in a way that you want, like this:
+</p>
+
+
+<pre kotlin>
+
+fun main() {
+	val greeting = birthdayGreeting(age = 5, name = "Rover")
+	println(greeting)
+}	
+
+fun birthdayGreeting(name: String, age: Int): String {
+    val nameGreeting = "Happy Birthday, $name!"
+    val ageGreeting = "You are now $age years old!"
+    return "$nameGreeting\n$ageGreeting"
+}
+
+</pre>
+
+<p>
+You can also have default values for the parameters, like this:
+</p>
+
+<pre kotlin>
+
+fun main() {
+	val greeting = birthdayGreeting(age = 5)
+	println(greeting)
+}	
+
+fun birthdayGreeting(name: String = "Rover", age: Int): String {
+    val nameGreeting = "Happy Birthday, $name!"
+    val ageGreeting = "You are now $age years old!"
+    return "$nameGreeting\n$ageGreeting"
+}
+</pre>
+
+<p>
+But also, do not forget to then change the value to a specific one, otherwise it will break (so you dont try to put a string into a Int. Maintain order!)
+</p>
+
 </body>
 </html>
