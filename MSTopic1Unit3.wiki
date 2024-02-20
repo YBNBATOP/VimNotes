@@ -1,0 +1,194 @@
+# General knowledge
+
+`@Composable` annotation tells the compiler that the function is meant to convert data into UI
+
+When creating functions, make sure to also accept a modifier in the parameters!
+
+Just like this:
+{{{kotlin
+@Composable
+fun GreetingText(message: String, modifier: Modifier = Modifier) {
+}
+}}}
+
+Then, you should call *Text()* to make some text appear in the UI.
+
+The you can test it first in the preview function
+
+Then, you can get back to the function, and change something related to the Text, like font size.
+
+{{{kotlin
+@Composable
+fun GreetingText(message: String, modifier: Modifier = Modifier) {
+    Text(
+        text = message,
+        fontSize = 100.sp
+    )
+}
+}}}
+
+*sp* is a measurement unit, scalable pixels.
+
+In Compose there are different parameters that go to different parts. Like text related information will go to Text(). Background color would go to the *Surface()*
+
+
+You can add additional items into one function, and then have like, multiple text boxes!
+
+{{{kotlin
+@Composable
+fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+    Text(
+        text = message,
+        fontSize = 100.sp,
+        lineHeight = 116.sp
+    )
+    Text(
+        text = from,
+        fontSize = 36.sp
+    )
+}
+}}}
+
+You can structure the boxes in some ways, the standart ones are *Box(), Column(), Row()*. You can manage the way you have your UI hierarchy and who is a children of who.
+
+This is an example of how to wrap the function contents:
+{{{kotlin
+@Composable
+fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+    Row {
+        Text(
+            text = message,
+            fontSize = 100.sp,
+            lineHeight = 116.sp,
+        )
+        Text(
+            text = from,
+            fontSize = 36.sp
+        )
+    }
+}
+
+}}}
+
+Also it is important to pass the modifier to the funcion (Column()), as then you want to pass it to the children:
+{{{kotlin
+@Composable
+fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+    Column(modifier = modifier) {
+        Text(
+            text = message,
+            fontSize = 100.sp,
+            lineHeight = 116.sp
+        )
+        Text(
+            text = from,
+            fontSize = 36.sp
+        )
+    }
+}
+}}}
+
+Your function can also be scalled:
+{{{kotlin
+@Composable
+fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier.padding(8.dp)
+    ) {
+        Text(
+            text = message,
+            fontSize = 100.sp,
+            lineHeight = 116.sp,
+            textAlign = TextAlign.Center
+        )
+        Text(
+            text = from,
+            fontSize = 36.sp
+        )
+    }
+}
+}}}
+
+*dp* seems to be used as rem in web dev, and it is Density-independent Pixels
+
+*Important note*: You have column, and then inside it you have the arrangement, and the modifier parameters. To understand it better, jsut think of it as a div container (parent), and then you have your children elements inside (Text()) which are children inside the big container. It is important to understand that it is essentially boxes you are working with. 
+
+It is also a good practice to give the modifier from the parent where the funciton was called.
+
+This is how your code will look like:
+{{{kotlin
+package com.example.happybirhtday
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.happybirhtday.ui.theme.HappyBirhtdayTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            HappyBirhtdayTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    GreetingText(
+                        message = "Happy Birthday Sam!",
+                        from = "from Emma",
+                        modifier = Modifier.padding(8.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier // parameters passed from setContent
+    ) {
+        Text(
+            text = message,
+            fontSize = 100.sp,
+            lineHeight = 116.sp,
+            textAlign = TextAlign.Center
+        )
+        Text(
+            text = from,
+            fontSize = 36.sp,
+            modifier = Modifier
+                .padding(16.dp)
+                .align(alignment = Alignment.End)
+        )
+    }
+}
+
+
+@Preview(showBackground = true, name = "BirthdayCardPreview")
+@Composable
+fun BirthdayCardPreview() {
+    HappyBirhtdayTheme {
+        GreetingText(message = "Happy Birthday Sam!", from = "from Emma")
+    }
+}
+}}}
+

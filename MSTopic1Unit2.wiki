@@ -1,0 +1,102 @@
+# Introduction
+
+## What will we study
+
+* How to create an Android App with Android Studio
+* How to run apps with Preview tool Android Studio
+* How to update text with Kotlin
+* How to update a User Interface (UI) with Jetpack Compose
+* How to see a preview of your app with Preview in Jetpack Compose
+
+To create a new project, all you have to do, is enter Android Studio, then create new Project, and choose the *Empty Activity*, as it will create a Compose App
+
+After that, give it a name, and then go ahead and create it.
+
+You will have something predefined (made) for you, and it is put in packages
+
+You can also take a another look at the Project Files, by selecting *Project Source Files* at the top of project files
+
+In Kotlin, the main function, starting one, is the *main()*. In Android, it is *onCreate()*
+In our case it looks something like this:
+{{{kotlin
+
+class MainActivity : ComponentActivity() {
+   override fun onCreate(savedInstanceState: Bundle?) {
+       super.onCreate(savedInstanceState)
+       setContent {
+           GreetingCardTheme {
+               // A surface container using the 'background' color from the theme
+               Surface(
+                   modifier = Modifier.fillMaxSize(),
+                   color = MaterialTheme.colors.background
+               ) {
+                   Greeting("Android")
+               }
+           }
+       }
+   }
+}
+}}}
+
+
+Inside, you can see the *setContent()* function, that sets the layout through composable functions. All functions with *@Composable* can be called from *setContent()*, or other Composable functions. This functions are used to generate the UI
+
+Here is an example of such a function:
+{{{kotlin
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(text = "Hello $name!")
+}
+}}}
+
+To create a function, you:
+* Add the `@Composable` annotation
+* Capitalized function name
+* and return nothing
+
+You can also define special functions, that will work for your preview in the Split view, not to run  the whole app everytime:
+{{{kotlin
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    GreetingCardTheme {
+        Greeting("Meghan")
+   }
+}
+}}}
+
+Such functions use their own variables, but also have additional parameter - *showBackgorund*, which can be false or true.
+
+By wrapping it with `@Preview`, you can have a function then that defines a preview.
+
+To change the background color, you need to add *Surface*, and then change values that you want. To do that, just select the line, then do something like in IDEA, and surround with widget, and then with Container
+
+This is how it looks:
+{{{kotlin
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Box {
+        Text(
+            text = "Hi, my name is $name!",
+            modifier = modifier
+        )
+    }
+}
+}}}
+
+You delete the Box, and then use *Surface(color = Color.Cyan)*
+
+You can then modify the padding, by modifying the modifier. And then the function will look like this:
+{{{kotlin
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Surface(color = Color.Cyan) {
+        Text(
+            text = "Hi, my name is $name!",
+            modifier = modifier.padding(24.dp)
+        )
+    }
+}
+}}}
+
+
