@@ -1,0 +1,103 @@
+= Antivirus scanning = 
+
+YOu can get a lot of information about a file, just by looking at its *properties*, like in Windows for example (important to remember for lab 2)
+
+A useful first step, but also AV software also relies mostly on signatures or heuristics (like it remembers the patterns, and then tries to identify similartities)
+
+Multiple scanners increase the chances to identify known malware (like VirusTotal)
+
+There are other ways ot actually google for the issue, like looking at the MD5 hash, or maybe looking for interesting unique strings.
+
+= Hashing =
+
+Hashes are *One way Cryptographic Functions*
+
+* Length is independent of the input size.
+* Impossible to calculate the origianl data
+* When the function is repreated with same input, hash remains the same
+
+* Digital fingerprinting (also used for file verification), like downloading Arch ISO and checking it with the PGP keys.
+* Crypto calculation, creating a unique value
+* 1-bit change = large difference in value
+* MD5 and SHA-1 are most popular
+* Black and White List
+* Generate, search, share
+
+= Strings = 
+
+First action, just *look* at the file:
+* Opening in notepad is not the best idea
+* Opening in a hex editor might be better, but still not ideal
+* Take a look at *ASCII* strings within a file, with utilities (like BinText)
+
+They are used:
+* Identifying sequence of characters
+* Print a message
+* Connect to URL or domain
+* Copy a file
+* Registry key
+
+== How does it work? ==
+
+ASCII and Unicode strings end with a null terminator
+
+ASCII strings use 1 byte per character
+
+Unicode ususally uses 2 bytes per character
+
+== Searching for Strings ==
+
+Is not fool proof
+* Do not base all your conclusions on the strings that were found
+* May not be used at runtime
+* They can be modified (while working)
+* Most strings programs only look for 5 or more consecutive ASCII chars
+* Always requires Human Interpretation
+
+= Packers =
+
+The main idea is to obfuscate and pack the malware
+
+Obfuscation target:
+* Hiding the execution
+
+Packing:
+* A subset of obfuscation
+* Compressesd and not directly analyzable (like with UPX)
+
+Can protect against Basic Static Techniques
+
+Packing goals can be dual:
+* Make the malware smaller, obfuscated or both
+
+Packing is like putting 2 EXE's into one. This makes static analysis of a packed file possible, but hard (remember for lab 2)
+
+To detect packer, you can use different tools, like *PEiD*, or *Exeinfo PE*
+
+But you also should be careful, as it might eventually run the application or something
+
+= PE Headers =
+
+PE stands for portable executable (or any other EXE in general)
+
+The Windows format for *all* executable files
+
+PE always has a DOS and an NT Header (for backwards compatibility, and it can be read from the strings
+
+The PE header also contains a great number of useful pieces of information for an analyst, like timestamp, linked libraries, API calls, imports, exports
+
+PE Header sections:
+* Imports - functions that are used from other libraries
+* Exports - Functions meant to be used by other programs
+* Timestamp - When was the program compiled (last time)
+* Sections - Static pieces of data meant to be used during execution
+* Subsystem - CLI (CUI) or GUI program
+* Resources - Static encoded data such as icons, menu's, strings, logo's
+
+Extensions are not what makes up a file format! Remember Magic Bytes and the fact that you can just rename the file.
+
+The imports can tell us a lot about the purpose of the file.
+
+One of the most useful tools here would be the Resource Hacker, or Dependency Walker
+
+Sometimes if the code is compiled, you will need to decompile it, in order to be able to read the code and maybe the strings themselves.

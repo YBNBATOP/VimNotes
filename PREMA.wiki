@@ -8,3 +8,8 @@
 
 [[PREMALab1|MagicBytes and HexEditor]]
 
+= Lecture 2 =
+
+[[PREMALecture2|Static Analysis]]
+
+[[PREMALab2|Static analysis and tools ]]
