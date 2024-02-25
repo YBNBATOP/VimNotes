@@ -1,13 +1,19 @@
 = Studying =
 
+== Semester 3 ==
+
 [[IM&E]]
 
 [[OSC]]
 
 [[WBA]]
 
+== Semester 4 ==
+
 [[PREMA]]
 
 [[MS]]
 
 [[FA]]
+
+[[NSP]]

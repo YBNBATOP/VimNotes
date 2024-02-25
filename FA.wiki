@@ -1,3 +1,6 @@
 = Forensic Analysis =
 
 [[FALecture1|Introduction,Forensic process, Storage disk fundamentals]]
+
+[[FALecture2|Logical structures of a drive]]
+

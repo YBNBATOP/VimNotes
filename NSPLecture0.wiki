@@ -1,0 +1,39 @@
+= Introduction =
+
+We will be put in a mind-set of a hacker
+* Aside from technical aspects, there will be focus on being a moral and ethical one
+
+By knowing how a hacker works, we can analyze and repeat its actions and therefore resolve issues and/or improve security
+* Hacking is knowing how it works
+* Part of the job is being a researcher
+
+It is called network and system pentesting, so we foucs on computer networks.
+
+We can perform the actions on our own networks only! In order to understand the possible problems, identify weak links, strenghten the organization
+
+We will have a Exam, and also we will have to make a final report, and other reports before the deadline. This is probably different, as you have one *final audit report* and other reports to do.
+
+= Audit repoort =
+
+== Pentest ==
+
+A pentest or penetration test is defines as the act of evaluating the security of a system by identifying the wekanesses and streghts in a ethical way.
+
+Important questions we try to answer:
+* Are systems x,y, z secure?
+* Is our bussiness secure and our employees vigilant enough?
+* What information could a hacker gather?
+* If we are at risk, what mitigations do you recommend?
+* If we have to change multiple things, what should be the top-priority?
+
+== Audit report or Technical Summary ==
+
+Every lecture/lab covers a specific method, technique or element from a pentest
+* It is suggested to take notes and create well documented reports, which is hard!
+* At the end, we will combine all our documentation and knowledge in an Audit Report ready to present to a company (Part of the exercise is to think about the contents, the suggestions and the message you want to give the company)
+
+We will get access to our own network of Howest to be able to do whatever we need, or study
+
+== CEH (Certified Ethical Hacker) ==
+
+There is no better moment to get ready for the CEH certificate, as it is right now. The more time you spend preparing for it and other things, the better it is/

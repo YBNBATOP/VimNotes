@@ -1,0 +1,78 @@
+= Volumes and partitions =
+
+First thing that you should know is `disk management`.
+
+For example, you may see there the multiple partitions you have, for your windows
+
+In Linux, you can have the same thing, but there you would run `sudo run fdisk -l /dev/sda`, and see the information. They are usually marked as `sdx`, as it stands for `scusi disk`, and then the letters.
+
+Partition: a single hard disk, can be divided into several parts
+
+Volumes: You can span a volume, over different disks (like a part of a disk would be split over others), and it will be the same partition, but over other partition
+
+= MBR for partitions tables =
+
+The MBR (Master Boot record) is most important structure on the disk, and is created when you partition the disk
+
+The booltloader is the base in your disk, where the information about your file system is stored.
+
+The MBR is created when you partition your disk. It conist of:
+- a small amount of executable code
+- the partition table for disks (64 bytes, 16 bytes each and 4 possible partitions, 8 bytes for each one (1 bytes == 4 hex signs)
+- a 2-byte structure called a signature word or end of sector marker (55aa usually)
+
+It is a total of 512 bytes
+
+MBR also has a boot code (446 bytes). It can have something inside (LILO for example), but can also pointer to a bootloader (like GRUB), so that some part of the bootloader is in the MBR, but some is on the partition like /efi fromm the Linux
+
+Every partition has its own information being written in its space
+
+== Disk signature ==
+
+For example, in Windows, any disk connected would get written into the registry
+
+== #Partitions ==
+
+One primary partitions is a "extended partition". That is the case when you use MBR and not GPT, and then you have a maximum of 4 partitions (but in reality it is 3 primary ones, and then 1 extended). This extended partitions have their own "logical partitions", and then are not bootable, they are just there as rounting measures for the main MBR code.
+
+Each of these extended paritions have its own *EBR (Extended Boot Record)*. So for example the extended partitiosn would have the addresses of 2 logical partitions, and then the partitions themselves would also have the links to themselves.
+
+In order to have more partitions (than 4), the last partition, in itself, will contain another "MBR", for the extended partitions! So your 4th partition, becomes more partitions in one!
+
+This can be checked in the Linux, with fdisk. If you did the normal partition, then you will see /dev/sda1, 2, and 5. That is because the last one is extended. You can check that with the `xxd` by skipping a certain amount of bytes. That is usually called `ebr (extended boot record)`
+
+== Partition recovery ==
+
+What you can do, is get rid of 16 bytes from the MBR, and if you can get them back, you can get back your partitions.
+
+MBR can be repaired and disk scanned for volumes. Primary volume 1 will not be recognized, and the data from it cnanot be respored.
+
+= GPT for partition tables =
+
+It is based on a GUID idea, having the ID's from different disks.
+
+GPT does not have MBR limits.
+
+It has 4 main entries, and then the other ones.
+
+You also, if install using UEFI, need a additional partition for UEFI! Usually it is called ESP (bootloader partition)
+
+GPT is newer, same as UEFI. There is a clear distinction and UEFI is way different from the MBR, as first of all it would be written to the system, or bootable partition, or maybe you could have larger possibilities.
+
+= HPA & DCO =
+
+This are features that you need to know.
+
+HPA = Host protected area, it is more about making the disk appear smaller than it is! That is usually controlled by the firmware.
+
+DCO = Device Configuration Overlay, was used to provide the ability to control reported disk features and capacity
+
+SUch information can be read by `hdparam -N /dev/sda`
+
+You can see there the size it is shown to the system, and the real one.
+
+DCO was also used along with HPA.
+
+There is also another part, called DSA (Drive Service Area) which is like the part for the software of the disk for when you talk to it. This is usually taken into consideration as negative bytes (as they were never supposed to be used)
+
+There is also another portion, which is genuiely made for service area (Drive Service Area), and it is there to contain information about the firmware, software the disk itself has.
