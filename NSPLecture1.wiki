@@ -1,0 +1,145 @@
+= Intro = 
+
+Is it illegal to view someone's Facebook profile over and over again?
+
+What if that person explicitly asked us not to?
+
+= Footprinting =
+
+Reconnaissance is the act of gathering information about a potential target
+
+Footprinting is creating an overview of that information, that may contain:
+* Remote access capabilities
+* Network ports, open or closed, services or not
+* Security aspects, used systems, purposes
+* Phone numbers, addresses, emails, company addresses
+
+Footprinting can be *active*(brute forcing, hacking, physical visits and inspectations, social engiineering), and *passive*(publicly available information on the internet, which is legal)
+
+Why do footprinting?
+* Information about the target
+* Detect data leaks
+* List of targets for pentests
+* List of targets for phishing
+
+It is important to create documentation for overview!
+
+Open source footprinting (OSINT) is the easiest way to find info using public information and, of course, websites! Company websites ofthen contain a whole load of information, and etc. It is also sometimes underappreciated, and you should sometimes come back to it, as it allows you to gather more information.
+
+Also important to know:
+* On the internet there are a lot of tools that are mocking to be OSINT, but they are not! It is important to be careful what kind of tools you use!
+
+Open source footprinting is the easiest in terms of finding out information, and of course, websites. Websites usually contain a lot of information, or maybe small bits of comments in the HTML code.
+
+Easy ways of information gathering contain:
+* whois requests, DNS tables searches, Google queries
+* most of the information is easy to get and legal
+
+== Techniques ==
+
+=== Network enumeration ===
+
+Network enumeration:
+* This is the processs of identifying domain names and associated networks!
+* It is usually done using enumeration queries (there are multiple types of those)
+
+In other words, we are trying to find out owner information! Mail servers, web servers, domain name owners, web sites.
+
+One of the first things you would lioke to do - is DNS translation. Hence you are using `dig` or `nslookup` so that you can check out the nameservers. Something like `whois` is also useful as it can say who bought the server.
+
+`whois` is a very powerful tool, as it can help you find:
+* owner name, email and address
+* nameservers
+* other websites on the same webserver
+* network block 
+  
+==== Some pointers ====
+
+"Repeat" is a word I will repeat multiple times, when performing pentesting and reconnaissance.
+
+==== Vhosts ====
+
+On the same machine, you can have different websites. Such technology is called virtual hosts.
+
+There is no failsafe way to ask for hosts on the sasme IP address, but there are tools that can perform a *reverse DNS lookup*
+
+==== Subdomains ====
+
+Every website can have subdomains, and you can not simply ask for a list. But, you can look for tools that can help you to search information
+
+==== Archiving ====
+
+There are websites, that index and make snapshots of the old versions of websites, hence giving you a bit more insight upon the old code of the website.
+
+==== Traceroute ====
+
+You can also find information about possible internal routing, using the traceroute commands.
+
+==== Google ====
+
+Google indexes pretty much everything on the internet. All you have to do, to use its power, is read the manual. The better you use the operators, the better results you can get. It is a very broad subject, and cand can be very useful.
+
+==== Shodan ====
+
+It is very cool and popular for industrial and IOT devices. It is used to understand which ports are open on the webserver.
+
+It might look similar to NMap, but somewhat different
+
+Also it might be useful to lookup remote desktop functionality there, hence getting an insight on what ports (remote desktop) are available on the server.
+
+==== Data breaches ====
+
+You can sometimes go ahead and look for leaked credentials on the internet, like - have i been pwned.
+
+leakcheck is also similar to it.
+
+This is a very powerful website, as it can give you a lot of information aswell.
+
+==== Datadumps ====
+
+Services like pastebin, and many others, can be very intersting, as they actually might have small bits of code being pasted without the user knowing it. Same with `git`, because you can find the credentials in older commits and etc.
+
+==== Location, Infrastructure, Bitches ====
+
+Images can contain a lot of information in themselves, or in the metadata. To look for this information, you can try and use something like `exiftool`
+
+Apart from that, to find information about people, what you can do is lookup social media for information regarding emails, phone numbers, dates of birth, blogs, photos
+
+==== Corporate information ====
+
+Financial information can be interesting to see winnings, expenses, events in the company structure
+
+You can even find out information about the tehcnologies a company uses, out of the job postings!
+
+You can even check the stakes of the company on google, to understand how good they are doing.
+
+Or, you can find additional information from the quarter reports that some companies might post on their website.
+
+Hell, sometimes on the websites you can even find information about job requirements, which might include software information, hardware information, and etc.
+
+== Technical writting ==
+
+We want and need easy, but easy for us, is also easy for a hacker/researcher.
+
+* One entry point
+* Clear and easy to understand documentation'
+* Simplicity
+* Everything that helps a hacker to understand the system
+* Guides, sourcecode, tutorials, write-ups, are all valueable.
+
+== Countermeasures ==
+
+After our reasearch, we need to make sure that our client will become more secure, and get rid of the problems!
+
+Perform your own footprinting techniques and remove any sensitive information
+
+Configure routers to restrict the responses to foorprinting requests
+
+Lock the ports with the suitable firewall configuration
+
+Use an IDS that can be configured to refuse suspicious requests
+
+“If you know the enemy and
+know yourself you need not
+fear the results of a hundred
+battles”

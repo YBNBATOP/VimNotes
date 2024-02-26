@@ -1,3 +1,5 @@
 = Network and System Pentesting =
 
 [[NSPLecture0|Introductions]]
+
+[[NSPLecture1|Footprinting, Reconnaissance, OSINT]]
