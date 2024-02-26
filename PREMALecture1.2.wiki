@@ -21,4 +21,4 @@ If you change the file type, the magic bytes do not change automatically, and yo
 
 Windows looks for the extension (but it will also check the files inside), and Linux watches the magic bytes.
 
-
+Magic bytes make the file type, not the extension which is written after the dot!
