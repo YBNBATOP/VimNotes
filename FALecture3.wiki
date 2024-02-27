@@ -1,0 +1,65 @@
+= Windows File System =
+
+Partiotions, are chuncks of your disk. But you need something to actually use it.
+
+File systems are like these record-storing procedures
+
+What does a file system need? Most basic storage system -> just add fils back to back
+
+Solution: keep a "directory file" with file locations ( + optional metadata)
+
+Problem? What when we start updating, deleting, adding files?
+
+Solution: Using blocks (a.k.a cluster or 'allocation unit size'). You allocate a file so many space, and it might, or might not take it fully. This is where the slackspace is mentioned.
+
+Think of shelfs in a closet. You have some closet, and then shelfs there, For a coat, you will give something similar to 2 blocks (shelfs). For a t-shirt - 1 block is enough. Hence, this is the same as doing and giving space to files.
+
+= Part 2: FAT =
+
+FAT (File Allocation Table) is a computer file system, and it has a whole family.
+
+pros: relative simplicity, lightweight, ease of implementation, cross platform compatibility
+
+cons: no journal (no consistency), no security (permissions/encryption) -> NTFS
+
+FAT was designed for small disks and simple directory structures.
+
+The idea of FAT is, that it has a boot sector for itself. The file system has some kind of MBR for itself, which links all the blocks for a certain file. Then it has a root directory, that specifies what will be the first piece of data of a file (like first position to look for info). It is all about daisy chaining the blocks of data for files.
+
+The maximum size for such drives with FAT, depend on the number. For example FAT16 - 2^16 = 4GB. FAT32 - 2^28 (yeah it uses 28 bits) = 16TB, or 32 GB for Windows. exFAT - will be if you have more.
+
+Hence, if you try to format a new USB Stick, them you can have sizes of FAT32, or exFAT (nowadays)
+
+Then, the allocation blocks will depend on what system you have. 
+
+Start sequence of FAT table - F8 FF FF FF
+
+To create a image as loop0 - sudo losetup -fPr image -show
+
+To mount - sudo mount /dev/loop0n1 /mnt
+
+To check the file system stats - sudo fsstat /dev/loop0n1 (we check the partition, and not the disk!)
+
+Then, you will be able to see information regarding the clusters and etc. You can even see the FAT table. 
+
+To read the partition (skipping the first 2 sectors with information) - sudo xxd -R never -s $((2x512)) /dev/loop0n1 (or partition)
+
+The stop sector of a file, is usually signed with FFFF
+
+To show deleted files - sudo fls -rp /dev/loop0n1
+
+Every offset (while viewing the xxd), of 1000, is an actual start of a new block (as 1000 in dec is 4096 in hex)
+
+= Part 3: NTFS =
+
+Net Technology File System is a proprietary system by Micrososft 
+
+NTFS uses a MFT (Master File Table), to have an entry for every single file, and point to the points of blocks for that file (so like FAT, but all in one block with information). It keeps information to read from where to where.
+
+You can also access the $MFT File, which is responsible for taking care of routing the file in your system
+
+Resident: stored directly in the MFT record (attributes like file name, timestamp, count, is always a resident)
+
+Features: Journal. NTFS is a kournalist file system and uses the NTFS Log.
+
+Features: Sparse Files, Compressed Files, Encrypted File System (EFS), Altranate Data Streams (ADS) (For different files, you can have different streams. Usually, you see the main data stream. But there is also a possibility to have other data stream, like when downloading something, and then you will be able to see different information about the downloaded file. Such streams can have information whether you file is safe to open, or not. You can create your own streams, with notepad functionality.)
