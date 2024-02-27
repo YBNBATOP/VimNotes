@@ -13,3 +13,7 @@
 [[PREMALecture2|Static Analysis]]
 
 [[PREMALab2|Static analysis and tools ]]
+
+= Lecture 3 =
+
+[[PREMALab3|Static + Dynamic Analysis]]
