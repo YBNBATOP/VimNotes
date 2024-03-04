@@ -1,0 +1,5 @@
+= Data Privacy and IT Law =
+
+[[DPITLLecture1|Introduction and general definitions]]
+
+[[DPITLLecture2|More about GDPR and processing the data]]

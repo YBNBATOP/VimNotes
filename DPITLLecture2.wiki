@@ -1,0 +1,136 @@
+We are finishing today with the ITLaw and GDPR. Next week we are getting an examination, or an exercise.
+
+For Cybercrime we will have to do some exercises, also in a group exercise.
+
+The basic principles should be memorized, especially if you start developing!
+
+= Lawfulness of processing =
+
+When you start getting any information, you are starrting to process it!
+
+We need to have a legal ground (at least one) to be able to proceed data.
+
+As a public entitiy, you need at least any interest, to process the data.
+
+== Consent ==
+
+As soon as you build a website, you want to get cookies there. Also, your marketeers would like to put ads there. Whenever it is not functional, you need to ask for consent. You need to be sure to get consent. It should be as easily given, as revoked.
+
+Regulations - applied to all states
+
+Directive - needs to be converted to a state.
+
+== Necessary for performance of a contract ==
+
+In any contract, you can have and need some information:
+* Parties involved (signature thatt binds both of you, and names) - fun fact, even if you ask for an invoice and then you get paid, but you havent agreed on the contract - you cant say that you havent accepted the rules.
+* Benefits (payment and etc.)
+* Duties (what is expected from you)
+
+What data we need for a legal agreement:
+* Contract:
+    * Personal Infromation 
+    * Signature
+    * Contract
+
+* Payment
+    * Benefits (cars, phones, discounts, internet)
+
+* Evaluation (learning path)
+
+=== Legitimate interest ===
+
+In order to get paid, you need to get monitored, which makes sure that you are working. Hence, someone might be able to scan the network, by performance.
+
+It is the performance that makes sure that you are doing some job.
+
+You choose your employer, as then you will be evaluated in different way. Somebody might "evaluate" you on the time base (time is 5PM, so I get the fuck out), and somebody does it on performance (like I can do a job in 4 hours and not 12 hours).
+
+One of the duties of a employer, is to pay you, but he/she also has a right to monitor the network and understand whether something is getting done, or not.
+
+== Legal obligation ==
+
+You get some legal points, that you are benefited. 
+
+== Vital interest ==
+
+Sometimes you have emergencies, and then you need to actually be able to get a correctly documented contract, that has the right points.
+
+Emergency data should either be update regularly, or not updated anyhow.
+
+== Public interest ==
+
+There is a need of a public need, that you are asked to pay for something.
+
+Like a parking space in the public, and the fact that you are supposed to pay, is a interest of public.
+
+
+
+The consent depends on the property and the situation. SO for example a teacher can have his own intellectual boundary, to get a photo of the whole class.
+
+Imagine that an IP address is also a personal data, due to the fact that you might have a personal device behind it.
+
+= Right of the data subject =
+
+There are 5 rights that we need to take into account
+
+== Right of access ==
+
+You can have your data, and you need to know what data goes where and how it is given.
+
+Imagine you have a wish to go and buy something online.
+
+First you go to a website, then you need to make an account (you need to minimize data for the account), then you search shit, and then you get (add) favourites. After that, you need the process of payment (here you need Bank accouunt, name, price, and soometimes invoice address if you need an invoice address). Then you need to pick it up for delivery, and here you need an address, which might be even the shop itself, or something else. In case of exceptional cases, they might need the phone number. This all, is about the right of access, as for different purpose, you have different data. Here it is also important to minimize the data that is being processed.
+
+== Right to data portability ==
+
+This is a requiremment from the legacy processes, when you wanted to change the ISP for example. You wanted to get the other provider of phone number, so then you want to save the number, but have a different operator.
+
+== Right to be forgotten ==
+
+This means that there are situations when you need to be erased from the database. This can be tricky, as then there are many underwater rocks that you need to check, as your data might be kept. Sometimes your data is allowed to be kept, and you get fucked.
+
+== Right of information ==
+
+It is important to uderstand that you need to know who processes your data, and for what purpose.
+
+== Exemption ==
+
+If it takes too much time to apply the GDPR, then it is your fault
+
+== Restrictions ==
+
+National Security
+National Defence
+Public security
+Prevention, investigation, detection or prosecution of criminal offences or the execition of criminal penalties, including the safeguarding against and the prevention of threats to public secirotu
+Protection of judicial independence and judicial proceedings.
+
+= Right of access =
+
+It depends on a lot of factors, like who is givng, and who is receiving.
+
+You do have choices, but still you need to balance shit.
+
+= Right of rectification =
+
+For example, you want to labelled as a Romanian and not a Moldovan in your passport, hence you need to prove a lot, and then you get the right
+
+= Right to be forgotten =
+
+The right to be erased from the system
+
+= Right to object =
+
+You have the right to object, when you know that you are being profilled.
+
+For example somebody might say that they like different kind of porn, and hence they can say that they are free to choose.
+
+= Controllers and processors =
+
+A controller, is someone who decides what is needed to be done
+
+A processor, is someone who needs to do something with the information
+
+A lawyer for example, is both a controller (and almost a processor) for himself, because he gets the data, and then decides himself what to do with the data.
+

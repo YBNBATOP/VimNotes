@@ -1,0 +1,213 @@
+Mobile Security
+
+Week 3: Android - ADB - ROOT
+
+We are going to talk about Android and how it works. This is about connecting to the device and doing something with debugger, and rooting.
+
+= Mobile Security? =
+
+The mobile application pentest conecentrates on following items:
+* Client-side safety
+* Filesystem
+* Hardware
+* Network security
+
+Many mobile app bugs - are web bugs in disguise
+
+Mobile security is not "difficult", because it is similar to the web browser bugs, as it also works with same things
+
+= Key Areas in Mobile App Security =
+
+* Local Data Storage
+* Interaction with the Mobile Platform
+* Code quality and exploit mitigation
+
+seen in other modules
+
+* Communication with trusted enpoints
+* Authentication and authorization
+
+= Mobile environment =
+
+We got Apple and Android
+
+iOS
+Android
+Windows 10(11)
+Windows 10 Mobile (maintenance only)
+Blackberry OS (maintenance only)
+Tizen OS (Samsung)
+Chrome OS (for devices)
+watchOS (Palm/HP)
+
+== Types of Applications ==
+
+PWA (Progressive Web Apps), Native Apps, Hybride Apps
+
+=== Native Application ===
+
+Native apps are specific wirtten for an OS. Ususally do not interact with internet or web views
+
+* Faster than others
+* All device functionality possible
+* Native look and feel OS
+
+Examples:
+* Clock
+* Calculator
+* File manager 
+
+=== Hybride applications ===
+
+Hybride apps are a combination of native views and web views (PWA).
+
+They can be installed like a native app, but they also use PWAs, but can be used offline
+
+ ==== WebView ====
+
+This is a component, which allows you to have more control over the UI and advanced configuration options that will allow to embed web pages in a specially-designed environment for the app.
+
+It also allows you to display web content as part of your activity layout, but lack some of the features of fully-developed browsers.
+
+ ==== Hybride frameworks ====
+
+React Native
+Flutter
+etc.
+
+=== PWA ===
+
+Progressive web apps
+
+* A website that looks, feels and behaves like a mobile app
+Can take advantage of native features of HTML5
+* No need to develop for different platforms
+* Can leverage on your existing HTML, CSS and JavaScript.
+
+* Not available through app stores
+* No access to all native features
+
+== Start Mobile Pentesting ==
+
+Step1 : Intelligence gathering is the most significant step in a penetration test
+
+Architecture understanding
+Mapping the application
+
+Step2 : assessment of the intelligence with the correct tools
+
+File ssytem analysis
+Package analysis
+Decompiling
+
+=== Vulnerability Analysis ===
+
+===== Static analysis ===== 
+
+The applicaiton is not running, and all we got - is the executable. You analyze the code
+
+==== Dynamic analysis ====
+
+The main objectie of dynamic analysis is finding security vulnerabilities or weak spots in a program while it is runnning
+
+Dynamic analysis is conducted both at the mobile platform layer and against the back-end services and APIs, where the mobile app’s request and response patterns can be analyzed.
+
+We are also going to use Frida, to manipulate the program.
+
+==== Standard Web Bugs ====
+
+SQL Injection
+Direct Object Reference
+Improper authentication/authorization
+Insecure uploads
+
+= Android =
+
+Android is based on Linux, so it has a Linux kernel. It is a software stack with several layers.
+
+It is also built up upon different drivers
+
+The Hardware Abstraction Layer (HAL) defines a standard interface for interacting with built-in  hardware components
+
+Andoid Runtime for Apps
+
+API Framework for othe activities
+
+All the code is getting compiled to Dalvik (.dex) using a compiler, and then running
+
+== APK Files ==
+
+Most important part out of here - is the manifest, with the information inside of itself.
+
+== Data storage ==
+
+Both Android and iOS provide secure creedntial storage for saved logins
+
+If an app does not use this API, its likely the app is using something else.
+
+Android just needs to know where all the data is getting stored, and hence it would go and take a look at what is happening.
+
+= ADB =
+
+Android Debug Bridge (ADB), allows our laptop to talk to mobile devices (you can even connect your phone to the PC).
+
+ADB provides a lot of functionality.
+
+You can open shells, even as root
+
+`adb root`
+
+`adb shell`
+
+Or get information about the battery
+
+`adb shell dumpsys battery`
+
+Or push files to the device
+
+`adb push file <file> <place>`
+
+Or get a screenshot 
+
+`adb shell screencap <place>`
+
+# Android bootloader
+
+A bootloader is a vendor-proprietary image responsible for bringing up the kernel on a device.
+
+You can flash custom things to your device.
+
+= Root the device =
+
+There are frameworks that allow you to give root permissions to your system, which makes something only related to the root system.
+
+Rooting gets you to the bottom of your os. You get root privileges on the device
+
+This means:
+* Access to the entire OS
+* Remove and replace the entire OS of the device
+
+There are 2 ways to root the device:
+* Systemless
+* System root
+
+Systemless:
+* Only the boot partition is modified
+* OS is >= Android marshmellow
+* Cleaner
+* Bypass Google SafetyNet
+
+System root:
+* System partition is modified
+* Manufacturer can notice
+* Old way
+
+To Do:
+
+[Apk] Labs
+[Apk] Rootchecker
+
+[Lab] Introduction
+[Lab] Rooting
+
+
