@@ -1,0 +1,29 @@
+= Windows Labs - Lecture 1 =
+
+Our teacher is Kenzo Warrens
+
+= Recap PowerShell & Intro scripting =
+
+We have 2 weeks for every lab to hand in
+
+== Scripting - General idea ==
+
+It is useful to make script, and they can:
+* Run other programs
+* Manipulate data/text
+* Combination of the two
+
+You probably spend a lot of time fixing a lot of information for the initial idea.
+
+It  is fine to write a script that does only one thing once
+But it is better to make a toolbox and make future life easier
+
+The best scripts are the one that are readable
+
+= Recap "Networking" Questions =
+
+== IP Addresses == 
+
+When can 2 devices communicate of the same network?
+* When they have 2 ip addresses from the same network, or if they are connected via gateways
+

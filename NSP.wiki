@@ -3,3 +3,7 @@
 [[NSPLecture0|Introductions]]
 
 [[NSPLecture1|Footprinting, Reconnaissance, OSINT]]
+
+[[NSPLecture2|Scanning]]
+
+[[NSPLecture3|Enumeration]]

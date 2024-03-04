@@ -1,0 +1,63 @@
+= AD User Management =
+
+Starting point:
+* One DC
+* One Core
+* One client
+
+== Active Directory ==
+
+=== Hierarchy ===
+
+You have forests, then trees, domains, and organizational units.
+
+=== ADDGC (Active Directory Domain Global Catalog) ===
+
+==== User management ====
+
+Our users and computer tools are represented as Organizational units.
+
+We can also use a plugin that allows to get all the users from AD.
+
+Today we are going to do user management.
+
+= Group policy management =
+
+Without groups and users, there is no real point for group policies.
+
+This is genuiely some preferences, and etc, that are 
+
+== Hierarchy ==
+
+Local Group Policy Object
+
+Site
+
+Domain
+
+Organisational units
+
+LWW (Last Writer wins!)
+
+This is how the policies are applied
+
+Group policy has a lot of possibilities.
+
+Do not edit default policies, unless it is a domain policy.
+
+There are 2 settings:
+* Computer Configuration
+* User Configuration
+
+Applied respectively:
+* When computer is started (Computer Policy launched)
+* When user logs on (User policy launched)
+
+Software Settings:
+* Install software when starting computer
+
+Administrative Templates:
+* Predefined setting in templates.
+
+You need to link a group policy, so that it gets activated.
+

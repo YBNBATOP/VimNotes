@@ -1,0 +1,41 @@
+= SSMWindowsLab03 =
+
+To show the name of the computer, you can run:
+
+* `hostname` - for legacy
+* `[System.Net.Dns]::GetHostName()` - for powershell (with admin privilege)
+
+To get all the environment variables, you can run the `Get-ChildItme Env:`
+
+To get the domain name using environment variables - `Get-Content env:COMPUTERNAME`. The difference from previous cmdlets is probably that it does not touch the DNS, to then get the name.
+
+To change the name of the computer, you can do it with GUI, or run a cmdlet - `Rename-Computer -Restart –NewName "<name>"`. It will Rename, and restart to apply changes.
+
+Legacy command to find the IPv4 address - `ipconfig`. CMDLet to get a special port `Get-NetIPAddress -InterfaceAlias "Ethernet0"`. To get only IPv4 address - `Get-NetIPAddress -InterfaceAlias "Ethernet0" | Select-Object -Property IPv4Address` 
+
+To set up a static IP address - `New-NetIPAddress -IPAddress 192.168.206.100 -PrefixLength 24 -InterfaceIndex 6`, to set a default gateway you would need to specify `New-NetIPAddress -IPAddress 192.168.206.100 -PrefixLength 24 -InterfaceIndex 6 -DefaultGateway 192.168.206.2`. Sometimes you can use `Set-NetIPAddress` to actually change a configuration. Otherwise, you would need to get rid of it, and then add it again.
+
+To set up firewall rules, you either enable them in the GUI, or you make it manually via cmdlet's (make sure to enable rules for Inbound and Unbound):
+
+* `Set-NetFirewallRule -Name CoreNet-Diag-ICMP6-EchoRequest-In -Enabled true` – ICMPv6
+* `Set-NetFirewallRule -Name CoreNet-Diag-ICMP4-EchoRequest-In -Enabled true ` – ICMPv4
+* `Set-NetFirewallRule -Name CoreNet-Diag-ICMP6-EchoRequest-Out -Enabled true` – ICMPv6
+* `Set-NetFirewallRule -Name CoreNet-Diag-ICMP4-EchoRequest-Out -Enabled true ` – ICMPv4
+
+To create a new powershell prompt, go ahead nad do `notepad $PROFILE` and let it generate one in GUI. Then you can put the command in:
+
+* function prompt {"`n$(get-date) | PS [$Env:userdomain\\$Env:username@$Env:computername] `n$($PWD.ProviderPath) > "}
+* then run the `Set-ExecutionPolicy Unrestricted` for it to work every time
+* sometimes it is also necesssary to generate the `$PROFILE` file. To check the path, simply type `$profile` in powershell, and then `New-Item -Path $profile -Type File -Force` to create the file. Then you can edit it with notepad
+
+To see all installed features - `Get-WindowsFeature | Where Installed`
+
+To measure how many objects you get from an output - `Get-WindowsFeature | Measure-Object`
+
+To add a PC to the AD - `Add-Computer -DomainName corp-serafim.serverlabs.be`
+
+To install a Windows Feature - `Install-WindowsFeature -Name RSAT-AD-PowerShell `
+
+To install a Windows capability - `Add-WindowsCapability -Online -Name "RSAT: Server Manager"`
+
+To execute a remote command on a another computer - `Invoke-Command -ComputerName GUI-SERAFIM -ScriptBlock { Get-NetIPAddress | Select-Object InterfaceAlias, IPv4Address, IPv6Address }`

@@ -1,0 +1,13 @@
+= Server System Management = 
+
+[[SSMLecture0|Introduction]]
+
+[[SSMLecture1|Windows Recap]]
+
+[[SSMLecture1.2|Troubleshooting tips]]
+
+[[SSMLecture2|Active Directory Windows]]
+
+[[SSMWindowsLab3|Setting Active Directory]]
+
+[[SSMWindowsLecture3|AD User Management]]

@@ -1,0 +1,31 @@
+= Windows =
+
+Peer to peer network is evil! (talking to each other, in a decentralized way)
+
+A domain network is better, because it is centralized!
+
+== Active Directory ==
+
+For now, we have 3 Win VM's, each with local user accounts. That is difficult to manage. Hence, we are going to set up windows Active Directory
+
+There are 2 options of Active Directory. Active Directory On-Premise is what we use
+
+For now, we are going to talk about Domain Service and Active Directory (ADDS).
+
+=== Active directory hierarchy ===
+
+1. Tree: Collection of all objects that belong to the same organisations/company, having a common FQDN
+2. Domain(s): Subdivision of a tree, e.g. contains all objects (users, computers) that belong to the same division
+3. Organizationl Units: subdivision of a domain with objects that have similar properties
+4. Forest: multiple trees in the same global catalog (GC)
+5. Site: contais multiple forests (sites, are basing the forests on a special location)
+
+=== ADDGC (Active Directory Domain Global Catalog) ===
+
+The GC is the master index of objects within an Active Directory forest. The GC is a quick tool to locate objects within a forest
+
+Everything should have an SID (security identifier)
+
+SID: a unique serial for every user, group, computer, printer. If a user gets gets deleted -> its SID is not reused EVER!
+
+Today we are going to set set up a DC and our users

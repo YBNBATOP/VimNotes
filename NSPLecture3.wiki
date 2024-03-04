@@ -1,0 +1,156 @@
+= Lecture 3 =
+
+= Enumeration =
+
+= Recap from Lab 2 =
+
+IPv4 can be talked about as "Legacy", as it is old. So nowadays we should focus more on the IPv6
+
+== First thing you do ==
+
+* Get your IP - `ip a` and check it.
+* To know the DNS server - `cat /etc/resolv.conf`. You can see then the DNS nameserver. Usually, it can be a local DNS resolver, meaning on localhost. You can see also additional information about what DNS you use by doing `nmcli`.
+* The domain name - same as your DNS.
+* To get the dafault gateway - `ip r` for legacy, and `ip -6 r` for IPv6. You can also try to look for the gateway in a way like `host _gateway`
+* You can do `sudo scan6 --interface eth0 --local-scan --verbose` to do a local scan of IPv6 for local addresses. NMAP can also do it, but rather slow. 
+
+== Enumeration Intro ==
+
+This time we are going to create actual connections to addreses, to see what is there. Like imagine you have a port 80 open. You can just try and navigate to it, because 80 is for HTTP and hence you should turn on your brain and think that it is a web server
+d
+Enumeration is used for getting information:
+* Indetities
+* Usernames
+* Groups
+* Shared folders
+* etc.
+
+=== Services to enumerate ===
+
+Some services will require enumeration:
+* NetBIOS
+* SNMP
+* DNS
+* SMTP
+* SMB
+* Active Directory / LDAP
+* Web Servers
+* etc.
+
+NetBIOS is a older version of DNS.
+
+`nbtscan` is also a cool tool that you can use to check out the 
+
+==== Link-Local Multicast Name Resolution (LLMNR) ====
+
+Based on DNS
+
+Both Legacy IPv4 and IPv6
+
+==== mDNS (Multicast DNS) ====
+
+You can listen for stuff that is around you, with using `avahi` tools, and something more.
+
+mDNS is the issue why high level domain does not allow ".local". You can even check them on some networks, but you need to check them manually.
+
+== Service Discovery ==
+
+Name services such as mDNS and LLMNR do not provide information about the type of device or its status.
+
+Service discovery provides additional information
+
+Service discovery methods are often combined with a name space.
+
+=== SNMP (Simple Network Management Protocol) ===
+
+The SNMP is a standard defined by the IETF
+
+SNMP uses agents on devices and systems (routers, switches, access points)
+
+SNMP agents send out SNMP traps, which are event listeners.
+
+SNMP in practice:
+* SNMP variables are called "objects".
+* These objects have a tree structure
+
+SNMP Features:
+* It is enabled by default on many devices: printers, routers, firewalls, servers, etc.
+
+=== DNS (Domain Name System) ===
+
+DNS is a hierarchical and distributed naming system for computers, services and other resource.
+
+==== DNS Zone Transfer ====
+
+This is the method of sending information from one DNS server, to another. That is very important, as you might have multiple DNS servers.
+
+Zone transfers wil return a full copy of the entire zone file of a domain
+
+Sometimes, you might have misconfigurations, but they are individual for every server, so you might need to check every one of them.
+
+DNS can also have txt files, with additional information. You can usually see the same thing with sites for subdomains enumeration. You can try `host -t TXT howest.ne`
+
+=== SMTP (Simple Mail Transfer Protocol) === 
+
+SMTP is the only surviving standard for sending email.
+
+You can directly interact with an SMTP server using telnet or netcat. Or use blat or mailx. Usually email servers on the internet will not allow this to be unauthenticated in order to prevent abuse.
+
+=== Server Message Block (SMB) ===
+
+SMB or Server Mesage Block runs on TCP/445
+
+SMB is intended for exchanging file. That is why it is often called CIFS.
+
+==== SMB Enumeration ====
+
+SMB is a clear text protocol, even the DATA is transmitted unencrypted.
+
+There are a SMB enumeration scripts in nmap.
+Also you can have other tools:
+* Metasploit
+* crackmapexec
+
+=== RPC (Remove Procedure Calls) ===
+
+RPC is a technology to facilitate "Interprocess Communication" that is being used in several protocols, systems, services and ports.
+
+=== Active Directory / LDAP ===
+
+It makes it easier to run a (mostly) Windows Environment
+
+It was created by Microsoft, the best support is, of course, by Windows.
+
+Active Directory is based on LDAP (Lightweight Directory Access Protocol)
+
+=== Web Services ===
+
+A web server can host multiple websites.
+
+==== Content Management Systems ====
+
+Content Management Systems cna be very vulnerable.
+
+For example, most of the sites are on WordPress, and hence they get outdated, and you need to update them most of the times.
+
+There are a bunch of the tools that can check for vulnerabilities.
+
+=== Countermeasures ===
+
+Disable unused services! Most services are not even used by default. Disable SNMP, RDP, SMTP. Enable Firewalls.
+
+Segment the networks (Configure VLAN's and etc)
+
+Use encryption where possible:
+* Replace FTP by  SFTP
+* SMTP -> Combine with STARTTLS or use SMTPS
+* RDP: eanble NLA
+* SMB: enforce SMBv3
+
+=== Documentation ===
+
+After scanning and enumeration, you should have a big list of interesting things
+
+Therefore creating proper and good documentation is important
+
+How? Your choice.

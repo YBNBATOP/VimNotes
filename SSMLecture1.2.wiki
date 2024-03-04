@@ -1,0 +1,112 @@
+Important information, on March 13th you can attend a cool masterclass, dont forget to register
+
+= General information =
+
+== Trouble shooting tips ==
+
+First of all, understand in which layer the issue is (like in Computer Networks), and you need to find where it is
+
+=== Physical layer ===
+
+The network card of Wi-Fi adapter
+
+For the lab's this will be the WMware virtual network editor (can be found in edit)
+
+Virtual networking:
+* Host only - IP address definitions is up to you, it only creates it like a hub (a hub is similar to a switch, but it sends information to all)
+* NAT - Ip address are configured for you, using a network subnet deffined in the virtual address editor (it is more like is just asks the DHCP server for an IP address and a DNS server)
+* Bridged - it depends on your host network, and it is like it is a part of the 
+
+=== Data link ===
+
+arp -an
+* Dont forget the n, to avoid DNS issues
+
+arping
+* arping -c 2 -I enp0s5 MACHERE
+
+tcpdumb
+
+wireshark
+
+=== Network layer ===
+
+ping
+
+traceroute
+
+Watch out for DNS issue: try replacing name with the ip address!
+
+Do not forget that problems with firewall might appear
+
+=== Transport ===
+
+socket layer, typically listen state
+
+netstat -tulp on server
+
+nmap
+
+telnet
+* telnet localhost 80
+* telnet ip-address on same host as server
+* telnet ip-address on client towards remote host
+
+If netstat -tulp does not show port-number as listen, that means there is nothing listening behind it!
+
+But what if the telnet give connection refused? Might be the firewall
+
+=== Session ===
+
+Manage the connection between ports
+
+=== Presentation ===
+
+=== Application ===
+
+dns, ssh, Enter-PSSession
+* ssh -v sshd -v
+* dnslookup > server a.b.c.d
+* /var/log/syslog or event log
+
+== Windows Firewall issues ==
+
+There are multiple profiles:
+* Domain: auth to domain controller
+* Private: private or home
+* Public: public
+
+== Examining logfiles ==
+
+Windows:
+* Get-Eventlog -LogName Security -newest 10
+
+Linux:
+* /var/log/*
+* tail -f /var/log/<logfile>
+
+= Intro Linux =
+
+We will learn a lot about working with administration and of course working with Linux
+
+All material is also presented on Leho so you can peek at the themes prior!
+
+It is also important to read all assignments and the quizzes, and manage the deadlines.
+
+== Linux Lab Environment ==
+
+We will use journalctl instead of syslog
+
+== Networking in Linux == 
+
+ip address
+
+ip route
+
+/etc/resolv.conf
+
+/etc/hosts
+
+More options will come afterwards
+
+

@@ -1,0 +1,103 @@
+= Basic Dynamic Analysis =
+
+Outline:
+* Sandboxes
+* Running malware
+* Monitoring the malware
+* Faking the network
+* Tools in practice
+
+It is performed after the static analysis, so not favorable to skip it!
+
+You get most of the information from it.
+
+Dynamic one, actually allows you to see what it does on the system, and maybe understand how it all works. Though, be warned, malware running on your system is not the best idea. It might be very harmful overall for your system.
+
+== Sandboxes ==
+
+Norman SandBox Analyzer, Windows Sandbox, and others (sandboxie we are going to use), allow you to run the malware in a version of a emulator or something.
+
+There is a problem with sandboxes, as malware can actually understand that it is inside one.
+
+Malware can sleep, but sandbox wont wait forever.
+
+Most sandboxes use VM technologies, and hence can be detected by the malware.
+
+Sandbox runs your malware in a protected environment, and hence sometimes your DLL's might be not loaded into it, and crash the malware.
+
+If a malware needs internet, then it will be useless in the sandbox.
+
+Sandboxes put every file and everything in a certain position on the disk, and does not spread it anywhere.
+
+So overall, how we do it, it is run a fake environment, in a fake environment, This is useful for easy malware, but not something harder.
+
+Sandboxie also knows what the malware does with the registry, and hence saves those values inside its place.
+
+== Running malware ==
+
+We need to be careful
+
+Executable, easy to execute:
+* Never double click!!
+* Better - use the command line to run the Malware.
+
+What about DLL's?
+* Normal DLL's have exports: You need specific addresses to export functions
+* We can run the: runddll32.exe
+* rundll32.exe PDLLname}, {Export} [arguments]
+* rundll32.exe rip.dll, Install C:\
+
+Some DLL's need to be converted into an EXE in case there are no exports.
+
+== Installing malware (services) ==
+
+Some malware tries to install itself as a service, and hence run everytime you start the system.
+
+== Monitoring malware: running processes ==
+
+Start your monitoring software before starting the malware
+
+We can make use of a very powerful tool: Process Hacker (Привет OverBafer!)
+
+It shows parent and child processes.
+
+It is also preferable to be run as a `Administrator`
+
+Remember: Malware tries to hide itself into windows services (like svchost)
+
+== Process Monitor ==
+
+This is like a wireshark, but for processes.
+
+This does literally the same thing usually, and moreover.
+
+You better run it as `Administrator`.
+
+Make sure to also use filters, to take a look at something useful
+
+2 good options: operation `regsetvalue` and operation `writefile`
+
+== Registry analysis ==
+
+Do you only want to know what has been altered in the registry?
+
+Use `RegShot`
+
+Run once before execution
+
+Run once after execution
+
+Compare it
+
+== Faking the Network ==
+
+We can use a fake DNS. This will just make sure that all the requests exist
+
+One good option is `FakeNet`
+
+=== FakeNet ===
+
+It responds to everything, meaning internet, mail, and etc etc.
+
+It is just having a response to everyone that asks for something.
+
