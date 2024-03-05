@@ -1,0 +1,64 @@
+= Static analysis =
+
+Static analysis employs tools to examine program code in search of application vulnerabilities, back doors, or other malicious code that might provide hackers access to sensitive corporate data, and we are going to look intor the APK of the code we are building
+
+Search for interesting data (passwords, URL's, API endpoint, API keys, etc)
+
+Check if the application is in debug mode and try to exploit it
+* Can I start the postLogin screen without loging in?
+
+Is the application saving data locally or externally?
+* What is actually stored when the data is locally?
+* Can you bypass the online data?
+
+* Exported Activities
+* Content Providers
+* Exposed Services
+* Broadcast Receivers
+* URL Schemes
+
+= APK =
+
+An APK is an installer file for the app itself on the Android device. There are tools that allow you to download actual APK files from the Play Store.
+
+We are interested in the META-INF directory, which has a lot of information:
+* MANIFEST.MF: the manifest file - the certificate of application
+* CERT.SF: the list of resources, and digest of lines in the MANIFEST.MF
+* lib: the directory containing the compiled code that is platform dependant
+
+The source code is being transformed into bytecode, and then Dalvik bytecode
+
+After building an application an APK is generated (Android Application Package)
+
+* .dex -> Dalvik bytecode
+* lib -> Native libraries
+* assets -> Read-only data
+
+
+= Reverse engineering the APK =
+
+We are of course going to use applications/tools to reverse the code of and APK. You can use `Apktool`, which will be able to recompile the code that you change.
+
+It can decode resources to nearly original form and rebuild them after making some modifications.
+
+Before you try and rebuild the application, the applcation is going to be resigned.
+
+Before you can run a rebuild application it needs to be signed first.
+
+= Smali code =
+
+When you understand how a developer builds something, it makes it much easier to understand how to reverse engineer it. 
+
+Smali code, is decompiled Java code. Instead of the Java running the JVM like normal, in android, Java is being compiled to the Dalvik Executable (DEX) bytecode format
+
+DEX bytecode -> SMALI -> Decompiled Java
+
+= JADX =
+
+You can use other tools, that can actually decompile the code in a more visual way.
+
+Command line and GUI  tools for producing Java source code from Android Dex and APK files. It is just overall better for viewing the data from the decompile, but Apktool is more useful.
+
+TODO
+[Lab Static Analysis]
+

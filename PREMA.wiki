@@ -16,4 +16,10 @@
 
 = Lecture 3 =
 
+[[PREMALecture3|Dynamic Analysis]]
+
 [[PREMALab3|Static + Dynamic Analysis]]
+
+= Lecture 4 =
+
+[[PREMALab4|More about static and dynamic]]
