@@ -4,10 +4,17 @@
 
 FLAGS FOUND:
 - LDAP service - shared directory (FLAG-6811)
+- DIG txt (banner) grabbing (FLAG-6649)
 
 ## Nmap scanning
 
 ![NMAP scan](image.png)
+
+## Dig
+
+![Dig axfr scan](image-12.png)
+
+The command dig axfr @10.11.12.6 vault.vinyl initiates a DNS zone transfer request for the domain vault.vinyl using the AXFR protocol. This request is sent to the DNS server at IP address 10.11.12.6. The AXFR protocol is used to replicate DNS records across DNS servers, allowing for the efficient management of DNS zones without manual edits on multiple servers.
 
 ## nbts scan
 
