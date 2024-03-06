@@ -7,3 +7,5 @@
 [[NSPLecture2|Scanning]]
 
 [[NSPLecture3|Enumeration]]
+
+[[NSPLecture4|Exploitation]]
