@@ -1,0 +1,95 @@
+= Sharing permissions =
+
+Sharing is caring, because we care about people
+
+= Member server =
+
+It is a server that has access to main resources, but it does not have to be a DC, but it can grant permissions to Users and Security Griups in AD - hence, a file server.
+
+== Group Management ==
+
+* AD that is used for authentication and autorization
+* The autorization part grants users access to resoureces
+* As a good practice, you should use groups
+
+== Group types ==
+
+Two types of groups in AD:
+* Security Groups - used for granting or denying access
+* Distribution Groups - email
+
+== Universal Groups (UG) ==
+
+Universal secruity grouyps are most often used to assign permissions to related resources in multiple domains
+
+
+== Global Security Groups (GSG) ==
+
+Put users in GSG to mimic an organisation
+
+== Domain Local Groups (DLG) ==
+
+It is mainly the same as GSG
+
+== OU vs SG ==
+
+OU:
+* A user can only be a member of 1 OU
+* An OU cannot hold any permissions, only policies
+* An OU can hold users, groups, computers
+* GPO can be linked to an OU
+
+SG:
+* A user can be a member of multiple SG
+* It can hold permissions, both user and access
+* An SG contains only users
+* GPO cannot be linked to a SG
+
+= What is permissions =
+
+Being able to access and use a resurce is the result of being a member of a Resource Group
+
+A Permissions is the membership of the group that grants access to said resource
+
+= AGDLP (Account Global Group Domain Local Group Permissions =
+
+Account (users) -> Global Group -> Domain Local Group -> Permissions
+
+It is a way of linking resources to the correct people
+
+= Share Resources: FAT vs NTFS =
+
+* Most restrictive wins
+* Share permissions good for:
+	* Small or simple share folders
+	* File systems do not support security (FAT32)
+* NTFS permissions good for:
+	* Shares with well setup NTFS permissions
+
+= Share Resources: Inheritance =
+
+Permissions are inherited by default! This means you might be unable to change permissions because of enabled inheritance!
+
+You can disable it like so:
+* Advanced
+* Disable inheritance
+* Best practice: "Convert inherited permissions into explicit permissions on this object"
+* OK
+
+= Share Resources: Effective Access =
+
+Need to test the access permissions for a certain folder? -> Go to Advanced Security Settings
+
+= Share Resources: Network Discovery =
+
+Start these services and make sure they start automaticaclly in future:
+* Function Discovery Resource Publication
+* SSDP Discovery
+* UPnP Device Host
+
+= Share Resources: Tips & Tricks =
+
+* Use $ after a Share name to make it hiddne
+* You can access a share by using the IP of the host machine + "/share-name"
+* You can access a share also by using its UNC (Universal Name COnvention)
+* You want one DL to point to one resource

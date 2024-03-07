@@ -1,0 +1,107 @@
+= External testing =
+
+It is testing of publicly available information, a network enumeration phase, and the behaviour of the security devices analyzed (mainly like OSINT style)
+
+It involves a comprehensive analysis of company's externally visible servers or devices, such as webservers, mail servers, firewalls, routers
+
+= Internal Testing =
+
+Internal testing involves testing computers and devices within the company. It is mostly like being inside a network with a VPN like we do.
+
+You have different types of testing, like:
+* Gray-hat
+* Darh-hat
+
+= Exploitation Intro =
+
+== Black-Box Testing ==
+
+The first phase, is to get as much information as possible.
+
+It takes a lot of time to get to know new systems. Like NMAP, that takes a lot of time. So it is just interesting to gather and spend as much time looking for the systems on the network.
+
+== Grey-Box Testing ==
+
+You will get some information regarding the IP range of the company, and etc. So you get some insights.
+
+== White-Box Testing ==
+
+You know most information about the company, and you get the most processes/services, networks, and etc, running on the network.
+
+=== Announced Testing ===
+
+The IT department knows that you are in the system, and they are helping you to do something. It is mostly about testing the existing infrastructure.
+
+=== Unannounced Testing ===
+
+The vice versa, as you make sure that the IT department does not know you are in the system. It allows only the upper management to be aware of the tests.
+
+= Vulnerabilities =
+
+Software HAS vulnerabilities:
+* Bugs
+* Temporary open services
+* Features not well protected (or easily brute forced, like login screen, and not limiting)
+* Bad engineering
+
+These are mostly "discovered" by the manufacturer itself
+* Patches & updates are released
+
+== CVE ==
+
+Vulnerabilities that are discovered by other people are not yet patched and called zero-day vulnerabilities.
+
+Hackers use to report the vulnerabilities to official portals. These portals are diffeerent for each vendor.
+
+There are 2 types of CVE manufacturer (each vulnerability gets a CVE code)
+
+When the company is not in the list of CVE manufacturer, then you can fill in a form to request a CVE code
+
+= Exploits =
+
+If code is written to expoit a known vulnerability this is called an exploit
+
+= Information before system hacking stage =
+
+What you have at this stage:
+* Footprinting (IP Ranges, Domain names, Websites)
+* Scanning (Target assessment, and etc)
+* Enumeration
+
+= System Hacking: Our Goals =
+
+We are trying to gather access to the system. We want to collect as much information as possible.
+
+* Gaining access - to collect information to gain access - password eavesdropping, brute forcing
+* Escalating privileges - to create a privileged user account if the user level is obtained - password cracking, known exploits
+
+= Hacking Stage: Privilege Escalation =
+
+An attacker cna gain acccess to the network or a system using a non-admin user account, and the next step would be to gain administrative privileges.
+
+There are some type of privilege escalation:
+* Vertical - Requires to grant higher privileges or higher level of access than administrator
+
+= Hacking Stage: Exploitation =
+
+The exploitation process:
+* Find the vulnerability
+
+= Nmap =
+
+To check if the system is up:
+* -sn - to do an arp scan for port 80
+
+To check if the system has ports open:
+* -p- - to scan for all ports
+* -p - to scan for most popular ports
+
+To check for versions running:
+* -sV - to scan for versions and services running on a port
+
+To know most information about the system:
+* -sO - to scan for information, versions, operating system
+
+You can lookup expoits for a service on the `exploid db` on the internet
+
+Then, you can go ahead and check the `metasploit` to check for exploits, and then use them.:wq

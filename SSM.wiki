@@ -11,3 +11,5 @@
 [[SSMWindowsLab3|Setting Active Directory]]
 
 [[SSMWindowsLecture3|AD User Management]]
+
+[[SSMWindowsLecture5|Sharing Permissions]]
