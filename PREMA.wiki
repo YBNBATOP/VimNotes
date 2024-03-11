@@ -23,3 +23,7 @@
 = Lecture 4 =
 
 [[PREMALab4|More about static and dynamic]]
+
+[[PREMALecture4b|Static Advanced Analysis]]
+
+[[PREMALecture4|Assembly and Advanced Static Analysis]]
