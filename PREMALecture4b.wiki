@@ -1,3 +1,20 @@
 = 1st sample =
 
-73892
+To get an idea of how many flags we have in our first sample, we can take a look at it with the `BinText`, for the strings. Or, use the built-in view for IDA, which also gives the strings view, but is less probable to give ALL the information out. Out of there, we can see a line that says we can find 2 flags.
+
+* To find the first flag, again what we need to do, is go to *View > Open Subviews > Strings*, and go to the tab with them. From there we can see the lines that contain word *flag*, and that is what we need. From there, we can navigate to the code which is related for those. To navigate to the place where this are appearing, we can just *double-click* on it. After that, we might see some kind of functions, which are also related to this lines. We can navigate to their code by pressing *CTRL + X*, and then we are presented with the lines that are responsible for the FLAG check. We can toggle between 2 views, using *Space*, depends on which one feels better. There we can see around 3 variables at the top (Like var_8, var_C...), and we can check which one of them is used as a check for the final answer, and also rename it, using *N* (just select the text neeeded, or click on the variable and then N). This makes it easier for us to understand what is what. After, we need to read some code of calculation for the first one, as it is around 5 loops of manipulation to create the FLAG.
+
+Important to know some basic assembly that we see there:
+* *ebp* and *esp* are like stack and heap
+* *add esp,4* - this is the clean up of stack, the value after esp can vary.
+* *mov [ebp+var_8],0* - the values in [] mean that we are looking for a value of an address. In this case, it is a value from the stack, set up with an offset. The value after the comma, is the value we put instead of the value that is already inside.
+* *imul ecx, 10* - this would multiply the value inside *ecx*, by 10 (simple math)
+* *add edx,3* - this would simply add a number to the existing one. Like if the value is 10, and we add 3, then it will become a 13
+* *eax* can be considered like a first memory address.
+* To add a comment line, we can press *CTRL+:*
+* *sub* - is the opposite of *add*
+
+Hence, if we do a bit of calculation, then we can get a number equal to 73892. And we try to input that, and it is the right answer (FLAG-73892)
+
+* To find the second flag, we take a look at the same place, and then we check the same mathematical stuff as we did with the first one, and then we get the number 69083, which is the correct answer, if we try to put it inside the value. (FLAG-69083)
+
