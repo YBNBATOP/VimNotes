@@ -1,0 +1,61 @@
+= ext - Extended File System =
+
+As we already know, there are entries, which point to inodes, which point to the file content itself.
+
+You have your data, your inode, and the inode also needs to be stored somewhere, and hence it also needs some space
+
+The typical block size for a partition of 512+ = 4096 B
+
+= Block group =
+
+Block group:
+* Multiple blocks = block group
+* A good place to store some data (Hint: Lab)
+* Block groups are stored sequentially
+* it reduces fragmentation:
+
+You can view the information with *fsstat* or *dumpe2fs*
+
+The blocks within a block group, are used for metadata, inodes, data blocks
+
+== Block group metadata ==
+
+Superblock:
+* it has 1024 B
+* holds the metadata of all the blocks , block groups, and their sizes
+
+Group descriptors:
+* Contain the block number of the data block bitmap, inode bitmap, start block of the inode table (so overall the layout of the groups)
+
+You can check information about a partition with: *sudo fstat /dev/sda3 | less*
+
+You can try and restore a backup using a superblock via: *e2fsck -b <block> /dev/sda3*
+
+(Data)block bitmap:
+* identifies all blocks and tags them as used or free
+
+You can even read the bits (number of inodes) used, if you do: *sudo blkcat /dev/sda <inode> | xxd -b | less*
+
+= ext journals =
+
+It allows us to view past information about pointers of the files.
+
+= Journals =
+
+This were invented to fix much faster the corrupted files.
+
+A journal is a log that captures and holds all actions on a file system.
+
+It is rather reliable.
+
+The journal is there to have a better and consistend solution for file corruption
+
+== Journal structure ==
+
+It contains different types of data blocks:
+* Journal superblock: contain head and tail of the journal, sequence number, the journal is a circular structure
+* Descriptor: describe other journal metadata blocks
+* Metadata: entire contents of a single block of file system metadata as updated by the transaction
+* Commit: confirms the updates have been written to disk
+
+

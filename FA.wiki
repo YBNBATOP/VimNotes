@@ -5,3 +5,5 @@
 [[FALecture2|Logical structures of a drive]]
 
 [[FALecture3|Windows File Systems]]
+
+[[FALecture4|ext file system metadata]]
