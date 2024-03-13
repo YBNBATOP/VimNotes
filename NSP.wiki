@@ -9,3 +9,5 @@
 [[NSPLecture3|Enumeration]]
 
 [[NSPLecture4|Exploitation]]
+
+[[NSPLecture5|Passwords]]
