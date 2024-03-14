@@ -2,105 +2,173 @@
 
 ## Second: Scan a live machine either scanme.nmap.org or always.snwb.howest.be
 
-### What ports are open?
+### Machine: scanme.nmap.org 
+
+#### What ports are open?
+
+To scan for open ports on the machine, what we can do is:
+
+* `sudo nmap scanme.nmap.org -p-` || `sudo nmap scanme.nmap.org` (as it takes a lot of time)
+
+Here is the result scan of open ports on the scanme.nmap.org:
+
+![Ports open - scanme.nmap.org](portscan-scanme.png)
+
+#### What services (+version) are running on the system?
+
+To find information regarding the versions and services running on the system, we can do this:
+
+* `sudo nmap scanme.nmap.org -sV`
+
+Here is the result scan of versions of the services on scanme.nmap.org:
+
+![Service versions - scanme.nmap.org](serviceversions-scanme.png)
+
+### Machine: always.snwb.howest.be
 
 Here is the result scan of open ports on the always.snwb.howest.be
 
-![alt text](image.png)
+![Ports open - always.snwb.howest.be](portscan-always.png)
 
-Here is the result scan of open ports on the scanme.nmap.org
 
-![alt text](image-1.png)
 
-* Connecting to the VPN, and then get the ip address:
-    * ip a
 
-    ![alt text](image-2.png)
+## Dashboard: Lab 2
 
-* Find the DNS Server:
-    * dig always.snwb.howest.be
-    * nslookup 10.11.12.6
+### Your own address:
 
-    ![alt text](image-3.png)
+* To find out own address, we first connect to the VPN (`sudo openvpn <file>`, then `sudo dhcpclien tap0`), and after that, we can run the `ip a`, and get our own IP address from the network (tap0 infterface).
 
-    amplifier.vault.vinyl.
+![IP Address](own-ip-address.png)
 
-* Find number of Live addresses
+### Find the DNS Server:
 
-    * ip a
+To find the DNS Server, what we can try and do, is:
 
-    We get our subnet mask 
+* `dig scanme.nmap.org`
+* `nslookup 10.11.12.6`
+* `cat /etc/resolv.conf`
 
-    ![alt text](image-4.png)
+This will give us (`dig`) the DNS server that is used to resolve the name. Then we can check the name of the DNS Server (`nslookup <ip>`) and get the name of that server (amplifier.vault.vinyl.), and also, we can take a look at the resolver configuration (`cat /etc/resolv.conf`), in order to understand the domain we are in, and the server that is used to resolve domain names. 
 
-    * ipcalc 10.11.12.24/23
+![DNS Server](dns-server-name.png)
 
-    We get the minimum one
+The correct answer is - `amplifier.vault.vinyl.`
 
-    * sudo nmap -sn 10.11.12.1-100
+### Find number of Live addresses
 
-    Then we get our result
+First, we need to find out in which network we are, and find the subnet delimiter. For that, run and check:
 
-    ![alt text](image-5.png)
+* `ip a`
 
-* Find the DomainController
+We get our subnet mask.
 
-    * since we had the DNS server, we run an nmap on that
+![Subnet Mask](subnet-mask.png)
 
-    ![alt text](image-6.png)
+Now we need to calculate the range of IP addresses on the network. We can do that, using the:
 
-    * We see a 53 port, domain on it, so it works
+* `ipcalc <ip>/<subnet>`
 
-* Hostname
+We get the various information about the network, and what we are intersted in, is the HostMin parameter
 
-    * one of the host, with the highest ip AND online, seems to be **catalog.vault.vinyl**, which is correct.
+![IPcalc](ipcalc.png)
 
-    ![alt text](image-7.png)
+Then, we want to check how many of the IP addresses of our scope (100 IP) are up and running, starting from the lowest one, and then specifying the we need up to 100.
 
-* Router
+* `sudo nmap -sn 10.11.12.1-100`
 
-    * first thing that you can do, is `sudo nmap 10.11.12.1-100`, and then you can again see the the different IP addresses and their MAC addresses. Based on that, we can see the hardware which is there, like Dell, Super Micro Computer, etc. Hence, you can go and google all the possible answers, and then you will be able to understand that the router has the firmware `Unkown`, and then check the IP of that router (10.11.12.28), which is the correct answer.
+Then we get our result
 
-    ![alt text](image-8.png)
+![Hosts up](hosts-up.png)
 
-* Router version
+### Find the DomainController
 
-    * Please enter the name of the software running on the router. - What you can do, is try and take a look at the nmap scan (for example `sudo nmap -O 10.11.12.1-100`), and then you can see a lot of information about the host itself, like OS, MAC, IP, and etc. But for the software, it does not really work, as if you say FreeBSD, then it is incorrect. What you can try and do, is go ahead and check the MAC address checker from wireshark for example (https://www.wireshark.org/tools/oui-lookup.html), and then enter the MAC address, and try and get a response.
+To find the DC, first thing  that we can do, is take a look again at the DNS Server that is resolving our DNS. We can check the services running on that IP, and hence get an overview of what can be intersting about it.
 
-    ![alt text](image-16.png)
+* `sudo nmap 10.11.12.6`
 
-    ![alt text](image-17.png)
+![DC Services](dc-services.png)
 
-    * What you can then do, is go ahead an try to navigate to that IP address, and then you will be able to see a page with login credentials and etc. And at the bottom you can see what software it is running. It is essentially about the software, and not firmware and etc. Hence, the correct answer is `OPNsense`
+We can see a bunch of services running on it, like `nfs`, `ldap`, `domain`, `kerberos`, which might mean that this is a Domain Controller.
 
-    ![alt text](image-18.png)
+Hence, the IP address for the Domain Controller is - `10.11.12.6`
 
-* HTTP
+### Hostname
 
-    * Based on port TCP/80, how many IP addresses are running a website? - to do that, you can run the nmap scan again over the 100 IP's, or specifically say that you want to grab only port 80 information, but from that scan, you can understand that there is 2 IP's having that port open, and hence running a website
+To find the hostname (FQDN) of the highest IP which is also online, we first need to check the IP's that are online (see previous hosts scan).
 
-    sudo nmap 10.11.12.1-100
+![Hosts up](hosts-up.png)
 
-    ![alt text](image-10.png)
+Then, we can see the highest IP being - `10.11.12.75`
 
-    ![alt text](image-11.png)
+To find some more information about it, we can run a scan on it aswell, or just check the previous results, as those also show the FQDN of those servers.
 
-    Then you can just count the amount of open ports, and understand that the correct answer is `2`.
+* `sudo nmap 10.11.12.75`
 
-    ![alt text](image-12.png)
+![Hostname Highest IP](highip-FQDN.png)
 
-    ![alt text](image-13.png)
+Hence, we can see that our answer is - `catalog.vault.vinyl`.
 
-* HTTPS
+### Router
 
-    * Same as the previous one, but what you can do is look for 443 port open. You will find one out of 2 having that port open, which is the right answer.
+First thing that we can do to find the router on the network, again, is take a look at the result of scanning the hosts that are up, as they also show the MAC Address resolver of the hardware.
 
-* Windows Systems
+![Hosts up](hosts-up.png)
 
-    * A bit harder, try to identify the number of Windows systems on the network. When using VPN, the nmap -O switch might fail, so base your answer on finding the systems with the msrpc TCP port open. - To do this, what you can try, is again a simple nmap scan `sudo nmap -O 10.11.12.1-100`, and then you will be able to see a lot of possible IP addresses and then the actual OS or Software that is running on them. What you can then do, is try and just calculate how many of them contain the Windows system, which in this case is `2`, and it is the correct answer.
+We can see something like `Dell`, `HP`, `Super Micro Computer`, etc.. But one of them says `Unknown`. If we start googling information about the different producers, we can notice that none of the known ones produce routers. Hence, the only option we are left for now, is the `Unknown` IP Address. What we can do with the MAC Address to check it again, is try and check the OUI resolver (from wireshark for example).
 
-    ![alt text](image-14.png)
+![OUI Resolver](OUI-resolver.png)
 
-    ![alt text](image-15.png)
+It says `Juniper Networks`, which means that is should be hardware for networks. Now we can say that the router on the network has IP - `10.11.12.13`
+
+### Router version
+
+To find the hardware that is running on the router itself, we can do a scan of open ports, and operating system, and services version, that are running on the system.
+
+* `sudo nmap 10.11.12.13 -O -sV`
+
+![Router services](router-services.png)
+
+![Router OS](router-os.png)
+
+We can see that the router has ports open, 80 and 443, which means we have a web interface. But, apart from that, we can see the software, which is `OPNsense`. So, if you try to navigate to the `http://10.11.12.13`, you will be prompted with a login screen, which also states that it is using OPNsense.
+
+Hence, our asnwer is - `OPNsense`
+
+### HTTP
+
+To get a list of hosts that have the port 80/tcp open, what we can do, is try and run a scan, over the 100 IP's:
+
+* `sudo nmap 10.11.12.1-100 -p80` || `sudo nmap 10.11.12.1-100 -p80 | grep -i "open"`
+
+Afterwards, we can just count (and see) the IP's that have that port open.
+
+![HTTP One](http-one.png)
+
+![HTTP Two](http-two.png)
+
+Based on the results, we can understand that the number of hosts having the port 80 open - is `2`.
+
+### HTTPS
+
+To get the amount of hosts that are running the 443/tcp open, we can repeat the command from the previous section, but specify that we need the port 443.
+
+* `sudo nmap 10.11.12.1-100 -p443` || `sudo nmap 10.11.12.1-100 -p443 | grep -i "open"`
+
+![HTTPS Host](https-host.png)
+
+According to the result, we can understand that the number of hosts that have the port 443 open - is `1`.
+
+### Windows Systems
+
+To identify the number of Windows systems on the network, we can again, do a scan of the network, with a flag to try and resolve the name of the OS.
+
+* `sudo nmap 10.11.12.1-100 -sS -O` || `sudo nmap 10.11.12.1-100 -sS -O | grep -i "windows"`
+
+![Win One](win-one.png)
+
+![Win Two](win-two.png)
+
+Hence, considering the results, we can say that the number of hosts running Windows OS - is `2`.
 
 
