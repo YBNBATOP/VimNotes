@@ -1,0 +1,11 @@
+We use RDP to acccess a remote desktop
+
+One of the best things about it, is that you can manage for example a server which has different sites.
+
+To access a remote desktop, just type in the seach "Remote Desktop"
+
+Make sure that your PC have RDP enabled (can we done with WAC or Server Manager)
+
+Remote Desktop has a main dissadvantage, as we can not get some GUI and have to do everything manually with the CORE
+
+Hence, we can make use of RSAT (Remote Server Administration Tools)

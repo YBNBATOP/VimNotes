@@ -13,3 +13,5 @@
 [[SSMWindowsLecture3|AD User Management]]
 
 [[SSMWindowsLecture5|Sharing Permissions]]
+
+[[SSMWindowsLecture6|RDP (Remote Desktop Protocol)]]
