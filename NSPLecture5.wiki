@@ -1,0 +1,89 @@
+Today, we are going to talk about passwords, and information regarding it
+
+= Intro =
+
+We as programmers, need to think about usability over security.
+
+When you want full security, then you can do barely anything on your application.
+
+When you want something usable = it can never be 100% secure.
+
+A password can be secure, based on the amount of time to crack it.
+
+* 10 minutes? VERY Risky
+* 1 month? VERY Low Risk
+* 10 years or more? Secure for LIFE
+
+To make more complex passwords - we can use passphrases.
+
+Password Managers are a good solution to store passwords. They also generate them
+
+Though, there can be problems:
+* Trust: Do you trust the password manager vendor?
+* Centralized risk: all converges into a single password. (it better be a good one)
+* Vulnerabiltites: password managers can also contain bugs.
+
+Password policy - it is about trying to rotate the passwords once in a while.
+
+As a programmer - you can make a delay between how much time should pass between tries to enter the password again.
+
+== Biggest weapon: Your head ==
+
+You need to understand that most people - do not care about passwords
+
+You can test 1 password over multiple accounts
+
+OR
+
+You can test 1 dictionary over one account
+
+= Password Security =
+
+Password cracking techniques can be used to audit the passwords in a company
+
+If you can crack a password, then other also can succeed
+
+== Cracking techniques ==
+
+* Dictionary file - a bunch of passswords from the most known one
+* Brute forcing attacks - trying a bunch of passwords that are generated.
+* Hybrid - somewhat dictionary, but modified as well
+* Syllable - combination of both
+* Rule-based - you have some information about the password.
+
+== Storing passwords ==
+
+The use of hashes!
+* Passwords are usually stored not in plaintext, but as an encrypted string
+* Diffrent hashing algorithm for different application
+
+== Salting ==
+
+Salting techniques prevents deriving passwords from the password file
+
+Stored representation differs
+
+It is like using some additional characters to hash the password.
+
+== Password hashes, what now? ==
+
+An example of cracling hashes: Rainbow Attacks
+
+== Pass the hash ==
+
+Why do we need to get the plain text password?
+
+A password hash can hust be reused to authenticate in the same manner
+
+== Online vs Offline password attacks ==
+
+Offline: typically, after retrieving a hash or encrypted password string/file
+
+Online: directly attacking an endpoint:
+* Web login portal like HTTP or HTTPS
+* Lockout (possible)
+* In practice, try limiting this only to wordlists
+* Tools for brute-forcing:
+	* NMAP
+	* MSFCONSOLE
+	* hydra
