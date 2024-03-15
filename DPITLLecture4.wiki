@@ -1,0 +1,148 @@
+= ICT Contracts =
+
+GDPR:
+* Lawfullness
+* Definitions
+
+IP:
+* Copyright
+* Patern
+* Portrait
+* Domain
+* Trademark
+
+Contractual law
+
+= Overview =
+
+* ICT Contracts 
+* ICT Projects
+* Software development
+* Cloud Computing
+* Support and SLA
+
+= ICT Contract preparation =
+
+Needs and expectations:
+* Parties
+* Expectation
+* Limitation
+* Exanuration (responsibilities)
+* Pay rate
+* Jurisdiction
+
+* Who is who?
+* Who does what?
+* How? (result / means)
+
+Preparation:
+* Quote (offer)
+* Time
+
+The pay rate needs to be benchmarked, and then you can understand that you are paid decently
+
+The experience also depends on how much experience you have. That is the difference between seniors and juniors.
+
+= Scope =
+
+Scope (description of services and supplies):
+* Key element for a ICT Contract (you need to keep important information about what is needed and how)
+* Presentation of content (you need definitions of what is happening and what is a part of the work you need to do)
+* Reasoning
+
+Consultation clauses:
+* Team and SPOC
+* Change management
+* Contractual flexibility
+
+== Overview ICT Contracts ==
+
+Software development:
+* Custom software = custom source code
+* Specific requirements
+* ICT management
+* Delivery and testing
+
+Standard software:
+* Standard and customised standard software
+* No access to source code
+* Licenses
+* Duration of right of use
+* Volume of use
+
+API:
+* Protocol for nodes between the databases
+* Software of a system or to be developed
+* Linking with new apps
+
+= ICT Projects =
+
+There are *Agile* and *Waterfall* projects
+
+There are also a few phasese:
+* Build:
+	* Requirements
+	* Consultancy
+	* Assingment Timing
+	* Milestones
+	* Delivery test
+	* Phase acceptance
+	* Further development
+* Operate:
+	* SLA
+	* Continuity
+	* Support
+	* Making changes
+	* License
+* Exit:
+	* Internal monitoring
+	* Other service provider
+	* Notice period
+	* Data transfer
+	* Escrow
+	* Source code
+
+== Software development ==
+
+Contractual arrangement:
+* Preliminary study
+* Milstones /timing /duration
+* Test phase
+* Acceptance
+* Exonoration
+* Adjustments
+
+= Cloud computing =
+
+== Clauses - Duration, suspension and termination ==
+
+Important clauses:
+* Continuity of the company/institution
+* Undertanding early termination options
+* Impact on data and applications made available to the service provider
+
+Dissolution:
+* Termination for breach of contract:
+	* Breach of essential commitment (material breach)
+	* Default on every possible commitment
+* Unilateral dissolution - party decision - abuse of rights
+* Often provided for remedy period - 30 days is not unusual
+* Termination after notice of default without remedy period is valid under Belgian Law
+* Dissolution in case of bankruptcy is valid, not in case of juridical reorganissation
+* Termination of dormant accounts
+
+Liability restrictions
+* Financial ceiling of liability:
+	* Limitation tp amounts paid by user
+* Time limitation for claims:
+	* Time limitation
+	* Limitation period can be shortened in Belgian law
+	* Possible qualification as exoneration clause review
+* Qualification of fault giving rise to liability
+
+= Support & SLA (Service Layer Agreement) =
+
+You need to make sur ethat you have a warranty period 
+
+
+
