@@ -68,4 +68,6 @@ We can make use of AI Helpers, and think about Prompt Engineering (just make som
 
 Make sure to divide work, and also make sure to have a teamleader and ask questions
 
+= Days progress =
 
+[[IPDay1]]
