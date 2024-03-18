@@ -1,0 +1,71 @@
+= International Project =
+
+Football is about finding good players and analyze data that people do.
+
+We will also have to make some presentation at the end of the project
+
+There will be different phases for us to analyze, and then we will be able to make different solutions
+
+Every morning we start at 9:30 at D133
+
+My room is D133
+
+We are going to work with the OH LEUVEN to make their life easier. We will of course have different projects
+
+= Introduction to OH LEUVEN =
+
+We want to get to innovate as much as possible
+
+They are trying to make some good progress with the football and also have a lot of interesting stuff
+
+They want to think out-of-the-box and get more ideas upon how to become better
+
+== Projects Questions ==
+
+=== Project 1 ===
+
+A tactical analysis of the opponents attacking strategy (смотр демок в КС)
+
+=== Project 2 ===
+
+Who is the next Lionel Messi? (My project, group 11)
+
+We need to scout new guys that actually are cool as players, which is called scouting
+
+Hence, you try to look at data, and find something that is crucial to contribute for the win.
+
+=== Project 3 ===
+
+Who is the OH Leuven fan?
+
+You might want information regarding 
+
+= Project brief =
+
+What is the idea:
+* Place a name of player in
+* Get players that play similarly good to him, or maybe a bit worse
+
+We are doing Player Based Profile Search, and clustering
+
+We are also being provided with some additional information, and some documentation, regarding what is what, and what data we can use 
+
+We should also work with Jupiter Notebooks => Scripts
+
+Pandas, Scikit, Mathplotlib
+
+GIT => Version Controlling
+
+Clustering =/= KMeans
+
+We should focus on which clustering algorithm is the best
+
+We want to make a clear understanding of what out data is, and hence we can make sure to use something like colors, on a gradient, and hemce understand the difference
+
+We want coloring, and make it more understandable.
+
+We can make use of AI Helpers, and think about Prompt Engineering (just make some normal prompts, like trying to undertand how to split a task in smaller tasks!) Also disable the Github Copilot does not collect your data (Github settings!), and make sure not to use the data provided
+
+Make sure to divide work, and also make sure to have a teamleader and ask questions
+
+
