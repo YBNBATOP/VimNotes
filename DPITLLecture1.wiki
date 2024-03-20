@@ -14,9 +14,33 @@ In our case, we are not allowed to do Ethical Hacking, really
 
 Privacy - it is about personal information, information that you want to keep of from others.
 
+== Case Study: Tomorrowland (2017) ==
+
 Imagine tomorrowland spending the time to check your identity with the police. That is somewhat runining your "expectation", because you are not expecting something like that - to happen. That is like an invasion, unless you are really able to know, and **expect** that. So this is about expectancy.
 
+Facts:
+* Profiling => access denied, because of systematic check, check for possible risk
+
+Questions:
+* Security based on criminal records, facts about person
+* Screening & profiling, preventive ID control
+* Jurisdiction or local authorities?
+
+== Case Study: Jehovah Witness == 
+
 Imagine also Martorii lui Ehova! That is really against you privacy, as they try to become like individuals, but they are an entity for example.
+
+Facts:
+* Processing data door-to-door
+* Kept like a structure
+
+Questions:
+* Collected only in a household?
+* Data stored for future visits?
+* What data is being processed?
+* Who is responsible?
+
+== Case Study: VTECH ==
 
 Imagine you try to expose a company, that they are doing something wrong. If you try and hack them, and show everyone that they do everything wrong, then you are a "criminal". But parents like that the child photos are online and the toys are there. 
 
@@ -24,21 +48,42 @@ This all means that privacy is a state of mind, very subjective, and a thin line
 
 So we care about the Privacy, and Data Protection
 
-= General objective =
+= General provisions =
 
-The regulation applies to everyone!
+== Objective ==
 
-The regulation protects the fundamental rights and freedoms
+The regulation applies to everyone! It is also lays down rules relating the processing of personal data and the free movement of personal data.
 
-The free movement of personal data within the Union shall neither ...
+The regulation protects the fundamental rights and freedoms, of a natural person, and especially their right to the protection of personal data.
 
-This all is about making difference betweek data **protection**, and **privacy**
+The free movement of personal data within the Union shall neither be prohibited for reasins connected with the protection of natural persons with regard to the processing of personal data.
+
+This all is about making difference betweek data *protection*, and *privacy*
 
 For example, if the data is processesed - like on the internet - you need GDPR applied to it. If not, then you do not need to (sometimes)
 
-= Definitions =
+=== Material scope ===
 
-Every time you are confronted wit the GDPR, you need to comply with it.
+AVG (GDPR) applies to:
+* a system where personal data is being processed, wholly or partly by atuomatic means, and is intende (or is) part of a filing system
+
+AVG does not apply to:
+* European instituions
+* Police, Justice & National Security
+* Household activity
+
+=== Territorial scope ===
+
+Controller based in EU
+
+Controller located outside EU:
+* Person is in the EU
+* Specific processing:
+	* Offering goods
+	* Observing behaviour of those involved
+	* Within the EU
+
+= Definitions =
 
 Definition for every legislation - is a base.
 
@@ -46,7 +91,18 @@ You need a base, to get everyone in the same ground. The definition, in a legisl
 
 == Personal data ==
 
-What do we see as personal data? It is about talking about a natural person
+What do we see as personal data? It is about talking about a natural person, an identifiable one
+
+Identifiable means:
+* Either by a reference, like name, ID, location data, etc
+* Or by a characteristics of the physical, physiological, genetic, mental, economic, cultural
+
+Also depends how easily a person can be identified, and what means are necessary for that, and how long it would take.
+
+Data can be:
+* Biometric
+* Genetic
+* Health
 
 If you are taking somebody's name on the internet, you are actually having issues with the law, unless you do not plan to use that identity as a tool.
 
@@ -62,13 +118,65 @@ The momemnt you write down data, you are alraedy processing it!
 
 You need restrictions and regulations for that processing.
 
-Also, do not forget that you have **rights**, but **duties** aswell. So that this is regulations and restrictions for the processes that you have.
+Also, do not forget that you have *rights*, but *duties* aswell. So that this is regulations and restrictions for the processes that you have.
 
-Important note: YOu have rights, but also duties.
+Processing is an operation, or multiple operations related to personal data, that might be performed by automated means.
+
+Some important facts:
+* Restriction of processing - Mark the personal data with an aim of limiting its processing in the future.
+* Profiling - usage of personal data to evaluate certain personal aspects about a person, in particular to analyze or predict different things about the person
+* Pseudonymisation - processing of data in such a manner, that it can not be adressed to a specific data subject without additional information
+
+== Legal entity ==
+
+Enterprise:
+* Natural or legal person
+* Engaged in an economic activity
+* Including partnerships and associations
+* Regularly engaged in an economic activity
+
+Group of undertakings:
+* A controlling undertaking
+* and its controlled undertakings
+
+== Cross border ==
+
+International organisation:
+* An organisation whose subordinates are governed by international law or other body, and that is set up by, or on the basis of an agreement between two or more countries.
+
+Main establishment:
+* A controller with establishments in more than one Member state, the place of its central administration in the Union
+* A processor with establishments in more than one Member state
+
+Representative:
+* a designated (by controller or processor) natural or legal person, to represent the controller or processor in connection with their respective obligations under this regulation
+
+== Actors ==
+
+Controller:
+* A natural or legal person, public authority, agency, or other body which determines the purposes and means of the processing of personal data.
+* It also depends on which law is being used (Union law, or Member State law), as it may determine who the controller is or what cruteria are used to designate him
+
+Processor:
+* a natural or legal person, a public authority, a department or another body, that processes personal data on behalf of the controller
+
+Recipient:
+* Somebidy that the personal data is provided to
+
+Third party:
+* Not being the data subject, controller, processor, persons, that are authorised to process the personal data under the direct authority  of the controller or the processor
+
+== Authority ==
+
+Supervisory authority:
+* An independent public authority established by a Member State
+
+Supervisory authority concerned:
+* A supervisory authority involved in the processing of personal data because of different means.
 
 = Principles =
 
-== Principles for personal data ==
+== Principles for big data application ==
 
 They are crucial to know inside out
 
@@ -79,22 +187,23 @@ They are crucial to know inside out
 * storage limitation - for example, i dont want to store the data for longer than i need
 * integrity and condifenctiality - feel like everything stays the same, and in terms of the class (information), stays in the class
 
-= Case Study: Predictive policing =
+== Case Study: Predictive policing ==
 
 Imagine that police uses the AI to understand what will be the next crime, commited by who, and who would be the victim.
 
-== Types ==
+=== Types ===
 
 In such a case you have a problem of types. You have a problem of typing the situation, and understanding a lot of information that might influence the case investigation and "profilling"
 
 The typing, is a problem that is based, for example, on the previous crime facts from the past. By using the previous information, you can do some risk assessment.
-= Case Study: Jobnet =
+
+== Case Study: Jobnet ==
 
 Imagine that you want to apply for a job, and then you are also asssessed by the AI as an example.
 
 In that case, it would be 2 different facts that decide whether you are suitable, or not. In one case, it would be the paper written, in another one it would be a speech. 2 different cases, give different advantages, against you, or with you.
 
-== Bias ==
+=== Bias ===
 
 Both cases studies are based on some bias. To minimize that, you need to take a look at the situation from differnent aangles and perpscpectives. Then, you might be able to assess the situation better.
 
@@ -111,25 +220,30 @@ The better is the quality of the data, the better you can make a better assessme
 * Public interest - same as the next one, and it means that it is in the interst to take care of data.
 * Llegitimate interest
 
-= Consent =
+== Consent ==
 
 The moment you do not want to give your consent, that moment allows you to be erased from a database, for example. 
 
 This is all about marketing, and it really means that it is about moments that stop to need you consent. Sometimes, that does not even relate.
 
+Definition:
+* Freely given - real choice and control for those involved
+* specific - aimed to ensure a certain degree of control and transparency for the person concerned
+* informed - transparent, proper and lawful
+* clear when explained on a website for example (explicit) - proving consent, withdrawal of consent should be as simple as given, should be lawful.
 
-== Specific ==
-
-You need to know what you are giving a consent for.
-
-== Freely given ==
-
-Sometimes, it happens that there is no need for consent, as it is already there! Like in marketing, and marking something with a green color. You will automatically choose green, and it is known, as your brain is biased.
- 
-== Explicit ==
-
-It is about making your own choice.
-
-== Points for attention regarding consent ==
+=== Points for attention regarding consent ===
 
 This is where you have different points to be mentioned, when asking for consent.
+
+Children:
+* Information society services
+* Direct offer to a child
+* Age
+* Children's consent and parental responsibility
+
+Scientific research
+
+The rights of data subjects
+
+Special categories according to Art. 9
