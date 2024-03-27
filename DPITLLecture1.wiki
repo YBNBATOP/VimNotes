@@ -211,6 +211,8 @@ This is where you start the need for Big data (meaning that you do not need only
 
 The better is the quality of the data, the better you can make a better assessment
 
+= Lecture 2 =
+
 = Lawfulness of processing =
 
 * Consent - if it related to marketing, it needs consent
@@ -247,3 +249,74 @@ Scientific research
 The rights of data subjects
 
 Special categories according to Art. 9
+
+== Necessary for the performance of a contract ==
+
+This is related to a sitation where the processing of personal data is necessary, in which the data subject participates.
+
+Example:
+* Processing of address data, when purchasing somethin online
+* Credit card details for processing of order
+
+Or maybe the processing takes place before a contract is concluded.
+
+There are also a bunch of articles that are supposed to be respected, as well as agreements and etc.
+
+Summary: Privacy in the workplace
+* Electronic communication data:
+	* Broad interpretation
+	* Regardless of the carrier
+	* Data transmitted or received by the employee
+	* Within the framework of the employment relationship
+* Eligibility requirements:
+	* Finality principle
+	* Proportionality principle
+	* Transparency principle
+
+Privacy in the workplace:
+* Collection of information:
+	* Global data
+	* Logging of time spent on the net
+	* The websites visited
+	* Mail volume
+* Individual data collection with the aim of assigning the collectively collected data to a person
+* Or via direct individualisation (allowed if the control has a certain objective)
+* Or via indirect individualisation (permitted without prior information phase and compliance with finality)
+
+== Legitimate interest ==
+
+The processing is necessary for the legitimate interests of the controller or of a third party.
+
+In short:
+* Involves a balancing of interests:
+	* The processing is necessary for the legitimate interests of the controlleror of a third party
+	* except where such interests are overriden by the interests or fundamental rights and feedoms of the data subject which require protection of personal data,
+	* in particular where the person concerned is a child.
+* Documenting the balancing
+* Examples:
+	* Fraud prevention
+	* Direct marketing
+	* Processing in company groups
+	* Network and information security
+	* Transmission of personal data in the context of judicial investigations
+
+== Legal obligation ==
+
+The processing is necessary for compliance with a legal obligation incumbent on the controller
+
+Please note:
+* The existence of a law does not always mean that is is a legal obligation. The detial of the activity clarifies this.
+
+== Vital Interest ==
+
+The transfer is necessary for the protection of the vital interests of the data subject or of other persons, if the data subject is physically or legally incapable of giving consent.
+
+In short:
+* Mainly in case of life-thretening events
+* Incapable of giving consent
+
+== Public interest ==
+
+The processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller
+
+Only possible for public authorities, when fullfiilling their duty to the citizen.
