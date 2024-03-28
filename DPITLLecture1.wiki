@@ -297,9 +297,7 @@ In short:
 	* Fraud prevention
 	* Direct marketing
 	* Processing in company groups
-	* Network and information security
-	* Transmission of personal data in the context of judicial investigations
-
+	* Network and information security Transmission of personal data in the context of judicial investigations
 == Legal obligation ==
 
 The processing is necessary for compliance with a legal obligation incumbent on the controller
@@ -317,6 +315,4 @@ In short:
 
 == Public interest ==
 
-The processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller
-
-Only possible for public authorities, when fullfiilling their duty to the citizen.
+The processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller Only possible for public authorities, when fullfiilling their duty to the citizen.

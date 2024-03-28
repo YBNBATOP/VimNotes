@@ -1,136 +1,112 @@
-We are finishing today with the ITLaw and GDPR. Next week we are getting an examination, or an exercise.
+Here we are going to focus more on general data protection regulation, or *AVG*/*GDPR*
 
-For Cybercrime we will have to do some exercises, also in a group exercise.
+= Data subject rights =
 
-The basic principles should be memorized, especially if you start developing!
+The data subject can have some rights:
+* Right of access
+* Right to data portability
+* Right to rectifiation (to change the data that is innapropriate, or non-accurate)
+* Right to be forgotten
+* Right to restriction of processing / Right to object
 
-= Lawfulness of processing =
+This all are additionally linked to the legal grounds that we had previously. Because for example,  if you give consent, then you cannot have the right to object the processing (similar to a contract, where you put your signature, and hence you agree with everything that is happening)
 
-When you start getting any information, you are starrting to process it!
+= Information obligation & notification =
 
-We need to have a legal ground (at least one) to be able to proceed data.
+== Transparency ==
 
-As a public entitiy, you need at least any interest, to process the data.
+General:
+* Identity of the controller and its DPO
+* Storage period
+* Processing purposes and basis
+* The legitimate interest, if applicable
+* International transfers
+* Right to complain
+* Rights of the data subject
+* Recipients and personal data
 
-== Consent ==
+Possibility to impose standardised icons
 
-As soon as you build a website, you want to get cookies there. Also, your marketeers would like to put ads there. Whenever it is not functional, you need to ask for consent. You need to be sure to get consent. It should be as easily given, as revoked.
+== Terms and conditions ==
 
-Regulations - applied to all states
+Controller may not refuse to comply with the request
 
-Directive - needs to be converted to a state.
+At the latest within one month after receipt
 
-== Necessary for performance of a contract ==
+Can be extended by 2 months
 
-In any contract, you can have and need some information:
-* Parties involved (signature thatt binds both of you, and names) - fun fact, even if you ask for an invoice and then you get paid, but you havent agreed on the contract - you cant say that you havent accepted the rules.
-* Benefits (payment and etc.)
-* Duties (what is expected from you)
-
-What data we need for a legal agreement:
-* Contract:
-    * Personal Infromation 
-    * Signature
-    * Contract
-
-* Payment
-    * Benefits (cars, phones, discounts, internet)
-
-* Evaluation (learning path)
-
-=== Legitimate interest ===
-
-In order to get paid, you need to get monitored, which makes sure that you are working. Hence, someone might be able to scan the network, by performance.
-
-It is the performance that makes sure that you are doing some job.
-
-You choose your employer, as then you will be evaluated in different way. Somebody might "evaluate" you on the time base (time is 5PM, so I get the fuck out), and somebody does it on performance (like I can do a job in 4 hours and not 12 hours).
-
-One of the duties of a employer, is to pay you, but he/she also has a right to monitor the network and understand whether something is getting done, or not.
-
-== Legal obligation ==
-
-You get some legal points, that you are benefited. 
-
-== Vital interest ==
-
-Sometimes you have emergencies, and then you need to actually be able to get a correctly documented contract, that has the right points.
-
-Emergency data should either be update regularly, or not updated anyhow.
-
-== Public interest ==
-
-There is a need of a public need, that you are asked to pay for something.
-
-Like a parking space in the public, and the fact that you are supposed to pay, is a interest of public.
-
-
-
-The consent depends on the property and the situation. SO for example a teacher can have his own intellectual boundary, to get a photo of the whole class.
-
-Imagine that an IP address is also a personal data, due to the fact that you might have a personal device behind it.
-
-= Right of the data subject =
-
-There are 5 rights that we need to take into account
-
-== Right of access ==
-
-You can have your data, and you need to know what data goes where and how it is given.
-
-Imagine you have a wish to go and buy something online.
-
-First you go to a website, then you need to make an account (you need to minimize data for the account), then you search shit, and then you get (add) favourites. After that, you need the process of payment (here you need Bank accouunt, name, price, and soometimes invoice address if you need an invoice address). Then you need to pick it up for delivery, and here you need an address, which might be even the shop itself, or something else. In case of exceptional cases, they might need the phone number. This all, is about the right of access, as for different purpose, you have different data. Here it is also important to minimize the data that is being processed.
-
-== Right to data portability ==
-
-This is a requiremment from the legacy processes, when you wanted to change the ISP for example. You wanted to get the other provider of phone number, so then you want to save the number, but have a different operator.
-
-== Right to be forgotten ==
-
-This means that there are situations when you need to be erased from the database. This can be tricky, as then there are many underwater rocks that you need to check, as your data might be kept. Sometimes your data is allowed to be kept, and you get fucked.
-
-== Right of information ==
-
-It is important to uderstand that you need to know who processes your data, and for what purpose.
+File a complaint with the authorities
 
 == Exemption ==
 
-If it takes too much time to apply the GDPR, then it is your fault
+Respect for fundamental rights and freedoms (Art. 23)
 
-== Restrictions ==
+Impossible or dissproportionate effort
 
-National Security
-National Defence
-Public security
-Prevention, investigation, detection or prosecution of criminal offences or the execition of criminal penalties, including the safeguarding against and the prevention of threats to public secirotu
-Protection of judicial independence and judicial proceedings.
+Obtaining or providing results from a statutory provision
 
-= Right of access =
+Proffesional or statutory secrecy with regard to personal data
 
-It depends on a lot of factors, like who is givng, and who is receiving.
+= Right of inspection =
 
-You do have choices, but still you need to balance shit.
+== Right of access ==
 
-= Right of rectification =
+This all is related to the right of the data subject to obtain a decision from the controller as to whether or not personal data relating to him are processed and, where that is the case - to have access to those personal data and to the additional information, like the purposes of processing, the categories of personal data and etc.
 
-For example, you want to labelled as a Romanian and not a Moldovan in your passport, hence you need to prove a lot, and then you get the right
+= Right to rectification =
+
+The data subject shall have the right to get from the controller, without undue delay, the rectification of personal data relating to him which is inaccurate
 
 = Right to be forgotten =
 
-The right to be erased from the system
+The controller is obliged to delete personal data without unreasonable delay, on the following grounds:
+* The data is not used anymore for the purpose it was used for.
+* The person concerned withdraws the consent
+* The data was processed unlawfully
+* The data was collected on the basis of parental consent
+
+= Right to restriction of processing =
+
+It is applicable if any of the following applies:
+* Contestation of correctness
+* Unlawful processing
+* The controller no logner needs it, but the data subject does for the establishment, exercise, or substantiation of legal claims
+* Exercise of an objection to the processing, pending the reply
+
+Exceptions:
+* Permission
+* Determining the exercise or defence of a right in legal proceedings
+* Protection of third party rights
+* Public interest
+
+Storage is always possible
+
+= Right to data portability =
+
+This is only for:
+* Personal data of the person concerned, and data obtained from the data subject
+
+Applies only to the following bases:
+* Permission
+* EWxecution of an agreement
+
+Purpose
+* Strenghtening data subject's right by givig them more control over their data
+* Reduces dependence on one provider
 
 = Right to object =
 
-You have the right to object, when you know that you are being profilled.
+Profiling:
+* Automatic processing of personal data
+* Evaluation of personal characteristics
 
-For example somebody might say that they like different kind of porn, and hence they can say that they are free to choose.
+Direct marketing:
+* Opt-out of measures if legal effects or impact are significant
 
-= Controllers and processors =
-
-A controller, is someone who decides what is needed to be done
-
-A processor, is someone who needs to do something with the information
-
-A lawyer for example, is both a controller (and almost a processor) for himself, because he gets the data, and then decides himself what to do with the data.
-
+Profiling exceptions:
+* Ordinary personal data
+	* Contractual necessity
+	* Authorised by law or express content
+* Sensitive personal data
+	* Necessity for public interest
+	* Express content
