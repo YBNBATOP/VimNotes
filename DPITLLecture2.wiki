@@ -110,3 +110,69 @@ Profiling exceptions:
 * Sensitive personal data
 	* Necessity for public interest
 	* Express content
+
+= Controller and processor =
+
+* General obligations
+* Data protection by design and default
+* DPIA
+* DPO
+* Codes of conduct and certification
+
+== Controller's responsibility ==
+
+Definition:
+* A natural person, public authority, department, or another body, that alone or with others, has the purpose and means to process personal data.
+* Takes appropriate technical and organisational measures to ensure and be able to demonstrate that processing of personal data is done according to certain regulations (Union or Member State law)
+* The measures are evaluated and updated as necessary
+* Appropriate data protection policy
+* Adherence to approved codes of conduct or approved certification mechanisms
+
+== Data protection by design and by default ==
+
+* Appropriate technical and prganisastional measures
+* Consideration:
+	* State of the art
+	* Implementation costs
+	* Nature, scope, context, and purpose of the processing
+	* Risks
+* Important consideration for new products and services
+* Technological implementation
+
+8 Privacy design strategies:
+* 4 Data-oriented strategies:
+	* Minimize (Select, Exclude, Remove, Destroy. Focus on core business)
+	* Separate (Insulate, Distribute. Distribute processing, and secury multiparty computation)
+	* Abstract (Group, Summarise/generalise, Adding noise, disrupting)
+	* Hide (Restrict access, Make unintelligible, Break link, Mix)
+* 4 Process-oriented strategy:
+	* Please inform (Please inform, please explain, Alert)
+	* Give control (Ask permission, Give choice, correct, remove)
+	* Enforce (Determine, Enforce, Management)
+	* Show on (Record, Audit, Report)
+
+== Joint controllers ==
+
+When two or more controllers jointly determine the purpose and means of processing - they are called joint controllers.
+
+They shall define their respective responsibilities for the fulfilment of the obligations arising from the Regulation, in particular in relation to the exercise of the rights of the data subject, and must have a arrangement between themselves to provide information.
+
+== Processor ==
+
+When a processing operation is carried out on behalf of a controller, the controller shall only use a *processor* that offers adequate guarantees regarding the application of appropriate technical and organisational measures to ensure that the processing complies with the regulations and protects the rights of the data subject. The processor should not engage another processor, without the consent of the controller.
+
+Taking appropriate organisational and technical measures taking into account:
+* The state of the art
+* The implementation costs
+* and the purposes of the processing and the risks to the rights and freedoms of individuals in terms of their probability and gravity
+
+Include the following:
+* pseudonomisation+encryption of personal data
+* ensure the CIA and resilience of the processing systems and services
+* in case of technical incident - ensure availability and access of personal data
+* regular test, evaluation, assessment of effectiveness of the technical and organisational measures to secure processing
+
+End of cooperation:
+* according to the choice of the controller
+* delete all personal data or return them to him
+* and delete existing copies, unless storage of the personal data is required by law.
