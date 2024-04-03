@@ -11,7 +11,7 @@ We will have:
 
 = Intellectual property =
 
-= Introduction =
+== Introduction ==
 
 The principle is that you have freedom of enterprise and copy
 
@@ -19,7 +19,7 @@ It allows you to exploit intellectual creations
 
 It neeeds to be original, and exclusive, and proved that it comes from you. Like an idea from a head, being written on paper
 
-= Domain name =
+== Domain name ==
 
 Each device connected to the Internet, is assigned an IP, and in order to make the Internet a a user-friendly, you give a name to the website
 
@@ -27,15 +27,13 @@ The principle of registration is first come - first serve
 
 Without any prior check
 
-We also to avoid mistyping of the domains
-
 You need to first check if the IP is available, and then you might even have disputes with the court to check if the domain will be give to you, or not.
 
 CyberSquatting, is about having the mitigation of domain names that are similar to the one that you have, to avoid typos. The domain name should be similar, it needs to be unfair advantage.
 
 A website can be taken down, because it is malfunctioning, and then the domain name can be even taken away, after 6 weeks.
 
-= Portrait right =
+== Portrait right ==
 
 It is the exclusive right to your image. 
 
@@ -51,10 +49,16 @@ Permission:
 * Freely
 * Certain
 * Unambigously taken
+* Specific
+* Both explicitly and implicitly
 
 To make the photos legal, you need to gather some information that will allow you to make it legal.
 
-= Copyright =
+For a child, the consent is given by the parent
+
+There are many more things that need to be considered when talking about consent and what you can, and what you can not post. Additionally, it depends on the means of the photoes that are taken.
+
+== Copyright ==
 
 Imagine that if a photo is taken by a non-human - then you cannot claim copyright over it.
 
@@ -62,17 +66,31 @@ To claim copyright, you need to make a unique, concrete, original piece of docum
 
 If you also have sources of information in your documents, you need to add those sources
 
-The copyright can be claiimed if it is some kind of art, made by humna
+The copyright can be claiimed if it is some kind of art, made by a human. It can be something like music, blog, video, tweet 
 
-There are multiple rights to acquire copyright, and you need to know them
+There are multiple rights to acquire copyright, and you need to know them:
+* Concrete form - no mere ideas or concepts no matter how genious, but the execution of that idea is conrete.
+* Original form - originality or genuieness, human creation and author's own intellectual creation, intellectual creation (bears the author's personal stamp, like the choice of the lightning and setting in a photo, or style of writing)
+
+When talking about the acquisition of copyright over the work made by an AI, that is really exceptional, and nevertheless that the AI is a "tool", you can not really acquire copyright over it, as it uses references, duplicate of other answers, unclear sources/protected texts/works
 
 There is:
-* Moral rights
-* Property rights (roght to reproduce work, such as making a copy)
+* Moral rights:
+	* Protection of the personal link to work (right to make work public for the first time, to be recognised as an author, to oppose changes to the work or the context)
+	* Does not pass to heirs
+	* Right is inalienable
+* Property rights (right to reproduce work, such as making a copy, or earning from the job. This right is transferable):
+	* communication to the public
+	* permission of the author is always needed to share the work
+	* right to compensation
+	* copyright rolls
+	* exceptions (like the parody, meaning the work has *clear* difference from the existing work. The work must contain humour or mockery. Also embedding of media is allowed if the content is legally public.)
 
 To use the copyrighted work, you need to get the right to use the art that you are trying to get
 
 We are looking at software the same way as we look at the book
+
+You can acquire the right of copyright after a certain duration, which is 70 years. After this amount of time, the work enters the public domain.
 
 = Trademark =
 
