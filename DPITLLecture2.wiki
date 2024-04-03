@@ -176,3 +176,64 @@ End of cooperation:
 * according to the choice of the controller
 * delete all personal data or return them to him
 * and delete existing copies, unless storage of the personal data is required by law.
+
+An example:
+* Company X wants to make use of an Internet Service Provider. The ISP will process personal data of these customers on behalf of company X. This is solely for the purpose of hosting and maintaining the website. The sole purpose of this is to host and maintain the website
+
+* Processor: The ISP
+* Controller: The company X
+* Explanation: In this situation, the ISP is under the actual control of your organisation and is therefore a processor. Company X takes the decisions and determines what happens to the personal data.
+
+=== Article 30 ===
+
+The contracts that contain information regarding the processor and controller, regard to each other separately, and should be respected. (https://gdpr.algolia.com/gdpr-article-30)
+
+== Personal security ==
+
+Report obligation:
+* Within 72 hours after detection of the breach
+* To the authorities
+* In case of delay: motivation necessary
+
+Exception:
+* Unless the breach is not likely to affect the rights and freedoms of natural persons
+
+Elements:
+* The nature of the personal data breach, and where possible - the categories of data subjects and personal data records concerned, and approx the number of data records conecrned
+* the name and contact details of the data DPO (data protection officer) or other contact point where further information can be obtained
+* the likely consequences of the personal data breach
+* the measures propesed of taken by the controller to address the personal data breach, including where appropriate, measures to mitigate its possible adverse effects
+
+== Notification of infringement ==
+
+When to report to data subject?
+* If it presents a high risk to the rights and freedoms of natural person
+
+== General conlusion ==
+
+Accountability:
+* The controller shall be responsible for compliance with paragraph I and shall be able to demonstrate it
+
+Documentation obligation and demonstrating compliance with the AVG:
+* Demonstrable:
+	* Appointment of a DPO
+	* Documentation obligation and risk-based approach (DPIA)
+	* Notification requirement
+* In case of dispute or control: submit
+	* Building in compliance processes
+	* Regular review and monitoring of processes
+
+= Transfers =
+
+* Principle: prohibition of transfers outside the EU and the European Economic Area
+* Only with adequacy decision, sufficient safeguards, or reservation
+* New tools to regulate transfers: codes of conduct, certificates
+* No more prior authorisation for certain tools
+
+== Authority ==
+
+Each supervisory authority shall have the competence to carry out on the territory of its Member State the duties and powers laid down in the Regulation
+
+In case of processing that is required by law, or involves a task carried out in the public interest, the supervisory authority of the Member State concerned shall be competent
+
+Supervisory authorities are not competent to supervise processing operations carried out by courts in the exercise of their judicial functions
