@@ -92,20 +92,123 @@ We are looking at software the same way as we look at the book
 
 You can acquire the right of copyright after a certain duration, which is 70 years. After this amount of time, the work enters the public domain.
 
-= Trademark =
+=== Copyright reform ===
 
-It is used to distinguish some of the function from one to another.
+Text and data mining exception:
+* Automated analysis technique that analyses works and other material in digital form to generate infromation
+* Only for scientific research by well-defined research organisations
 
-All signs need to be sufficiently distinctive and can be accurately represented.
+Publisher protection:
+* Publishers of press publications get exclusive rights for online use of an article for a period of 2 years.
+* Link tax (fair and proportionate remuneration to publishers in exchange for the use of press publications, including excerpts)
+* Exception - non-commercial use, hyperlink
 
-There are different classes for a trademark to be registered in.
+Greater responsibility for online platforms themselves:
+* Obtaining consent, via a license agreement for example
+* Self-liability for infringements under certain conditions
 
-It is important to understand where it is. 
+=== Copyright contract ===
 
-= Patent law =
+No contract?
+* Principle: author remains owner of copyright
+* Exception: software/database create by employee
 
-Exclusive right to exploit inventions
+Two possibilities:
+* Transfer of certain property rights
+* License of certain property rights
+
+Always in writing:
+* Copyright contract; broader agreement clause; clause in the invoice conditions
+* Rule of evidence for the protection of the author
+
+=== Copyright software ===
+
+Protected object:
+
+Computer programs:
+* Applications, video games, etc.
+* Also preparatory (design) material
+
+Protection only for "manner of expression of computer program"
+
+The developer = author (unless done under employment contract)
+
+It is also allowed to reproduce, adapt (translate), publicly communicate, and distribute the software
+
+=== Open source ===
+
+* The source code is freely available at no additional cost
+* The source code can be reused in new software
+
+There are also multiple catergories of licenses, and it is important to read them. For example, if you see the license *GPLv3*
+
+=== Databases ===
+
+There is a specific protection regime for databases
+
+Database:
+* Collection
+* contains works, data, or other independent elements
+* Systematic or methodical arrangement
+* The data can be retrieved separately (search function)
+* The database shall be accessible by electronic means or otherwise
+
+How are databases protected?
+* Database law:
+	* protection of the producer
+	* requirement of substancial investment in terms of data acquisition, control of data content, or data presentation
+	* data retrieval
+	* re-use of data
+	* can also be protected by copyright if meets copyright conditions
+	* data itself does not have to be origianl, but its choice, arrangement, selection or ranking must be
+
+== Trademark ==
+
+It is used to distinguish some of the function from one to another. Like signs used to distinguish goods or services of one company from the goods or services of other companies
+
+All signs need to be sufficiently distinctive and can be accurately represented, to be eligible for trademark registration regardless of the type of sign
+
+There are different classes for a trademark to be registered in. This is important to keep in mind.
+
+The registration of trademark is done with competent authorities. Also, there is of course a price to be paid for the registration.
+
+=== Protection conditions ===
+
+Absolute grounds for refusal and invalidity:
+* Signs tha cannot consitute a trade mark
+* Requirement of distinctive character
+* Admissibility
+* Certain marks consisting of the shape or other characteristic of the goods
+* Misleading marks
+* Weapons, flags, emblems of state
+* Geographical indications
+
+Relative grounds for refusal and invalidity:
+* Availability
+
+== Patent law ==
+
+Exclusive right to exploit *inventions*
 
 There are criterias for a patent:
 * Needs to be a technical invention
 * Applicable to industries
+
+Acquisition?
+* Patent application (at one of the needed authorities)
+
+Right to take action against subsequent acts:
+* Direct infringement (commercialisation, same technical end result)
+* Indirect infringement (supply of means/material to reproduce an invention)
+
+Moral right to paternity
+
+Patent term: 20 years
+
+Can you get a patent on software?
+* Sofware as such - No
+* Technical invention incorporated in software - Yes
+* What about AI and ML?
+	* Machine learning - mathematical method
+	* Mathematical method excluded only as such
+	* Chat GPT - inventive
