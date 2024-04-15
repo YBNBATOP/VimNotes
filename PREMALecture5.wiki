@@ -1,0 +1,54 @@
+= Malware! = 
+
+There are multiple types of malware, and they are all different and exploit different stuff
+
+Those can spread like viruses and shit.
+
+There are a lot of viruses, and one of them is WannaCry, which is a cryptographic locker
+
+== WannaCry ==
+
+How it worked:
+- People get phishing mail
+- They open a file with a like .docm extension
+- The file executes macros (because of macros)
+- Downloads the executable, executes it
+
+If we start to do some analysis, we can find some interesting shit inside it, as you can find the static addresses of Bitcoin wallets, which is easy to dodge via firewall rules and etc.
+
+You can find types of files, that are specified to be encrypted. Though you wont find dll and system files, so as that the system still has to work.
+
+This kind of viruses can also spread via the network, so the old versions are still vulnerable.
+
+In the first versions you could find stuff that would check for certain websites online
+
+There are also scareware, as they ask you to download some bullshit, or just ads
+
+= Components of malware =
+
+Components:
+- Crypter
+- Downloader
+- Dropper
+- Exploit
+- Injector
+- Obfuscator
+- Packer
+- Payload
+- Code
+
+= Stages in the life =
+
+Stages:
+- Design
+- Replication
+- Launch
+- Detection
+- Incorporation
+- Elimination
+
+= Cool shit =
+
+There are more things to viruses, as they can evolve themselves in order to change their own code, or avoid AV
+
+Also fun shit, Windows is going to look for executables in the $env:path, and open the first one it hits. Like *calc* can be somewhere in the middle, but also have something at the beginning, hence you will open the one that is the first one! Smart as fuck!

@@ -27,3 +27,7 @@
 [[PREMALecture4b|Static Advanced Analysis]]
 
 [[PREMALecture4|Assembly and Advanced Static Analysis]]
+
+= Lecture 5 =
+
+[[PREMALecture5|Malware]]
