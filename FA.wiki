@@ -7,3 +7,5 @@
 [[FALecture3|Windows File Systems]]
 
 [[FALecture4|ext file system metadata]]
+
+[[FALecture5|Data carving & Anti-forensics]]

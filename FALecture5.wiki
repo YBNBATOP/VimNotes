@@ -1,0 +1,96 @@
+= Data carving =
+
+We want to know how to get more data. We want to retrieve files. Like carving wood.
+
+It is different from file recovery, as you had meta data of the file system
+
+File carving, is getting a file based on the content characteristics. That is cool for when you dont have the metadata anymore. This might happen when you do 2 different types of formatting of the disk. One deletes the metadata, the other one - does not. The content can start with a certain header or certain magic byte, or something similar. You can operate with bytes and check the files (retrieve) that were deleted. You can also look for semantic carving, which is like a structure to look for.
+
+You can analyze your blocks (4096 bytes) along your disk, not only sectors. But also it is casual that a whole document can contain a picture, and then you would need to look further away for that image.
+
+It is in fact very hard to find that actual file.
+
+Remember *strings* command? You can get strings and actual text in the disk itself, like we looked in the data table of a disk for a lab.
+
+Usage for strrings:
+- sudo strings /dev/sdb2 | grep FLG
+
+You can also use *scalpel* tool, It can look for magic bytes of the files, and specify how many bytes it should look for (because some bytes can be stored somewhere else, and not in sequence)
+
+Usage for scalpel:
+- sudo scalpel -c ~/scalpel.conf /dev/sdb1 (looking for uncommented types of shit)
+
+It will then return you files it can find
+
+= Anti-forensics =
+
+Overview:
+- Hiding data
+- Destroying data
+- Supporting measures
+
+== Hiding data ==
+
+It depends why do you want to hide the information
+
+You can encrypt data of course, but that is still present on the system.
+
+There are multiple questions you can ask yourself before hiding the actual data.
+
+One of the first things you can hide the data in, is like in the OS. That also has some different ways to hide, like the properties file, or system files.
+
+Another way, of course slack space! It is in fact, leftover space. That can be seen in like HPA and DCO with disk software and shit. 
+
+You can also have leftover space in between partitions, and inside the partitions themselves.
+
+Even your file system can have slack space, as it does not always check for free space and etc.
+
+Your files can also have slack space, as you assing 8 sectors of 512 bytes for every file. Hence a smaller file will have a lot of space that is just free.
+
+In order to use that slack space yourself, you can make use of *dd* (yes, delete drive, fuck yeah)
+
+You can use it to append different shit to the actual files.
+
+Example of usage:
+- sudo dd of=/dev/sdc1 if=tobehidden.txt bs=512 seek=$((296962*8+1)) (this will attach the data to a sector from the file itself, into the slack space)*
+
+You can also read the slack space data via:
+- sudo icat -s /dev/sdc1 inodehnereofthefile
+
+If you inject data into the slack space and then edit the file, then the data is going to be moved, but NOT THE SLACK SPACE INFORMATION.
+
+Steganography is another type of shit that allows you to make some movable data, but that is actually secret. The shit is camouflaged. This is also usually called as polyglot files.
+
+You can identify a polyglot by using *binwalk filename*.
+
+Apart from that option, you can also change the actual data, via changing the least significant bit (meaning does not really affect the fiel itself) to something else, which is already going to use your values.
+
+=== Anti anti-forensics ===
+
+You do want to know if data is hidden, dont you? Then you need to know more shit, like the image size that is also a polyglot would be surely different
+
+== Destroying data ==
+
+We want to know for sure that our information is destroyed for good.
+
+There are different terms to disk cleaning, that have ddifferent options.
+
+One of the first things would be overwriting.
+
+That is where we also take care about the operational security, as your system can get fucked just by doing some small manipulations. So please add some passwords to your BIOS at least. You can erase the whole system via the BIOS in like 2-5 minutes depending on the amount of shit.
+
+You can also delete only special files, like *shred* in the linux. But, for example, this shit does not delete data from the journal for example.
+
+And of course you can just physically destroy the disk, via shredder.
+
+== Supporting measures ==
+
+You can just make use of different means that will not leave traces on your system. Like using VM's and etc, will actually not leave that much data on the disk.
+
+You can change timestamps, so that its not clear what happens
+
+Rubber duckies!
+
+Legal thwarting - data cannot be sent anywhere else, viruses on the computer, public computer
+
+Crime scene - misleading devices and documentation on the place
