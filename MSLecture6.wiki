@@ -1,0 +1,34 @@
+For the next weeks we are going to talk about other shit
+
+Today it is about Burp Suite inside the app!
+
+Next week is last lesson about Malware! How to detect it, how to understand the google protecting it and etc.
+
+The malware can be handled different ways in the project:
+- Write manually inside application (actual code, or like classes and etc) (grants the points)
+- Inject metasploit payload (bonus points, as it is tricky)
+- Write own malware (nothing big), and inject that into the application (bonus + bonus!)
+
+First, make it  work inside your application (write it like the first point), and then you can progress further
+
+It is not essential that you might fail a small part, like API request, so not scary
+
+Everything might work:
+- Getting contacts
+- Geolocation
+- Keylogger
+- Something rather small, but it should work
+
+You will also have to work with demos and etc for the final presentation 
+
+= Dynamic analysis =
+
+There are 2 types:
+- Code instrumentation (like Frida)
+- Sniffing traffic (proxy like Burp Suite)
+
+You need to manually setup a lot of stuff for the proxy to work. Remember that the gateway from emulator to the host is *10.0.2.2*
+
+When trying to sniff shit, then you can get into SSL pinning, which is a part of secure connection and it might become a problem. It is used to avoid MIM attacks. To bypass that, you can have 2 ways:
+- You can install the CA certificate (but somewhat a hustle because some manipulations are needed)
+- You can use frida-scripts that allows to bypass SSL pinning (for demo you can also need to make sure to have some notes)

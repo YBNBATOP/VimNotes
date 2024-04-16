@@ -13,3 +13,5 @@
 [[MSTopic1Unit3|Making a new App]]
 
 [[MSLecture5|Pentesting mobile apps using Frida]]
+
+[[MSLecture6|Dynamic tooling]]
