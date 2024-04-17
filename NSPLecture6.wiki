@@ -3,16 +3,18 @@ We need to submit our audit report for 50% of the grade
 You do not need a template, you can design something yourself as long as it has what you need. You will get feedback on the audit report, as you need to know about it for a security project next year! So you need to know some shit
 
 Overview:
-- General assessment (like put an overall score)
-- Overview of devices that should be fixed (some of them might be ok so you can say you could not break it)
-- Make then some text readable for non-technical people (with a lot of text and explanations)
-- Make a structure of what is up with shit
-- Make a list with devices (but leave only the most important ones)
-- Make advices upon if something is wrong (like an old useless shit, turn it off)
-- Try to be accurate with version numbers
-- Make sure that it is as readable as possible, AS YOU ARE NOT TALKING TO NERDS
-- Handle the FLAGS as passwords, or sensitive data that you find, which is already regarding the security of the "company"
-- Then you can build a table with firewall rules to enable of something similar
-- You can write about attack vectors
-- Do not really put up your NMAP SCANS with commands and shit. Because otherwise nobody will pay you.
-- Mitigations, are cool as fuck, so give advice how to fix it.
+* General assessment (like put an overall score)
+* Overview of devices that should be fixed (some of them might be ok so you can say you could not break it)
+* Make then some text readable for non-technical people (with a lot of text and explanations)
+* Make a structure of what is up with shit
+* Make a list with devices (but leave only the most important ones)
+* Make advices upon if something is wrong (like an old useless shit, turn it off)
+* Try to be accurate with version numbers
+* Make sure that it is as readable as possible, AS YOU ARE NOT TALKING TO NERDS
+* Handle the FLAGS as passwords, or sensitive data that you find, which is already regarding the security of the "company"
+* Then you can build a table with firewall rules to enable of something similar
+* You can write about attack vectors
+* Do not really put up your NMAP SCANS with commands and shit. Because otherwise nobody will pay you.
+* Mitigations, are cool as fuck, so give advice how to fix it.
+* You can even specify shit regarding the prices and etc. Make them be worried about downtime and etc.
+* Make sure that you write shit that actually exists and appears from a certain place, not out of nowhere.

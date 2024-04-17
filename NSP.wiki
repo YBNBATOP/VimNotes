@@ -13,3 +13,5 @@
 [[NSPLecture5|Passwords]]
 
 [[NSPLecture6|Audit and other shit]]
+
+[[NSPLecture7|Wi-fi]]
