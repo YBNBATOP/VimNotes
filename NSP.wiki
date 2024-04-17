@@ -11,3 +11,5 @@
 [[NSPLecture4|Exploitation]]
 
 [[NSPLecture5|Passwords]]
+
+[[NSPLecture6|Audit and other shit]]
