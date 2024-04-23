@@ -1,0 +1,27 @@
+This is the last input session
+
+We are going to talk about forensics tooling, like:
+* Autopsy
+* Kape
+* Magic Rescue
+* etc
+
+For the phones:
+* Andkiller
+* MOBILedit
+* Cellebrite UFED
+* MobSF
+
+= Data acquistion = 
+
+You either encounter live system or images take nof the system
+
+Most of the time, we are also talking about memory forensics
+
+KAPE is a live data acquisition and analysis tool which can be used to acquire registry data.
+
+Autopsy gives the possibility to acquire data from both live systems or from a disk image. It works with data sources.
+
+FTK Imager also similar to Autopsy and allows you to extract data
+
+

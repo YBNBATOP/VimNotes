@@ -9,3 +9,5 @@
 [[FALecture4|ext file system metadata]]
 
 [[FALecture5|Data carving & Anti-forensics]]
+
+[[FALecture6|Forensics tooling & mobile forensics]]
