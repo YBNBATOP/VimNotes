@@ -1,0 +1,48 @@
+= Introduction =
+
+Malicious software on your phone!
+
+Most of the types work only for mobile devices, like banking trojans. It is important to know for the exam what types of shit you have!
+
+There are such things as subscription scammers and they subscribe you to something.
+
+Mobile ad fraud is an atempt to scam the ad advisors.
+
+Adware is malicious software that places unwanted advertisements on the screen.
+
+SMS Trojans send SMSs to premiou numbers so users have to pay for each SMS.
+
+Most of these trojans have only specific targets
+
+Spyware is a type of malware that collects, uses and spread personal or sensitive information without the user's consent or knowledge. In this case, it does it in smaller doses, so it is harder to detect if it is there.
+
+= How does malware gets on device? =
+
+Users can download malicious apps from an app store
+
+Use of 3rrd party services and etc.
+
+Downloading APK files and etc.
+
+Attacks of supply chain.
+
+Hacking OS vulnerabilities.
+
+= Discover malware =
+
+Signs of malware:
+* Seeing a lot of ads constantly
+* You install an app, and then the icon immediately dissappars
+* The battery is draining much faster
+* Use of a lot of data
+* Signature based detection (like the hashes and sequence of bytes on PC)
+
+= Create malware =
+
+Use metasploit exploit
+
+msfvenom
+
+Payload: android/meterpreter/reverse_tcp
+
+

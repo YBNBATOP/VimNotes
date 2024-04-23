@@ -15,3 +15,5 @@
 [[MSLecture5|Pentesting mobile apps using Frida]]
 
 [[MSLecture6|Dynamic tooling]]
+
+[[MSLecture8|Malware]]
