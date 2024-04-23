@@ -45,4 +45,6 @@ msfvenom
 
 Payload: android/meterpreter/reverse_tcp
 
+To build APK - Build > Build bundles/APK(s) > Build APK
 
+You can write manually malware in your application, then you can do a metasploit session (for bonus), and then you can try to inject malware in another application (bonus bonus nahui)
