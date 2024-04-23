@@ -47,4 +47,12 @@ Payload: android/meterpreter/reverse_tcp
 
 To build APK - Build > Build bundles/APK(s) > Build APK
 
-You can write manually malware in your application, then you can do a metasploit session (for bonus), and then you can try to inject malware in another application (bonus bonus nahui)
+You can write manually malware in your application (but you need to do something useful or more advanced), then you can do a metasploit session (for bonus), and then you can try to inject malware in another application (bonus bonus nahui)
+
+The evaluation:
+* 15 minutes
+* Show application
+* Show code
+* Questions regarding Frida (write like a full script), BurpSuite, APKTool, Malware
+* Code explanation
+* A few theoretical questions
