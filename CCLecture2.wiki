@@ -1,0 +1,33 @@
+Cybercrime is a part of Cybersecurity, and we try to tackle most of the problems, that are connected somehow to the crime world.
+
+In Cybercrime we have a lot of "actors", and technically speaking factors that are responsible to decide what is to be done in the realm of cybersecurity
+
+= How it all started =
+
+Fact Sheets:
+* Council of Europe Convention on cybercrime
+* EU directive on attacks against information systems
+* EU NIS directive (old one, 2016)
+* EU NIS2 directive (more around 2023)
+* Proposal for a directive to combat fraud and the counterfeiting and etc.
+
+= EU and criminal legislation =
+
+There is one interesting thing that will bring up information:
+* European union agency for fundamental rights (you can compare it with the human rights, a bit, that are related to like the united nations rights, but they are not *enforced*, or to council of europe, and they actually have enforcement mechanism)
+
+Not everything is EU responsibility, and it is crucial to understand where it applies. It mostly applies in the places where it can be the only source of legislation.
+
+Another actor is CSIRT (CERT is a trademark, that is responsible for incidents, and even BE has it, and you can get it by like buying the license or something.). There are also 2 somewhat forums that are responsible for accepting the CERT
+
+NIS does not only forces your country to do Cybersecurity, but also many other things like sharing information and etc.
+
+There is a very long line of strategy by the EU, and then it is quite a thing, as it contains a multitude of directives that are put in power.
+
+ENISA is also a very important source that is responsible for showing off things related to cybersecurity. It has documents that can teach you something related to Cybersecurity
+
+Do not forget that in the world of reacting to threats, you can have a "fire brigade" and a group that is setting up to understand whether "its a fire or not". For example CERT is a fire brigade, but CyTRIS is deciding whether something is a fire, or going to fire.
+
+= Privacy & data protection =
+
+Data protection means protection of personal data. Privacy, is about something that is related to somebody monitoring me or something.
