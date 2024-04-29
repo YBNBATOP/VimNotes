@@ -31,3 +31,7 @@
 = Lecture 5 =
 
 [[PREMALecture5|Malware]]
+
+= Lecture 6 =
+
+[[PREMALecture6|Debugging]]

@@ -1,0 +1,46 @@
+This is about Advanced Dynamic Analysis
+
+There are 2 levels:
+* Source-level debugging: we are all used to this kind of debugging like in a programming environment
+* Assembly-level debugging oeprates at CPU level (low-level debugger)
+
+Both allow to place stops.
+
+Low-level debugging can be done in Kernel Mode or User Mode:
+* Kernel-mode requires usually 2 OS
+* Another popular tool is WinDbg
+* Malware can also be debugged in User Mode (using tools like Immunity)
+
+= Debugging =
+
+Similar to Assembly analysis
+
+It is easier though
+
+On the exam/sample, first you better open the sample using IDA, and check the processes that are happening, and you can put down breakpoints to then see the values.
+
+= Loading an image =
+
+Executables are loaded using image loader
+
+= Stack vs Heap =
+
+Heap is more global, stack is user per thread (process)
+
+Classes and objects go on the Heap. It is also manipulated by the program.
+
+= Main memory =
+
+Memory is usually depicted with the highest address at the bottom
+
+= Endianness =
+
+This refers to a way how bytes should be interpreted in the memory.
+
+= How to Debug =
+
+There are a lot of debuggers
+
+After launching the debugger, we can do two things:
+* Open a new process
+* Attach some shit
