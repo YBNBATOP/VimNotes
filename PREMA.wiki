@@ -35,3 +35,7 @@
 = Lecture 6 =
 
 [[PREMALecture6|Debugging]]
+
+= Lecture 7 =
+
+[[PREMALecture7|Dynamic Rebase]]

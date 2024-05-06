@@ -1,0 +1,5 @@
+ASLR - Address Space Layout Randomization = meaning that we move the code starting point to another one. 
+
+The Image Base Address is the beggining of the code in the logical memory space.
+
+Overall, you can see in the PE Headers if something was compiled with ASLR or not. This will only make sure if you are running something like a file, or that you want to decompile it, you will see some kind of offsets with the 
