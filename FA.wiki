@@ -11,3 +11,5 @@
 [[FALecture5|Data carving & Anti-forensics]]
 
 [[FALecture6|Forensics tooling & mobile forensics]]
+
+[[FALectureGuest|Guest Lecture about what are attacks]]

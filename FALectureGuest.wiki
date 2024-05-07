@@ -1,0 +1,36 @@
+= Threats =
+
+There are multiple threat actors:
+* Hacktivists
+* Organisational crime
+* Insiders
+* Nation State
+
+Evolution of incident response (do not erase the evidence!!!)
+* PAST: pull the plug
+* TODAY: forensics and etc
+* FUTURE: automatic analysis by AI
+
+Incident response process:
+* Preparation
+* Identification (check how dafuck something happened)
+* Containment (understand the malware and get rid of it)
+* Eradication
+* Recovery
+* Lesssons learned
+
+All of this is just the ideal one, but the reality is different
+
+Indicator of compromise - it is an indicator that something is off. Like network stuff, or maybe the change of a MD5SUm
+
+Killchain of the attack:
+* Campaign (phishing, documents attached, low network noise)
+* Exploitation (document open, dropper, same noise)
+* Propagation (infection with control from outside, propagation through the network, network noise is high)
+* Ransom (download of ransomware, execution of ransomware, a bit lower network noise)
+
+For containment, you want to make the life harder for the attacker, hence you want to block the incoming and outcoming messages to the outer network. Or you can even have a separate pyramid of pain. 
+
+= Digital forensics =
+
+
