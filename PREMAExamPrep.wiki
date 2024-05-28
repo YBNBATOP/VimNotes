@@ -1,0 +1,22 @@
+= Example of questions =
+
+== At what time was the sample created ==
+
+To check for that, you can open *PEview* (with the sample), and then go into IMAGE_NT_HEADERS > IMAGE_FILE_HEADER and look for Time Date Stamp
+
+= Important/Curious to remember =
+
+== Imports ==
+
+To view different imports from different DLL's (might be needed to know the type of the malware that you are running based on the headers), you can go to *PEview*, then go to the SECTION .rdata > IMPORT Name Table. There you can see the DLL's (their names), and the functions that are imported from it.
+
+== Resources ==
+
+In the same *PEview* there is the SECTION .rsrc that is responsible to contain the possible (or most) resources used by the sample. Could also try to check it with the Resource Hacker (it can also show images and etc but rendered) 
+
+
+= How to analyze a sample (general steps) =
+
+First and foremost, we can do some static analysis, meaning that we are going to see what is happening and what strings (for example) the sample has. Some samples may also contain other information. So you can use *PEview* (for imports, to understand what the samples might be doing, and it should be understandable by the name of the function. Like a keylogger would surely contain stuff regarding the Key or something. Then we can open *BinText* and look for strings specifically, like FLAG, or something that is related to HTML, or maybe some error messaged, like Windows Sockets initilization failed.
+
+
