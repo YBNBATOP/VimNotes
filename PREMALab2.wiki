@@ -4,24 +4,24 @@ Some of them (Flags) you can find yourself, but for some of them you will have t
 
 == 1st one ==
 
-We can understand that it contains 3 flags, based on the string that we can see with **BinText** utility.
+We can understand that it contains 3 flags, based on the string that we can see with *BinText* utility.
 
-* To find the first flag, what you can do is right-click > properties > details. The you should find the first flag (FLAG-53795)
+- To find the first flag, what you can do is right-click > properties > details. The you should find the first flag (FLAG-53795)
 
-* To find the next flag, what you can do is try and open it with *BinText* program, and then you should be able to see the flag (FLAG-73643), under another line which looks like a password:
+- To find the next flag, what you can do is try and open it with *BinText* program, and then you should be able to see the flag (FLAG-73643), under another line which looks like a password:
 
 00000000154C   00000040214C      0   V3ryS3cUr3!p4ssW0rd
 
 000000001564   000000402164      0   FLAG-73643
 
-* To get the third one, first thing that you can do, is try and run it (in PowerShell), and eventually put in the password from the previous lines that we saw (V3ryS3cUr3!p4ssW0rd). Then you will get the last flag (FLAG-22875), and also the previous one. You can also take a look at it with *BinaryNinja*, and then you can find the FLAG in plaintext inside the source code.
+- To get the third one, first thing that you can do, is try and run it (in PowerShell), and eventually put in the password from the previous lines that we saw (V3ryS3cUr3!p4ssW0rd). Then you will get the last flag (FLAG-22875), and also the previous one. You can also take a look at it with *BinaryNinja*, and then you can find the FLAG in plaintext inside the source code.
 
 == 2nd one ==
 
 If we check the strings with *BinText*, we can see that it actually contains 3 flags (string inside the executable itself)
 
 * First flag you can find in 2 ways:
-    -  Either you open it with *BinText*, and then you see the actual string with a password (000000001501   000000402101      0   4n0th3rS3Cur3!P4ssword), and the one with the flag (000000002FEE   000000404DEE      0   FLAG-18369), and then you got the FLAG (FLAG-18369)
+    - Either you open it with *BinText*, and then you see the actual string with a password (000000001501   000000402101      0   4n0th3rS3Cur3!P4ssword), and the one with the flag (000000002FEE   000000404DEE      0   FLAG-18369), and then you got the FLAG (FLAG-18369)
     - Or you open *ResourceHacker*, and then you can go to the String Table, and you can find it there.
 
 * Second flag, you can find in the same *ResourceHacker*, if you go to the Bitmap image, and then you can open it and see the FLAG (FLAG-84017)
@@ -32,11 +32,11 @@ If we check the strings with *BinText*, we can see that it actually contains 3 f
 
 The progrma contains 2 flags, this we can get by checking the strings using *BinText*
 
-* To get the first flag (FLAG-25248), after checking that the strings in **BinText** are somewhat empty, we can start up **PEiD** utility, and check what it is. We can see that the program was compressesd with **upx**. Hence, what we need to go is decompress it. To do that, unarchive upx from the tools, and then using the powershell, decompress the executable of exercise 3. After doing that, we can get back to the strings in **BinText**, and then see the flag line: 
+* To get the first flag (FLAG-25248), after checking that the strings in *BinText* are somewhat empty, we can start up *PEiD* utility, and check what it is. We can see that the program was compressesd with *upx*. Hence, what we need to go is decompress it. To do that, unarchive upx from the tools, and then using the powershell, decompress the executable of exercise 3 (*.\upx.exe -d <file>*). After doing that, we can get back to the strings in *BinText*, and then see the flag line: 
 
 000000002612   000000404412      0   #Most awesome console app FLAG-25248
 
-* To find the second flag, get back to the strings using **BinText**, as there you will be able to find some interesting lines (in thde executable that was already unpacked!!! with upx):
+* To find the second flag, get back to the strings using **BinText**, as there you will be able to find some interesting lines (in the executable that was already unpacked!!! with upx):
 
 000000001500   000000402100      0   V3ryS3cUr3!p4ssW0rd2
 
@@ -48,7 +48,7 @@ By looking at this lines we find a password (which was different when the progra
 
 This one supposevly has only 1 flag (also can be seen from the scoreboard exercise).
 
-* To find the flag, go and check the strings first, and check that you can seee nothing related to a flag there. If you open **PEiD**, then you can see that it was written in a C familiy. Hence, open the **dotPeek** tool from Jetbrains, and then add the executable in there. If you check the *TimeLock* namespace, and then the *frmMain*, you will notice that you can find strings related to a flag. It is being generated, and all we have to do is calculate it (manually or by putting it in a function from the IDE).
+* To find the flag, go and check the strings first, and check that you can seee nothing related to a flag there. If you open **PEiD**, then you can see that it was written in a C familiy. Hence, open the *dotPeek* tool from Jetbrains, and then add the executable in there. If you check the *TimeLock* namespace, and then the *frmMain*, you will notice that you can find strings related to a flag. It is being generated, and all we have to do is calculate it (manually or by putting it in a function from the IDE).
 
 private int dagen = 365;
 
