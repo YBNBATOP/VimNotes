@@ -10,13 +10,11 @@ We get a PNG file, but we can't open it. Hence, it means that the MagicBytes are
 
 Next, use `hexedit file`, and check what are the fist bytes.
 
-We are interested in the very first ones and their ASCII representation on the right
+We are interested in the very first ones and their ASCII representation on the left (in HxD).
 
-{{local:images/lab1-1.png}}
+We see that it is not full (it is set to *00 00 00 47*). We need to change those bytes to the PNG ones (*89 50 4e 47*). That you can check on the internet.
 
-We see that it is not full. We need to change those bytes to the PNG ones. That you can check on the internet.
-
-Then open the image and you get the flag.
+Then open the image and you get the flag. (FLAG-128967)
 
 == 2nd exercise ==
 
@@ -24,15 +22,11 @@ We get what looks like a binary. It might be an executable.
 
 Again, open it with a HexEditor and try to find something that is related to a known type.
 
-{{local:images/lab1-2.png}}
-
-Here we can understand that the type should get changed to a `.exe` or MZ. This we can understand because it contains a line that says it can not be executed in MS DOS or something similar. After we changed the MagicBytes, change the file type to `.exe`, then open PowerShell, navigate to the directory, and the `./filename` to execute it in your shell, not like a program. And you should get your flag
+Here we can understand that the type should get changed to a `.exe` or MZ. This we can understand because it contains a line that says it can not be executed in MS DOS or something similar. After we changed the MagicBytes (to *4d 5a*), change the file type to `.exe`, then open PowerShell, navigate to the directory, and the `./filename` to execute it in your shell, not like a program. And you should get your flag (FLAG-189473)
 
 == 3rd exercise == 
 
-Again, same story, open the file in hexeditor, and you get that the bytes are again wrong, and we need to find something that is similar. We can see and *M* there, hence considering the slides, we think that it should be a `.BMP`, or bitmap image. Again, change the Bytes, change the extension to `.BMP`, and try to open it. You should again get your flag.  
-
-{{local:images/lab1-3.png}}
+Again, same story, open the file in hexeditor, and you get that the bytes are again wrong, and we need to find something that is similar. We can see and *M* there, hence considering the slides, we think that it should be a `.BMP`, or bitmap image. Again, change the Bytes (*42 4d*), change the extension to `.bmp`, and try to open it. You should again get your flag. (FLAG-176842)
 
 = General tips out of lesson =
 
