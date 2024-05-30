@@ -1,0 +1,17 @@
+= Start =
+
+Here it is just an overview of what we have studied mostly.
+
+= 1st one (Spy.exe) =
+
+First of all, lets check stings (*BinText*) and whether the file is packed or not (*exeinfo*).
+
+While checking the strings, we surely mention some important things: That the sample contains 3 flags, a few places for "FLAG-", Windows Sockets Initialization Failed, and some HTML stuff that is important to mention (check the solution on leho too)
+
+Then I decided to check the *PEview*, and it is important to mention that inside there we can check *IMAGE_NT_HEADERS > IMAGE_FILE_HEADER*, and inside there we can see the *Time Date Stamp* (when it was created), and see whether it is a 32 or 64 bit program. If we also check the *IMAGE_OPTIONAL_HEADERS* and then see that it is a GUI project. Also, if we check the *SECTION .rdata > IMPORT Address Table/IMPORT Name Table*, and see the functions that it loads. So there we can see a function related to *CreateCompatileBitmap*, and also things related to *Clipboard* like *OpenClipboard*, *GetClipboardData*. This and the name might mean that something is off here.
+
+* To get the first flag, we should launch the *FakeNet*, as it might be doing something with the internet. Important to also launch (with administrator) the *ProcessExplorer* and *ProcessMonitor*. After that, we can finally launch the *Spy.exe*. When we do it, nothing seems to happen. Hence, we first make sure to filter in ProcessMonitor for *PID, regsetvalue (operation), and writefile (operation)*. After that, we will still see nothing. Then, what we need to do is check the process information inside the *ProcessExplorer*. There we can see that it has a connection (initializes) to some strange address (or it says desktop-blablabla) and port 31337. Hence, we needed the FakeNet. After that, open the browser, and try to navigate to *http://localhost:31337*, and then we get a page where we can get screenshot, or clipboard information. if we click on screenshot, we will see in the *ProcessMonitor* that it wrote a file to a location on our PC *%appdata%\Local\Temp* and find the value like FLAG-41278.jpg. Hence, we found the FLAG.
+
+* To get the second one, we can do the same thing, but this time click on *Clipboard*, and then we find that it wrote to the same place again. But this time FLAG-88321.txt. Hence we found the second flag.
+
+* To get the third flag, it is not that obvious, but we need to access the same localhost and port but via telnet. But before that, we need to make sure that we installed it. For that, look for *Control Panel > Small Icons > Programs and Feature > Trun Windows features (on the left) > Select Telnet Client and click OK*. After that, pop a powershell, and then say *telnet localhost 31337* and we get the connection and the third FLAG (FLAG-16479)
