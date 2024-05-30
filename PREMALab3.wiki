@@ -1,6 +1,6 @@
 = Lab 3 PREMA =
 
-= 1st exercise =
+= 1st exercise L3a-FrameworkQuestion.exe =
 
 First thing I would try to do, is check the strings, with `ResourceHacker`, or `BinText`.
 
@@ -10,13 +10,13 @@ First thing I would try to do, is check the strings, with `ResourceHacker`, or `
 
 * To get the last flag, what you need to do, is use the `ILSpy Binaries`, and then you will be able to go to the resources, and get to see the FLAG (FLAG-60472). That could not be seen in the *ResourceHacker*, or *dotPeek*
 
-= 2nd exercise =
+= 2nd exercise L3b-Flippo.dll =
 
 If you check the strings using `BinText`, you will see that it says that there is only one flag in there.
 
 * To get the first one, first take a look at the strings, and then you get the idea that it should do something like FLAG-00000. To do it, you need to open the `PEExplorer`, and then you need to uncheck the option that it is a DLL file, inside the characteristics. You can also understand that it is supposed to be run as a .exe, as you can check the hex magic bytes. Then you save the file as a .exe, and then you run it, and you get the flag (FLAG-20290).
 
-= 3rd exercise =
+= 3rd exercise L3c-Shipme.dll =
 
 * To get the first flag, what you need to do, is try and check the exports of functions via `PEview` or `PEExplorer` (SECTION .rdata > EXPORT Address Table). It is a DLL, hence you need to check it up. Then, you go to the cmd, and try and run it as a dll.
 
@@ -32,7 +32,7 @@ Then it will say that you need to try harder and etc.
 
 Then you will get the last flag (FLAG-44953). If you try to make it without the "FLAG", then it would say that it cannot find the shipment.
 
-= 4th exercise (IMPORTANT FOR EXAM) =
+= 4th exercise (IMPORTANT FOR EXAM) L3d-Dropper.exe =
 
 This one contains 3 flags, this can be seen from the *BinText*. Also curious to know, is that it has a string inside that says that "Rename to Game.exe to arm it". Also, you can find something like "Service.exe" which is inside strings, and might be a file accessed by the program.
 

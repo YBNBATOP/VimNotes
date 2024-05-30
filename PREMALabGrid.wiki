@@ -1,0 +1,26 @@
+= PREMA Lab 4 The_Grid.exe =
+
+We have one sample, that seems to have 6 flags. That information can be gathered from the `BinText` of the executable itself.
+
+Important notes: Fisrt thing that I notice, is that the flags are being generated and given when the answer is correct. Apart from that, I see some files that might be used for the Registry writer:
+
+- 000000006680   000000407280      0   SOFTWARE\HOWEST\PREMA\THE\GRID
+- 0000000068B0   0000004074B0      0   \PREMA.txt
+
+To check the type of the program we have, I checked the *PEview* and then went into *IMAGE_NT_HEADERS > IMAGE_OPTIONAL_HEADER* (in this case it says CUI or simply CLI I guess)
+
+To check when the file was created, I checked the *IMAGE_NT_HEADERS > IMAGE_FILE_HEADER > Time Date Stamp*
+
+* To find the first flag, what you need to start with, is of course the strings and resources from the *BinText* and *ResourceHacker*. If you check resource hacker, you can go there, and then you will be able to see a bitmap image, and then you can see the FLAG (FLAG-959298). The information about the bitmap image can also be found inside the *PEview*.
+
+* To find another FLAG (FLAG-980549), what you can do is go ahead and try to launch the executable inside the sandbox, with `Process Monitor` and `Process Explorer` opened. Then you launch the capture of events in Process Monitor, and open the executable inside the PowerShell. After that, you can stop the capture, and analyze the PID of the executable. What I did, is filter by Operation, and put it to *regsetvalue* and *writefile*, and then you should be able to see a event. Then, you can open it, and see that it tries to write something to this address specifically - *HKU\Sandbox_ybnbatop_DefaultBox\user\current\software\HOWEST\PREMA\THE\GRID\FLAG*. Lower in the data, you can find the FLAG (FLAG-980549) itself.
+
+* To find another flag, also according to the same event, you can go outside the sandbox, and try and navigate to something similar from lab 3 (*C:\Sandbox\ybnbatop\DefaultBox\user\current\AppData\Local*), and there is the *AppData* (hidden folder), you will be able to see the FLAG (FLAG-249156) inside a file called *PREMA.txt*
+
+* To find another flag, what you can do, is try and solve the question 1 from the launched application. The answer can be found online, and then, you divide 1000/50 (because on the wiki you can understand that it should be physical years, as 1000 and 1050 does not work.), you get 20, you enter 20, and then you get the answer FLAG (FLAG-464654). Or, what can be done is you open *IDA*, then open *Views > Open subviews > Strings*, find the string with first question, and then *Right-click > List crossreference* and jump to the first one. There you will see a chunk of code (in graph view), and then remember - *RED* means true, *GREEN* means false. Hence, if you answer correctly, you go the *RED* way. And to toggle values from Hex to decimal, just press *H* on keyboard, at the value where it does the *cmp (compare)* before *jnz (jump not zero*. You should be able to see the value *20 (original 14h)*
+
+* To find the fifth flag, what again can be done, is pretty much the same as for the previous flag. You find the string reference, and then you go ahead and get to the actual chunk of code. A very useful tip is to use the latest IDA version, as it can generate pseudocode if you have internet connection and press the *F5* key. Then you can easily check that the value should be equal to *4096*, and by answering that, we get the FLAG (FLAG-670075). Otherwise, you would have to calculate it manually from the function *sub_401430*
+
+* The last flag can also be found using *IDA* and generating pseudocode, otherwise it would probably require to calculate the function output manually of *sub_401590*. Either way, we can find out that the value needed is *1982*, and if you enter it, then you get the last FLAG (FLAG-512901).
+
+

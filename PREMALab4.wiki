@@ -1,18 +1,71 @@
-= PREMA Lab 4 =
+= Start =
 
-We have one sample, that seems to have 6 flags. That information can be gathered from the `BinText` of the executable itself.
+This lab requires to read data using *IDA* and understanding of assembyl code.
 
-Important notes: Fisrt thing that I notice, is that the flags are being generated and given when the answer is correct. Apart from that, I see some files that might be used for the Registry writer:
+= 1st one (L4a-Guess) =
 
-- 000000006680   000000407280      0   SOFTWARE\HOWEST\PREMA\THE\GRID
-- 0000000068B0   0000004074B0      0   \PREMA.txt
+First thing we can do, is open *BinText* and search for strings. We find there information regarding 2 flags.
 
-* To find the first flag, what you need to start with, is of course the strings and resources from the `BinText` and `ResourceHacker`. If you check resource hacker, you can go there, and then you will be able to see a bitmap image, and then you can see the FLAG (FLAG-959298)
+* To get the first flag, we need to calculate the "flag" itself which is the number that we are going to enter. To do that, we need to know some basic operations: *mov [ebp+var_4],7* - this would put the value 7 into the address at ebp+var_4 (think of it like a variable); *mov ecx, [ebp+var_4]* - this would save the value from the ebp address into ecx (the things that end with e_x are like main variables, or things on the stack (like setteled in values); *imul ecx, 10* - this one would mean that the value inside ecx is getting multiplied by 10; and then *mov [ebp+var_4], ecx* - this would represent and end of loop where the value gets modified outside the stack, and then used. So, to find the flag, we need to keep an eye on the *ebp+var_4*, which will end up looking like this: 7x10)+3)x10)+8)x10)+9)x10)+2) = 73892. The you enter the value in the executable and it says we found the first FLAG (FLAG-73892).
 
-* To find another FLAG (FLAG-980549), what you can do is go ahead and try to launch the executable inside the sandbox, with `Process Monitor` and `Process Explorer` opened. Then you launch the capture of events in Process Monitor, and open the executable inside the PowerShell. After that, you can stop the capture, and analyze the PID of the executable. What I did, is filter by Operation, and put it to `regsetvalue`, and then you should be able to see a event. Then, you can open it, and see that it tries to write something to this address specifically - HKU\Sandbox_ybnbatop_DefaultBox\user\current\software\HOWEST\PREMA\THE\GRID\FLAG. Lower in the data, you can find the FLAG (FLAG-980549) itself.
+* To find the second flag, take a look at the routes the graph view in *IDA* shows. We can see that it has one *red* route, when it goes after comparing *cmp eax, [ebp+var_4]*. And it give you the first flag. But if you check the other *jnz short loc_sub4010C7* then you might see that in there it compares the other option, where you have *ebp+var_C*. That one is also being calculated in the previous chunk where we saw the previous flag. So the value there ends up being: 523x132)+74)-27 = 69083 (the sub means -). We enter the value, and we get the FLAG (FLAG-69083)
 
-* To find another flag, also according to the same event, you can go outside the sandbox, and try and navigate to something similar from lab 3 (C:\Sandbox\ybnbatop\DefaultBox\user\current\AppData\Local), and there is the AppData, you will be able to see the FLAG (FLAG-249156) inside a file called PREMA.txt
+= 2nd one (L4b-CombinationLock) =
 
-* To find another flag, what you can do, is try and solve the question 1 from the launched application. The answer can be found online, and then, you divide 1000/50 (because on the wiki you can understand that it should be physical years, as 1000 and 1050 does not work.), you get 20, you enter 20, and then you get the answer FLAG (FLAG-464654)
+This one is supposively containing only one flag.
+
+The whole idea is that it starts counting from the start from 99999, in increments of 13 (can be seen in the function sub_401050)
+
+* To find the flag, it is useful to have the latest version of IDA and the internet connection, as then you will be able to generate pseudocode on *F5*. After that, you can see the values being calculated in more readable way. It contains 5 functions that check the values that we need to have. First function checks if the we have a value between 29999 and 40000 (meaning that first number is 3). Then we check if number % 10000 is between 4999 and 6000 (% means that we are taking a look at the remainder. For example 11 % 10 = 1, because you can include 10 once inside the 11, but not more.). Then we check if the number % 1000, and multiplied by 3 is between 597 and 900. Then we check that the fourth character (so v3) should == 52, which means that we are taking a look at the ASCII number, and in this case it will mean 4 (This can be seen very good if you dont have the pseudocode opened but the normal graph view). And then the last number, we need it to be % 10 and multiplied by 33, and == 231. Then you can either do maths (which i am bad at), or write a whole python script which we got from our good specialist Evarist (thank you very much):
+
+```python
+
+#!/bin/python3
+
+def size_check(num):
+    return num > 29999 and num < 40000
+
+def mod_check(num):
+    return (num % 10000) > 4999 and (num % 10000) < 6000
+
+def mul_mod_check(num):
+    num2 = 3 * (num % 1000)
+    return num2 > 597 and num2 < 900 
+
+def check_fourth_digit(num):
+    return str(num)[3] == "4"
+
+def mul_mod_check_2(num):
+    return 33 * (num % 10) == 231
+
+def main():
+    for i in range(29999, 40000):
+        if size_check(i) and mod_check(i) and mul_mod_check(i) and mul_mod_check_2(i) and check_fourth_digit(i):
+            print(f"Found the flag: {i}!")
+            return
+    
+    print("No flag found...")
+
+if __name__ == "__main__":
+    main()
 
 
+```
+
+By running this script, we will get the brute forced number. We enter 35247 (result), and it says that we got the FLAG (FLAG-35247)
+
+= 3rd one (L4c-FakeNews) =
+
+Analyzing the strings says that we are going to look for 3 flags.
+
+By checking the executable with *exeinfo*, we can undertsand that it is packed using *upx*. We can unpack it and check again. (*.\upx.exe -d <file>*)
+
+Now we know that it also contains one nice malware feature.
+
+We will continue analyzing the *unpacked* version, but launching the *packed* version whenever we need.
+
+* To get the first flag, lets try and open *IDA* with the file. Then, take a look at the strings and find the *FLAG-%d*. After that, we can understand that there are 2 routes that can get us there, and in both cases it is represented by cases from the switch. The first flag is supposed to work if the day is *6*. So if we change the date in Windows to that number, and then run the *packed* FakeNews.exe, then we will get the FLAG (FLAG-49134). Notice that in IDA it was 49128, but here it is +6 value. 
+
+* To get the next flag, we can check the other cases that are present in the decompiler. We can see that one of the cases shows some gibberish with pound signs (#). It is the case for day 21, hence we can set the date in Windows to that, and then we will get the ASCII art, and get the FLAG (FLAG-14210)
+
+* To get the last flag, we are supposed to do the trick as we did the first one. The value is supposed to be set up for the day 32, but since I cant set it up, I do not know how to do it. But the value inside there is 83934, so it might either stay intact, or it will change to + 32 value.

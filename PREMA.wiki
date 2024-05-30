@@ -22,7 +22,9 @@
 
 = Lecture 4 =
 
-[[PREMALab4|More about static and dynamic]]
+[[PREMALabGrid|More about static and dynamic]]
+
+[[PREMALab4|Static analysis advanced]]
 
 [[PREMALecture4b|Static Advanced Analysis]]
 
