@@ -15,3 +15,11 @@ Then I decided to check the *PEview*, and it is important to mention that inside
 * To get the second one, we can do the same thing, but this time click on *Clipboard*, and then we find that it wrote to the same place again. But this time FLAG-88321.txt. Hence we found the second flag.
 
 * To get the third flag, it is not that obvious, but we need to access the same localhost and port but via telnet. But before that, we need to make sure that we installed it. For that, look for *Control Panel > Small Icons > Programs and Feature > Trun Windows features (on the left) > Select Telnet Client and click OK*. After that, pop a powershell, and then say *telnet localhost 31337* and we get the connection and the third FLAG (FLAG-16479)
+
+= 2nd one (SameGame.exe) =
+
+After checking the strings we can see quite some information regarding the fact that it contains 6 flags.
+
+We can understand that it is some kind of malware, depending on the *SECTION .rdata > IMPORT Name Tables* and we can see quite some functions that mention *Crypt*, *Hash*, *Clipboard*, and etc. So quite some extensive things that give us the idea that it should be doing some ransomware, or maybe crypto locking, or etc.
+
+If we then open *ResourceHacker*, then we are going to get the idea that it indeed does some shenanigans, because in the Dialogs we can see that it contains some text that says *You are cryptolocked*.

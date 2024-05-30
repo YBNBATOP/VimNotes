@@ -14,6 +14,13 @@ To view different imports from different DLL's (might be needed to know the type
 
 In the same *PEview* there is the SECTION .rsrc that is responsible to contain the possible (or most) resources used by the sample. Could also try to check it with the Resource Hacker (it can also show images and etc but rendered) 
 
+== ASLR ==
+
+To check if ASLR is enabled, check the *PEview* > *IMAGE_NT_HEADERS > IMAGE_OPTIONAL_HEADERS* and look for DYNAMIC_BASE
+
+== Where the code starts ==
+
+To check where the code starts: *PEview > IMAGE_NT_HEADERS > IMAGE_OPTIONAL_HEADERS > Addres of Entry Point*
 
 = How to analyze a sample (general steps) =
 

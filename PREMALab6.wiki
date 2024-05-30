@@ -1,0 +1,32 @@
+= Start =
+
+We are using Immunity debugger.
+
+= 1st one (L7a-CTF.exe) =
+
+It contains 3 flags. Has some place holders for FLAG-%d
+
+* To get the first flag, lets open IDA and Immunity Debugger. Lets go to strings, and of course use the *FLAG-%d* string. There are supposed to be 3 of them once we try to access the references. After that, we go to the function. We want to see the nodes, that actually show the result. So the first flag is easy, as we can find the line like *cmp esi, [esp+something]*. After we know this, we can go to our immunity debugger (and notice in IDA the address where this cmp is situated, down.). After that, we can find the address in our debugger and make sure to put a breakpoint (F2). After that, we can run the sample. It will be waiting for our input, so just press spacebar. After that, we hit the breakpoint and can analyze what is happnening. We see that the line in debugger says *CMP ESI, DWORD PTR SS:[ESP+10]*. This means, that we need to take a look at the right (registers), and see what is being compared to what. In this case, the Heap value of ESP+10 is being expected to be true. So how to do it: Take a look at the registers, then notice the value of ESP (in my case it was 0019FF14), and we can also see the value of ESI (in this case it is 00002710 which is 10000 so starting point in Decimal). After that, we take a look down right, and first find the initial address of 0019FF14. Then, since we had + 10, we literally do + 10 in hex in calculator, and see that we need the address 0019FF24. So if we check the value at that address, in hex representation, then we are going to see 000CB63. Translate that to decimal, and that is our first FLAG (FLAG-52067)
+
+* To get the second flag, again strings - check cross reference - go to the second one. We again look for *cmp esi, edi*. Notice the address, and put inside debugger. So after we remove the first bp and put the next one, we can just keep running it. Press the spacebar again, and now we need to analyze the right side again, but this time only the registers. Why? Because the different buffers are in different places, that being for example EAX is probably going to be on the stack, or have and address as the ESP in the previous one. But in this case, *CMP ESI, EDI* the correct value is stored in the EDI. So when we look at it, we understand that the value is 0000888B = 34955 in decimal, and that is our second FLAG (FLAG-34955).
+
+* To get the third flag, do the same things as before, but this time, we are looking for the *test eax, eax*, which is technically not the best way to do it, but in this case it does the job, since we do not really have any other comparison. Run the program. At this point, you should hit the spacebar, then you hit the breakpoint, and voila, you should already see the needed string in ASCII format in the registers and also on the Heap (i believe the right bottom thing its called like that. PS nope, its called the Stack. The left bottom thing is the Heap/Memory), and the FLAG. (FLAG-61867)
+
+= 2nd one (L7b-ATM.exe) =
+
+This one contains only one flag
+
+* To get the flag, go to IDA and find the strings and the cmp. *cmp dword[something], 0A54Bh*. After you put the breakpoint, Run the program, and then put some input inside. Like 1111 and see the value in Hex for it (457). When we hit the breakpoint, the value appears in the EAX register. The strange thing about this exercise is to understand where the data points to. In this case it is comparing not values, but more like address references. In this case it is the pointed to our EAX* 4+403370, and compared to the 0A54B (important to know, and also need to know that this is going to be read from right to left like little indian big indian and overall look like 4B A5). We can then search for this value in the memory (Bottom left) and look for Binary string, and put our 4B A5 in there. Now we can see where the data is stored, and hence we can make use of the Address line that is shown on the same line with the data. In this case it is 00406614 for example. Then, we need to take that address, and do the inverse of the operations it does on our initial EAX pointer, so take calculator and use the Hex and calculate 406614 - 403370 and / 4 = CA9 = 3241 in decimal. And we got our FLAG after inputting this as PIN (FLAG-45374)
+
+= 3rd one (L7c-Crypto.exe) =
+
+There are 2 flags inside here.
+
+* To find the first one, open the *IDA* and of course the debugger. Lets take a look at the strings where it says *Encrypting flag* and etc. Once we jump there, you can see not much, but you can see the next functions tha are being called. In this case it is the function *sub_401230*. We can go there, and inside we will see *test eax, eax* before the routes go different ways. Hence, in this case we can try and exploit that. At this point you should get already the ASCII flag in the registers. (FLAG-25394)
+
+* To get the second one though, is kind of harder. What you should understand is that there is a function call (that you can also see in the Debugger as clean text) that is responsible to encrypt and decrypt the data. In this case, we can find where this function is getting called in the debugger (in this case it is advapi32.cryptdecrypt). We can google it, and see the values that it stores (we will need the 5th argument it uses pwData). We put the breakpoint on the method itself, and also the next line just to see that the method gets triggered.After you click the first time, you will get shown values on the Stack with arguments for the function. If we then right-click on the 5th argument, and then say follow in Dump, then we will get the address where our decrypted flag will be stored after the execution. Hence, we press run the second time, and we can see inside there the FLAG (FLAG-63949)
+
+= Remember =
+
+Anything with E_X is supposed to hold the values, like variables. Anything else can be changed or be the switching point for the values.
+
