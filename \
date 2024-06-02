@@ -1,9 +1,0 @@
-= Start =
-
-This lab requires to read data using *IDA* and understanding of assembyl code.
-
-= 1st one =
-
-First thing we can do, is open *BinText* and search for strings. We find there information regarding 2 flags.o
-
-* To get the first flag, we need to calculate the "flag" itself which is the number that we are going to enter. To do that, we need to know some basic operations: *mov [ebp+var_4],7* - this would put the value 7 into the address at ebp+var_4 (think of it like a variable); *mov ecx, [ebp+var_4]* - this would save the value from the ebp address into ecx (the things that end with e_x are like main variables, or things on the stack (like setteled in values); *imul ecx, 10* - this one would mean that the value inside ecx is getting multiplied by 10; and then *mov [ebp+var_4], ecx* - this would represent and end of loop where the value gets modified outside the stack, and then used.
