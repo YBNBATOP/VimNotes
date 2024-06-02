@@ -1,0 +1,83 @@
+= Information =
+
+Regulation is something that is going to be applied anyway. Directive - a direction for a country to make or change a law. Directive example - NIS, and then you have some time to put it into your own rule. That is also where member state law comes in play.
+
+GDPR applies to member states automatically, and then institutions and everything else has different regulations.
+
+Territorial scope is applied if you are from america and do shit in europe, then it applies to your.
+
+If you are outside America, the processor will be American. The moment you do something in EU - the GDPR applies.
+
+Personal data - all the data that can be used to identify you as a person. But only information that is unique!
+
+IP address for example is not personal data.
+
+Then we have biometric data, generic data, health data.
+
+Processing means that the data is processed, like being storred or something. Then it means that you have a "processor" for the data.
+
+Then you have different means to protect the processed data inside.
+
+You have actors - Controller, and Processor.
+
+Authority - you work as a DPO, then you are the supervisor authority. Then you have other authorities above.
+
+There are different principles of gathering the data, but also we need to respect some rules when captivating the data.
+
+All of the data needs to be processed based on something at least. Like purpose limitation, to make sure that you only take the minimal information. Legality, fairness and transparency. Correctness, data minimisation, storage restriction. 
+
+Then, you need to have at least one thing that allows you to collect and process the data. Like consent (freely given, easily withdrawn, and specific. You can go back on consent, but no a contract. It is also different for the children as they need to be more than 13 yo), necessary for the performance of a contract (means that you need to agree for the information to be processed, like the address for a delivery. There should also be respect for private life, and privacy in the workplace, and many more), legitimate interest (it is neccessary for the controller or a third party, like analytics and etc.), vital interest (depends on your life), public interest (public > your interests).
+
+For example, lets think that we have pictures, then in case you are in the photo not on purpose - then its okay.
+
+IP address with the username is also personal data.
+
+We then have problems regarding the Case DIrect Marketing which involves making the users giving me the marketing options. Also we have viral marketing, which means that the target will actually involve the other parts in their marketing answers.
+
+Data subject rights, are a main part of the processing of information.
+
+Right of access - you have the access to the information collected. You can contact the company to ask and print the data that you have, but not too often.
+
+Right to rectification - right to correcting data, because you can ask to make sure that hte data that is stored is right. 
+
+Right to be forgotten - right to erase the data that has been collected without any consent. This data can be erased after certain time.
+
+Restriction of processing - make sure that the data is not processed if I do not want to. That can be related to the fact that somebody processees the wrong data. Like they need to first change the data, and be like then we can do it.
+
+Right to data portability - ability/right to change the data to another part/company.
+
+Right to object - think of direct marketing, which will restrict you from getting direct marketign stuff.
+
+Controller - the guy/company/multiple controller that makes the decision and creates the purpose of collecting the data. The momemnt you have the purpose, then you are the controller.
+
+Data protection by desing and by default - a set of rules that will make sure that the data that gets leaked not that dangerous. It includes: Minimise, Separation, Abstract, Hide, Inform, Enforce.
+
+Joint controller - if i am the company that sells shoes, and then i collect data, but then I want to send my data to somebody else. I will put in my store the information that the information is also going to be sent to other company.
+
+Personal security - you need to inform the authorities in no more than 72 hours about a data leak, whether you need to contact the users,
+
+When do we need to report that data got leaked? It is not necessary if we use encryption of data, or use data minimisation. Like the data cannot be connected to a person. The company can either talk to individual customers, or make a public announcement.
+
+DPIA is a document that makes sense for the security of the company.
+
+DPO is the person in charge for the security.
+
+You cannot claim copyright over something that was created by AI. Also, copyright can be gathered only upon sometging that was done by a human.
+
+Copyright should have a concrete (specifi) form. It is also supposed to be original form, because you are deciding what is happening with it. It should also have some things to be based on. You have the right up until you die, and 70 years after. After that, everybody can be used. You have Moral right (i made the work, so it is mine), and also property rights (i have this under my jurisdiction, and then i can sell CDs with the things i have. Like resell of a CD disk of a game, then you as the owner have the right)
+
+Database as a whole can be a copyright, but only if you put a lot of work/money in it. Databases have also some special features about it that needs to be secured.
+
+Trademark can be registered, but it is all about the way you create that trademark. Like you need something unique. Otherwise, it is not easy to replicate. Like the colors is okay. There are also many classes for the trademark. Trademark should not be too complex, misleading, and etc.
+
+Patent law is when you create something, and then you want to make sure that you made it. Like algorithms can be patented. Protected for 20 years.
+
+= Beyond cookies =
+
+Cookies can not be applied to GDPR. In short, we can say that all the "technicall" cookies are not to be approved. Others relating like marketing - should be. Or anything unique for the user should be accepted.
+
+The language for the cookie statement depends on the country and etc.
+
+You need to give more setting for the user to know how to get rid of cookies and etc.
+
+

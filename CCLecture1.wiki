@@ -1,0 +1,88 @@
+= Legal framework =
+
+Cybercrime is everything related to using the PC. if you use it to make crimes - it is also part of the cybercrime. Cybersecurity is a part of the thing that you make to secure the usage of PC and etc.
+
+= Council of Europe =
+
+Council of Europer decided upon what will be accepted or made in the EU.
+
+= Information =
+
+There is a lot of possible definition for information in the computers.
+
+Cybercrime is based upon different things, and most other countries can have different rules put up for themselves.
+
+= There are different type of offences =
+
+Illegal access - have access to any ones device, intentionally (like login into the laptop).o
+
+Illegal interception - being the MITM (man in the middle).
+
+Data interference - make it impossible for the network to communicate. This can be like ALFA adapters usage, but also it can be an escalate of the illegal access, as you can change something. That is more than just seeing around (illegal access).
+
+System interference - DDoS.
+
+Misuse of device - cybercrime its not only about what you are doing on your PC. When you use your tools to commit hacks.
+
+Computer-related forgery - You have your laptop and you remove a watermark.
+
+Computer-related fraud - You have a laptop, and use it to actually create a fake Facebook file.
+
+Offences related to child pornography - different rules are different for the Women and Children.
+
+= Offences to copyright =
+
+If you copy somebody's text, and post it on your assignment - this is copyright issues. You have many more like that.
+
+All countries need to have different regulations toward any law. For example - the time in prison as punishment can be adapted.
+
+Because we want to fight with cybercrimes, we need to have procedural law, which is responsive to have rules regarding taking of information. 
+
+The providers of service can have your information and can provide the information to the law enforcements.
+
+Every country has its own jurisdiction. If you commit crimes in a different country, then it depends on other factors who the jury will be. That is why extradiction exists.
+
+All the members of jurisidction should have their own methods of keeping in touch and managing information.
+
+= EU and criminal legislation =
+
+The country that has the Euro as currency, then EU has power over you.
+
+EU cannot force you adapt your rules to make you a less technologically advanced country. But they can force you to adapt stuff regarding security, or anything. 
+
+= Content blocking =
+
+There are multiple things that need to be implemented regarding the restriction or blocking of information in the country.
+
+= CERT and other institutions, along with the directives. =
+
+The EUROPOL is the highest bullshit that is responsible to tackle all the possible crime.
+
+under it, we have the CERT (Central Emergency Response Team), that is responsible to gather information and then spread the threats awareness over to the other institutions and countries.
+
+All of the countries have police, but there is also police that tackles problems regarding the cybercrime. Like EC3 (European Cybercrime Center), which is regarding to fight with the cybercrime.
+
+Because of companies like Apple, Google and etc, there is a need for more private sectors to work towards crime.
+
+= Privacy and data protection =
+
+We need to respect human rights, but also it is a sharp edge of when your data can be collected or something like that. Like your information should not be touched, because it depends.
+
+Council of Europe will require your country to actually implement stuff, so that you can implement solutions afterwards towards the cybercrime.
+
+Whenever you collect the data, you need to know the risks of taking data and etc.
+
+It is also needed to put focus on biometric data.
+
+We have ordinal personal data (all type of data for identification) -> biometric data -> sensitive biometric data
+
+= Prevention =
+
+It is also important regarding the data protection.
+
+It is also important to think about the big data. we are basing ourselves on 4 facts - Volume, Valocity (how fast the data is collected), Veracity (how valid the data is), Variety (how much type of data we have.).
+
+There is also data that is made, and found. Like the made one is created by human. The found data is something made by a device, which can be volunteered, automated, directed, and etc.
+
+Then we have big data analytics.
+
