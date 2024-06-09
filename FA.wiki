@@ -13,3 +13,7 @@
 [[FALecture6|Forensics tooling & mobile forensics]]
 
 [[FALectureGuest|Guest Lecture about what are attacks]]
+
+= Exam preparation =
+
+[[FAExamPrep]]

@@ -1,0 +1,96 @@
+= Lecture 1 =
+
+== Terms ==
+
+Forensics = the use of science and technology to investigate and establish facts in criminal or civil courts of law.
+
+Goal of computer forensics = explain the state of a digital artifact such as a computer system, storage medium, electronic document. You want to find *facts*! You do this by exposing *evidence*. Forensics is a legal process, and it is supposed to follow some legal concepts and precedents (chain of custody, spoilage of evidence, dealing with production of evidence in court).
+
+== Digital vs Incident ==
+
+Incident response:
+* GOAL: find a quick reaction to immediate problem.
+* DATA: Typically short-term data sources.
+* SPECIAL SKILLS: Quick response/analysis, interactions with SOC, IT, management
+
+Digital forensics:
+* GOAL: usually part of investigation
+* DATA: typically require "older" and more data
+* SPECIAL SKILLS: Interaction with "cops", presentation of findings, POC
+
+== Forensic challenges ==
+
+First and foremost there are quite some possible sources of data. Some of them are moveable, some not.
+
+Then you have the internet, which is quite a tool for forgeries (like AI deepfakes)
+
+On TV everything just seems to be so smooth and etc. Hence it makes the other people think that everything is really simple and etc.
+
+In reality, data can be lost, encrypted data, does not show guilt, rarely shows certain data, tools crash.
+
+== Digital forensic process ==
+
+Acquisition:
+* Collect the digital media, create copies, maintain records of all actions made upon media.
+
+Analysis:
+* Refers to media examination, identification of items present in the media and reducing of them to items of interest.
+* Analysis of the artifacts using the appropriate methods
+* Interpretation of the results of this analysis based on the examine's training, expertise, experimentation, and experience.
+
+Presentation:
+* Sharing of results of the analysis to the interested parties.
+
+== Postmortem vs Live Forensics ==
+
+Postmortem:
+* System is powered off, remove hard drive, image with write-blocker
+* No risk that external threat can destroy data on the system.
+* No need for password to access data (unless encrypted)
+
+Live:
+* System is still running, run a program to capture some data.
+* Can capture RAM
+* Essential for malware present only in RAM, recovering authentication and encryption passwords from RAM
+
+== Forensic tools ==
+
+Write blockers:
+* Prevent any data to be overwritten on the drive.
+* Can be physical tool, or software.
+
+Disk imagers:
+* Produce exact forensically sound, duplicate of the original data.
+
+Shielding:
+* Put the device in a bag that does not allow any signals for it (Faraday bags).
+
+Software:
+* Both open-source, and commercial.
+* Do various stuff regarding the data.
+
+== HDD ==
+
+Uses magnetic storage and a couple of rapidly rotating disks.
+
+Important to know that the smallest amount to write on is *sector*, then you have a *cluster* (multiple sectors), then you have *track* (which is a full circle on the disk), *cylinder* which is multiple tracks over the disks.
+
+The sector is usually *512 bytes*, but can also be 4096 (4KB in the modern HDD)
+
+Hence you have logical and physical bytes per sector.
+
+4096 + 4096 = 4K native (4Kn)
+512 + 512 = 512 native (512n)
+512 + 4096 = 512 emulated (512e)
+
+Early method for giving addresses to each physical block of data on a HDD was called Cylinder Head Sector (CHS) Addressing.
+
+LBA used one address to find all the data, the MBR contains the start address of each drive, and the number of physical sectors.
+
+There are also multiple ways to understand that an HDD is broken, because of noise, heat, smoke, errors.
+
+Even if the disk is destroyed, there still exists a way to actually recover data via special magnetic analysis, which is also expensive.
+
+To destroy data, you can do it:
+* Degaussing = using a super hard magnet to mess everything up
+* Physical destruction = make stuff unspinable, shred drive completely.
