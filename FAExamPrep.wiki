@@ -85,7 +85,7 @@ Hence you have logical and physical bytes per sector.
 
 Early method for giving addresses to each physical block of data on a HDD was called Cylinder Head Sector (CHS) Addressing.
 
-LBA used one address to find all the data, the MBR contains the start address of each drive, and the number of physical sectors.
+LBA (Logical Block Addressing) used one address to find all the data, the MBR contains the start address of each drive, and the number of physical sectors.
 
 There are also multiple ways to understand that an HDD is broken, because of noise, heat, smoke, errors.
 
@@ -94,3 +94,226 @@ Even if the disk is destroyed, there still exists a way to actually recover data
 To destroy data, you can do it:
 * Degaussing = using a super hard magnet to mess everything up
 * Physical destruction = make stuff unspinable, shred drive completely.
+
+== SSD == 
+
+The SSD uses the electricity to set up the gates in the silicon substrate to decide if the values is set or not.
+
+Write wear is a thing that means that the electricity float is not possible anymore, due to the amount of overwritten amount.
+
+The floating gate can have like a couple of levels of charging (stages). If you have a single level, then we call it SLC (1bit/cell = 2 states possible), MLC (Multi Level Cell), and TLC (3 bit/cell), and QLC ( 4 bit/cell)
+
+SSD read page by page. Page sige is 4Kb usually.
+
+*Pages is the minimum amount to write*
+
+*Blocks is the minimum amount to erase*
+
+Wear levelling for SSD is to make sure that it uses different cells in the block. (block = multiple pages, page = a line of cells). We erase data by the block. Whenever the data is overwritten in the block, the data is moved, and the other cells are made as dirty (waiting for garbage collection). Hence, after the whole block is is fulled with information or is dirty, the valid data is moved to another block, and the dirty blocks are cleared. 
+
+Because of the fact that we need to constantly update the data, the SSD will provide some space for itself from the vendor designed for the operations.
+
+Also the blocks can be marked as to be overwritten, and then the computer and the hardware will know what is up. The TRIM command is useful as it will be able to trim the dirty or deleted cells.
+
+= Lecture 2 =
+
+== Partitions ==
+
+Partition is how you can divide your disk into multiple Logical Volumes.
+
+Linux LVM is a method that makes a partition look like a physical disk.
+
+== MBR ==
+
+This is Master Boot Record. You can have only one MBR. The rest would be EBR. 0x55AA means the end of MBR paritions (512 bytes overall, 446 for bootstrap code, 4 partition entries each 16 bytes). Every partition entry contains information regarding status, then information regarding it.
+
+The bootstrap data is also used, and then you have data in there, as for example the disk signature (needed for registry and computer itself).
+
+The last partition can be divided into EBR (Extended Boot Partition), and from there have more possible partitions.
+
+Logical partitions are created within the extended partitions and are defined in the EBR. So from now on its mostly *Logical* and not physical partitions. The EBR can only have logical partitions. MBR can have 2TB maximum space per partitions
+
+In terms of recovery, if your MBR is dead, you can still recover the access to othter tables and data. But in case your data is of first partition is affected, then you cant recover it.
+
+UEFI is needed to have GPT partitions. MBR is only used with BIOS. UEFI/GPT partitions have an additional small partition for the disks themselves. Like the MBR would have only one small partition, but UEFI would have another one set up with ESP or EFI. You can definitely see it on the partitions of any screenshot.
+
+== HPA vs DCO == 
+
+HPA is Host Protected Area and it is responsible to have data that cant be used by the user.
+
+To spot if it is present, you can do a certain command and look at the sectors that are used or where it starts.
+
+DCO is Device Configuration Overlay, it is the amount of space to make sure that your disk would work properly and not be used by the user. Even though, you can access it. 
+
+DSA is Drive Service Area also for some firmware objectives and etc.
+
+= Lecture 3 =
+
+== File system ==
+
+File system is about storing and representing the data.
+
+We allocate information in blocks. So it is 8 sectors per a block. And hence a sector is 512 bytes, and the block is 4096 bytes (4KB). Hence, if you store something small, than you will still assign 4KB for that file (even if it uses like 718 bytes). It always assigns it in blocks.
+
+== FAT ==
+
+In windows we use FAT (File Allocation Table). There are a couple types of it. FAT 16,32, ExFAT.
+
+How it works: it uses a allocation table (indexes) to know where the information is stored and where it starts and ends.
+
+So the more is the FAT type, the more clusters you possibly have. FAT 16 will allow maxiumu 2^16  clusters = ~ 4GB. For FAT32 is 2 28 bits (important to know.)
+
+File Allocation Table is meant to specify where the cells (or sectors) are stored with information. Whenever you see 00 00 it is unallocated sectors. Whenever you see FF FF it means the end of a partiion. When you see F7 FF it means that the cluster is bad. F8 FF is for when the data starts. 
+
+With FAT you have some Root directory, responsible for boot and also the name of clusters and etc. Then you have Data Area with information regarding clusters and etc.
+
+== NTFS ==
+
+New Technology File System is using Master File Table where it keeps information regarding all the file. If it is super small (the size of file), then it can be stored on the MFT.
+
+The entries of the MFT contains information like permissions, modification time, creation time, hard link counts, file name.
+
+You have resident and non-resident data, and can be either stored in the MFT or set outside but with a pointer.
+
+It stores information with VNC and LNC (virtual and logical Number Cluster or some bullshit).
+
+NTFS also has jounralling, and includes full sparse file support. This is for the files that have zeros in between that can be ommited to store, but will be added automatically when you read the data. It also allows to have EFS (Encrypted File System).
+
+It also allows to use Alternate Data Streams (ADS), which means that the data will be bigger, and also it will be possible to read it via either some tools or proper show of files that are not show.
+
+== Linux file system ==
+
+In linux everything is a file, hence it uses a special feature as VFS (Virtual File System).  
+
+File modes in linux will show you first the type of the file, thenn it will show you permissions for owner, group, and then others.
+
+You have several types of files, and most important ones are *l*, *b*, *c* (link, block, characters). Blocks are for like partitions and etc, the Characters is for input devices. Then this two can have 2 different major and minor inodes. So the major one specifies the category. and the other one show you the number of the device. Like a disk, and then partitions inside there.
+
+There are also some relevant directories:
+* /dev - used by user processes
+* /sys - used for the system
+
+== ext File System ==
+
+The most common one nowadays is ext3/4. Journalling appeared in ext3 and the Max File system was 32 TiB. ext2 could be upgraded to ext3 but without journalling. The ext4 has max files 1 EiB. You also have backwards/forward compatibility, like you can mount ext2 as ext3 and have journalling.
+
+The way it stores inodes is by doing the inodes. Also it uses sectors to store information, and hence uses multiple sectors in the blocks. In Windows it is clusters.
+
+It also uses UUID (Universally Unique Identifier) to operate with names of the disks/partitions.
+
+=== Inodes ===
+
+Inodes are linkes to name of the files, and the inodes already point to blocks with information
+
+You can use *stat* to check information regarding the file and the inodes it uses.
+
+*icat* command can print the information regarding the what is inside an inode.
+
+*blkcat* can check information regarding the contents of the inode itself.
+
+Inodes can point to another blocks, and overall can work like chains to show files.
+
+Also if you run out of inodes but have space, then you got to know that you need some inodes to be freed.
+
+== Hard links vs Soft links ==
+
+Hard links point to the same inode. Soft links point to the same file, but need an inode that will specify that it points there.
+
+Directories are also stored as inodes.
+
+Important inodes:
+* 2 = / or root directory
+* 11 = lost+found
+* 8 = journal
+
+The data still stays inside the inodes.
+
+*fls* can be used to show files that have been deleted. The * will show the files that are deleted (careful with d/d and r/r)
+
+Ext2 keeps the blocks intact, but ext3 and 4 will get rid of the content pointers inside the inode.
+
+= Lecture 5 =
+
+We have ext metadata, that can be used to check information.
+
+The backup is used to have superblocks and group descriptors as information inside there.
+
+Maximum size group is 32768 blocks.
+
+ext2, 3, 4 can have backup, but then the ext3 and 4 can have also journalling.
+
+== Journals ==
+
+It can only be on ext3 and ext4, and hence whenever you partition it with ext4 you get information regarding the creation of journal.
+
+It contains information regarding the journal superblock (and inside there you have information regarding sequence number, or in other words its to know the status of the files), descriptor, metadata, commit.
+
+Journal can have multiple modes as well. It can have ordered mode (know where data was stored, but without the data itself). Writeback mode (saving only blocks information but not the data). Journal mode (data mode, slowest one, stored the backup and the content of the data).
+
+It also helps for crash recovery because it checks the journal and then you can recover data. It also helps for forensics, as we can read data blocks with information.
+
+After accessing the journal you can have information regarding the multiple sequences and data blocks that were used.
+
+= Lecture 6 =
+
+For Windows forensics we analyze the registry, and also the files and jumplists.
+
+== Registry ==
+
+We also really care about the registry, and we need to know where data is stored inside there.
+
+The registry stores information as objects in JS. Key - value
+
+Important:
+* HKEY_CLASSES_ROOT = only crucial information for some applications and etc
+* HKEY_CURRENT_USER = only stores pointers to another hive HKEY_USERS and there you have values for every user
+* HKEY_LOCAL_MACHINE = contains information regarding the most various information regarding policies, permissions, security, software, system, and etc.
+* HKEY_USERS = contains user specific configuration information.
+* HKEY_CURRENT_CONFIG = contains again, pointers to HKEY_LOCAL_MACHINE, and contain information regarding the hardware profiles and etc.
+
+The hives are reinitialized every time you start you PC.
+
+Important to know something regarding the SAM as it is important for users information.
+
+There are also important paths that we need to know.
+
+Like where you store the information of previous network connections, recently ran applications (MRU)
+
+You can also have ShellBags to see various information regarding view preferences, and information regarding when did we write to a file.
+
+AmCache hive stores information regarding the last applications ran.
+
+To find the hives you can go to C:\Windows\System32\Config to find the hives.
+
+We also have other artifacts, such as .LNK files for shortcuts, jumplists (recent documents and etc), prefetch files (like default applications to run), SRUM (system resource usage monitor), RDP cache, VSS (volume shadow service), thumbnail cache, browsers data and etc. 
+
+= Lecture 7 =
+
+There are multiple forms to actually hide data. You can encrypt or just hide the data. You can do it as easy as marking the file as hidden for example. 
+
+Or you can hide stuff inside slack space, which can have multiple forms:
+* Space in the block (if you have couple of sectors only used, then the rest is slack space)
+* Space in between the partitions
+* Space in the HPA/DCO
+
+FISTint is inserting data in places where it is not supposed to be.
+
+Staganography is camouflaging information inside another file. You can do it via various means.
+
+Polyglot - a file can be something different, or contain inforamtion inside itself. Like you can have a file that represents an image, and then inside of it you can have files that will represents a zip. To check for that you can check the size of the file. A tool for that is *binwalk*. It will check what kind of hashes you have inside tehre.
+
+== Destroying data ==
+
+There are multiple ways to destroy all the data. One of such ways is to use the firmware overwrite, software overwrite with like *dd*, degaussing (a strong magnet overall), shredder.
+
+== Data carving ==
+
+This is regarding the reading of the files blocks, and trying to understand where the files are supposed to start and end. This is useful as you dont base yourself on the inodes but blocks themselves.
+
+= Lecture 8 =
+
+Mobile forensics is also similarr to windows and etc, but you better use the tools like Sleuth Kit, Autopsy, KAPE. This will make sure that you get the most information found for you.
+
+After that you have more specific tools that will allow you to do some cracking on the phone itself.
+
+
